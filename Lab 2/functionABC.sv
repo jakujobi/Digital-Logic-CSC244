@@ -14,12 +14,11 @@ not (nB, B); // nB is  B'
 not (nC, C); // nC is C'
 
 and (nBaC, nB, C); // (B′· C)
-and (nBanC, nB, nC); // (B′· C')
-
 or (E, nA, nBaC); // A′ + B′· C
-or (F, nA, nBanC); // A′ + B′· C′
-
 not (nE, E); //nE is E' = (A′ + B′· C)′
+
+and (nBanC, nB, nC); // (B′· C')
+or (F, nA, nBanC); // A′ + B′· C′
 not (nF, F); //nF is F' = (A′ + B′· C')′
 
 and (Y, nE, nF);

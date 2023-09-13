@@ -1,0 +1,10 @@
+|functionABCreduced
+A => WideAnd0.IN0
+A => WideAnd1.IN0
+B => WideAnd0.IN1
+B => WideAnd1.IN1
+C => WideAnd1.IN2
+C => WideAnd0.IN2
+F << comb.DB_MAX_OUTPUT_PORT_TYPE
+
+

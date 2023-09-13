@@ -1,0 +1,30 @@
+|fWXYZtoplevel
+W => W.IN2
+X => X.IN2
+Y => Y.IN2
+Z => Z.IN2
+F1 << functionWXYZ:u1.F
+F2 << functionWXYZsimplified:u2.F
+
+
+|fWXYZtoplevel|functionWXYZ:u1
+W => WideAnd1.IN0
+W => WideAnd0.IN0
+W => WideAnd2.IN0
+X => WideAnd0.IN1
+X => WideAnd1.IN1
+X => WideAnd2.IN1
+Y => WideAnd0.IN2
+Y => WideAnd1.IN2
+Z => WideAnd2.IN2
+F <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fWXYZtoplevel|functionWXYZsimplified:u2
+W => WnZ.IN0
+X => comb.IN1
+Y => YnWnZ.IN1
+Z => WnZ.IN1
+F <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
