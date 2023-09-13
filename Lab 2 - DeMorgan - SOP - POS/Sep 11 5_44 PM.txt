@@ -1,0 +1,24 @@
+module logic_function (
+  input logic A,
+  input logic B,
+  input logic C,
+  
+  output logic Y
+);
+
+  logic not_A, not_B, not_B_and_C, not_A_or_not_B_and_C;
+  logic not_C, not_B_and_not_C, not_A_or_not_B_and_not_C;
+
+  not(not_A, A);
+  not(not_B, B);
+  and(not_B_and_C, not_B, C);
+  or(not_A_or_not_B_and_C, not_A, not_B_and_C);
+
+  not(not_C, C);
+  and(not_B_and_not_C, not_B, not_C);
+  or(not_A_or_not_B_and_not_C, not_A, not_B_and_not_C);
+
+  not(Y, not_A_or_not_B_and_C);
+  not(Y, not_A_or_not_B_and_not_C);
+
+endmodule

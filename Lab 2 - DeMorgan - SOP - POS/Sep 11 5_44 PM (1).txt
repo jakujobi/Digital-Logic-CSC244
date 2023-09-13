@@ -1,0 +1,13 @@
+module Homework (
+input logic A, B, C;
+output logic Y;
+
+);
+
+logic nA, nB, nC, nBaC, nBanC, ;
+
+
+
+
+
+endmodule
