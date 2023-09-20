@@ -33,8 +33,12 @@
 
 
 module dec416 (
+    //input logic [D:C:B:A] in,
     input logic [3:0] in,
-    input enable,
+    
+    input enable, // enable signal
+    
+    //output logic [P:O:N:M:L:K:J:I:H:G:F:E:D:C:B:A] out
     output logic [15:0] out
 );
 
