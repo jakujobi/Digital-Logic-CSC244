@@ -1,7 +1,11 @@
 // This module is used to test the functionality of the dec416 module. It takes in a 4-bit input, an enable signal, and outputs a 16-bit signal.
 module test_decode (
+    //input logic [D:C:B:A] in,
     input logic [3:0] in, // 4-bit input signal
+    
     input enable, // enable signal
+    
+    //output logic [P:O:N:M:L:K:J:I:H:G:F:E:D:C:B:A] out
     output logic [15:0] out // 16-bit output signal
 );
 
