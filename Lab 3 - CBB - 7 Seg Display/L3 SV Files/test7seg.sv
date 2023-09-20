@@ -13,3 +13,5 @@ module test7seg(
 seven_seg seg1(
     .in(in),
     .out(out));
+
+endmodule
