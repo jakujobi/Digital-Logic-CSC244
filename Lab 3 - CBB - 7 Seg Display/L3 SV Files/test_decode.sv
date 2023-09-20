@@ -11,3 +11,5 @@ dec416 dec1 (
     .enable(enable), // connect enable signal
     .out(out) // connect output signal
 );
+
+endmodule
