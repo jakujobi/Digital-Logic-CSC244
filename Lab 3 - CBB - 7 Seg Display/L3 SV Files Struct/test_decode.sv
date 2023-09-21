@@ -8,10 +8,10 @@ module test_decode (
 
 // The dec416 decoder module is instantiated inside this module
 // And its inputs and outputs are connected to the inputs and outputs of this module respectively.
-    dec416 decoder (
-        .in(in),    //in: 4-bit input signal (connected to in)
-        .enable(enable),    //enable: enable signal (connected to enable)
-        .out(out)   //out: 16-bit output signal
-    );
+dec416 decoder (
+    .in(in),    //in: 4-bit input signal (connected to in)
+    .enable(enable),    //enable: enable signal (connected to enable)
+    .out(out)   //out: 16-bit output signal
+);
 
 endmodule
