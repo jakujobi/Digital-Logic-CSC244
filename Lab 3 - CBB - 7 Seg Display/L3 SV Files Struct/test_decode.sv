@@ -5,25 +5,14 @@ module test_decode (
     
     input enable, // enable signal
     
-    //output logic [P:O:N:M:L:K:J:I:H:G:F:E:D:C:B:A] out
-    output logic [15:0] out // 16-bit output signal
+    output logic E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T // 16-bit output signal
 );
 
 // Instantiate the dec416 module and connect its input, enable, and output signals to the corresponding signals in this module.
 dec416 dec1 (
     .A(A), .B(B), .C(C), .D(D), // connect input signal
     .enable(enable), // connect enable signal
-    .out(out) // connect output signal
+    .E(E), .F(F), .G(G), .H(H), .I(I), .J(J), .K(K), .L(L), .M(M), .N(N), .O(O), .P(P), .Q(Q), .R(R), .S(S), .T(T) // connect output signal
 );
 
 endmodule
-
-
-// // Instantiate the dec416 module and connect its input, enable, and output signals to the corresponding signals in this module.
-// dec416 dec1 (
-//     .in(in), // connect input signal
-//     .enable(enable), // connect enable signal
-//     .out(out) // connect output signal
-// );
-
-// endmodule
