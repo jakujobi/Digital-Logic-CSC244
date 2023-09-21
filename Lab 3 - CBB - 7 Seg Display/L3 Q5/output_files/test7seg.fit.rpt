@@ -1,5 +1,5 @@
 Fitter report for test7seg
-Thu Sep 21 00:46:17 2023
+Thu Sep 21 10:50:51 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Sep 21 00:46:17 2023          ;
+; Fitter Status                      ; Successful - Thu Sep 21 10:50:51 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; test7seg                                       ;
 ; Top-level Entity Name              ; test7seg                                       ;
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Total combinational functions  ; 15 / 49,760 ( < 1 % )                          ;
 ;     Dedicated logic registers      ; 0 / 49,760 ( 0 % )                             ;
 ; Total registers                    ; 0                                              ;
-; Total pins                         ; 13 / 360 ( 4 % )                               ;
+; Total pins                         ; 12 / 360 ( 3 % )                               ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                          ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                                ;
@@ -154,7 +154,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-10        ;   0.3%      ;
+;     Processors 2-10        ;   0.4%      ;
 +----------------------------+-------------+
 
 
@@ -164,8 +164,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]     ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+-------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                   ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 60 ) ; 0.00 % ( 0 / 60 )          ; 0.00 % ( 0 / 60 )        ;
-;     -- Achieved     ; 0.00 % ( 0 / 60 ) ; 0.00 % ( 0 / 60 )          ; 0.00 % ( 0 / 60 )        ;
+;     -- Requested    ; 0.00 % ( 0 / 58 ) ; 0.00 % ( 0 / 58 )          ; 0.00 % ( 0 / 58 )        ;
+;     -- Achieved     ; 0.00 % ( 0 / 58 ) ; 0.00 % ( 0 / 58 )          ; 0.00 % ( 0 / 58 )        ;
 ;                     ;                   ;                            ;                          ;
 ; Routing (by net)    ;                   ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )  ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -188,7 +188,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 44 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 42 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 16 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -225,7 +225,7 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 ;                                             ;                       ;
 ; Total LABs:  partially or completely used   ; 2 / 3,110 ( < 1 % )   ;
 ; Virtual pins                                ; 0                     ;
-; I/O pins                                    ; 13 / 360 ( 4 % )      ;
+; I/O pins                                    ; 12 / 360 ( 3 % )      ;
 ;     -- Clock pins                           ; 0 / 8 ( 0 % )         ;
 ;     -- Dedicated input pins                 ; 1 / 1 ( 100 % )       ;
 ;                                             ;                       ;
@@ -247,8 +247,8 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 ; Peak interconnect usage (total/H/V)         ; 0.2% / 0.3% / 0.1%    ;
 ; Maximum fan-out                             ; 17                    ;
 ; Highest non-global fan-out                  ; 17                    ;
-; Total fan-out                               ; 73                    ;
-; Average fan-out                             ; 1.22                  ;
+; Total fan-out                               ; 72                    ;
+; Average fan-out                             ; 1.24                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -283,7 +283,7 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 ; Total LABs:  partially or completely used   ; 2 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
-; I/O pins                                    ; 13                   ; 0                              ;
+; I/O pins                                    ; 12                   ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 288 ( 0 % )      ; 0 / 288 ( 0 % )                ;
 ; Total memory bits                           ; 0                    ; 0                              ;
 ; Total RAM block bits                        ; 0                    ; 0                              ;
@@ -297,7 +297,7 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 79                   ; 8                              ;
+;     -- Total Connections                    ; 78                   ; 8                              ;
 ;     -- Registered Connections               ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
@@ -306,7 +306,7 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 ;                                             ;                      ;                                ;
 ; Partition Interface                         ;                      ;                                ;
 ;     -- Input Ports                          ; 5                    ; 0                              ;
-;     -- Output Ports                         ; 8                    ; 0                              ;
+;     -- Output Ports                         ; 7                    ; 0                              ;
 ;     -- Bidir Ports                          ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Registered Ports                            ;                      ;                                ;
@@ -350,7 +350,6 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 ; out[4] ; E16   ; 7        ; 74           ; 54           ; 0            ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; out[5] ; D17   ; 7        ; 74           ; 54           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 ; out[6] ; C17   ; 7        ; 74           ; 54           ; 21           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
-; out[7] ; D15   ; 7        ; 66           ; 54           ; 14           ; no              ; no                     ; no            ; 2         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; User                 ; -                    ; -                   ;
 +--------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -382,7 +381,7 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 ; 4        ; 0 / 48 ( 0 % )   ; 2.5V          ; --           ;
 ; 5        ; 0 / 40 ( 0 % )   ; 2.5V          ; --           ;
 ; 6        ; 0 / 60 ( 0 % )   ; 2.5V          ; --           ;
-; 7        ; 13 / 52 ( 25 % ) ; 2.5V          ; --           ;
+; 7        ; 12 / 52 ( 23 % ) ; 2.5V          ; --           ;
 ; 8        ; 4 / 36 ( 11 % )  ; 2.5V          ; --           ;
 +----------+------------------+---------------+--------------+
 
@@ -516,7 +515,7 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 ; D12      ; 438        ; 7        ; in[2]                                          ; input  ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; D13      ; 431        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; D14      ; 428        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
-; D15      ; 404        ; 7        ; out[7]                                         ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
+; D15      ; 404        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; D16      ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; D17      ; 389        ; 7        ; out[5]                                         ; output ; 2.5 V                 ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; D18      ; 385        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -892,7 +891,6 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; out[4]   ; Incomplete set of assignments ;
 ; out[5]   ; Incomplete set of assignments ;
 ; out[6]   ; Incomplete set of assignments ;
-; out[7]   ; Incomplete set of assignments ;
 ; enable   ; Incomplete set of assignments ;
 ; in[0]    ; Incomplete set of assignments ;
 ; in[1]    ; Incomplete set of assignments ;
@@ -906,7 +904,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+--------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name      ; Entity Name ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+--------------------------+-------------+--------------+
-; |test7seg                  ; 15 (1)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 13   ; 0            ; 15 (1)       ; 0 (0)             ; 0 (0)            ; 0          ; |test7seg                ; test7seg    ; work         ;
+; |test7seg                  ; 15 (1)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 12   ; 0            ; 15 (1)       ; 0 (0)             ; 0 (0)            ; 0          ; |test7seg                ; test7seg    ; work         ;
 ;    |seven_seg:seg1|        ; 14 (14)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (14)      ; 0 (0)             ; 0 (0)            ; 0          ; |test7seg|seven_seg:seg1 ; seven_seg   ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+--------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -924,7 +922,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; out[4] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; out[5] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; out[6] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; out[7] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; enable ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; in[0]  ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; in[1]  ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
@@ -933,52 +930,52 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+---------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                ;
-+---------------------------------+-------------------+---------+
-; Source Pin / Fanout             ; Pad To Core Index ; Setting ;
-+---------------------------------+-------------------+---------+
-; enable                          ;                   ;         ;
-;      - seven_seg:seg1|out[0]~0  ; 0                 ; 6       ;
-;      - seven_seg:seg1|out[1]~1  ; 0                 ; 6       ;
-;      - seven_seg:seg1|out[2]~2  ; 0                 ; 6       ;
-;      - seven_seg:seg1|out[3]~3  ; 0                 ; 6       ;
-;      - seven_seg:seg1|out[4]~4  ; 0                 ; 6       ;
-;      - seven_seg:seg1|out[5]~5  ; 0                 ; 6       ;
-;      - seven_seg:seg1|out[6]~6  ; 0                 ; 6       ;
-; in[0]                           ;                   ;         ;
-;      - seven_seg:seg1|WideOr6~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr5~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr4~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr3~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr2~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr1~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr0~0 ; 0                 ; 6       ;
-; in[1]                           ;                   ;         ;
-;      - seven_seg:seg1|WideOr6~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr5~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr4~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr3~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr2~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr1~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr0~0 ; 0                 ; 6       ;
-; in[2]                           ;                   ;         ;
-;      - seven_seg:seg1|WideOr6~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr5~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr4~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr3~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr2~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr1~0 ; 0                 ; 6       ;
-;      - seven_seg:seg1|WideOr0~0 ; 0                 ; 6       ;
-; in[3]                           ;                   ;         ;
-;      - seven_seg:seg1|WideOr6~0 ; 1                 ; 6       ;
-;      - seven_seg:seg1|WideOr5~0 ; 1                 ; 6       ;
-;      - seven_seg:seg1|WideOr4~0 ; 1                 ; 6       ;
-;      - seven_seg:seg1|WideOr3~0 ; 1                 ; 6       ;
-;      - seven_seg:seg1|WideOr2~0 ; 1                 ; 6       ;
-;      - seven_seg:seg1|WideOr1~0 ; 1                 ; 6       ;
-;      - seven_seg:seg1|WideOr0~0 ; 1                 ; 6       ;
-+---------------------------------+-------------------+---------+
++------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                   ;
++------------------------------------+-------------------+---------+
+; Source Pin / Fanout                ; Pad To Core Index ; Setting ;
++------------------------------------+-------------------+---------+
+; enable                             ;                   ;         ;
+;      - seven_seg:seg1|sevOut[4]    ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[0]~37 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[5]~38 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[3]~39 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[6]    ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[2]    ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[1]    ; 0                 ; 6       ;
+; in[0]                              ;                   ;         ;
+;      - seven_seg:seg1|sevOut[4]~12 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[0]~15 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[5]~18 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[3]~21 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[6]~27 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[2]~33 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[1]~36 ; 0                 ; 6       ;
+; in[1]                              ;                   ;         ;
+;      - seven_seg:seg1|sevOut[4]~12 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[0]~15 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[5]~18 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[3]~21 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[6]~27 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[2]~33 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[1]~36 ; 0                 ; 6       ;
+; in[2]                              ;                   ;         ;
+;      - seven_seg:seg1|sevOut[4]~12 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[0]~15 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[5]~18 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[3]~21 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[6]~27 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[2]~33 ; 0                 ; 6       ;
+;      - seven_seg:seg1|sevOut[1]~36 ; 0                 ; 6       ;
+; in[3]                              ;                   ;         ;
+;      - seven_seg:seg1|sevOut[4]~12 ; 1                 ; 6       ;
+;      - seven_seg:seg1|sevOut[0]~15 ; 1                 ; 6       ;
+;      - seven_seg:seg1|sevOut[5]~18 ; 1                 ; 6       ;
+;      - seven_seg:seg1|sevOut[3]~21 ; 1                 ; 6       ;
+;      - seven_seg:seg1|sevOut[6]~27 ; 1                 ; 6       ;
+;      - seven_seg:seg1|sevOut[2]~33 ; 1                 ; 6       ;
+;      - seven_seg:seg1|sevOut[1]~36 ; 1                 ; 6       ;
++------------------------------------+-------------------+---------+
 
 
 +------------------------------------------------+
@@ -993,8 +990,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Global clocks         ; 0 / 20 ( 0 % )         ;
 ; Local interconnects   ; 7 / 49,760 ( < 1 % )   ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )        ;
-; R24 interconnects     ; 0 / 5,406 ( 0 % )      ;
-; R4 interconnects      ; 27 / 147,764 ( < 1 % ) ;
+; R24 interconnects     ; 1 / 5,406 ( < 1 % )    ;
+; R4 interconnects      ; 25 / 147,764 ( < 1 % ) ;
 +-----------------------+------------------------+
 
 
@@ -1132,9 +1129,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000001 ; IO_000002    ; IO_000003 ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007 ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
-; Total Pass         ; 13        ; 0            ; 13        ; 0            ; 0            ; 13        ; 13        ; 0            ; 13        ; 13        ; 0            ; 8            ; 0            ; 0            ; 5            ; 0            ; 8            ; 5            ; 0            ; 0            ; 0            ; 8            ; 0            ; 0            ; 0            ; 0            ; 0            ; 13        ; 0            ; 0            ;
+; Total Pass         ; 12        ; 0            ; 12        ; 0            ; 0            ; 12        ; 12        ; 0            ; 12        ; 12        ; 0            ; 7            ; 0            ; 0            ; 5            ; 0            ; 7            ; 5            ; 0            ; 0            ; 0            ; 7            ; 0            ; 0            ; 0            ; 0            ; 0            ; 12        ; 0            ; 0            ;
 ; Total Unchecked    ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; Total Inapplicable ; 0         ; 13           ; 0         ; 13           ; 13           ; 0         ; 0         ; 13           ; 0         ; 0         ; 13           ; 5            ; 13           ; 13           ; 8            ; 13           ; 5            ; 8            ; 13           ; 13           ; 13           ; 5            ; 13           ; 13           ; 13           ; 13           ; 13           ; 0         ; 13           ; 13           ;
+; Total Inapplicable ; 0         ; 12           ; 0         ; 12           ; 12           ; 0         ; 0         ; 12           ; 0         ; 0         ; 12           ; 5            ; 12           ; 12           ; 7            ; 12           ; 5            ; 7            ; 12           ; 12           ; 12           ; 5            ; 12           ; 12           ; 12           ; 12           ; 12           ; 0         ; 12           ; 12           ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; out[0]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; out[1]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1143,7 +1140,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; out[4]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; out[5]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; out[6]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; out[7]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; enable             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; in[0]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; in[1]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1251,7 +1247,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.08 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.07 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1259,9 +1255,9 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 Q5/output_files/test7seg.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 6067 megabytes
-    Info: Processing ended: Thu Sep 21 00:46:17 2023
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 6051 megabytes
+    Info: Processing ended: Thu Sep 21 10:50:52 2023
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:04
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test_decode
-Wed Sep 20 23:44:44 2023
+Thu Sep 21 08:12:03 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 20 23:44:44 2023          ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 21 08:12:03 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; test_decode                                    ;
 ; Top-level Entity Name              ; test_decode                                    ;
@@ -264,16 +264,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Wed Sep 20 23:44:36 2023
+    Info: Processing started: Thu Sep 21 08:11:53 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_decode -c test_decode
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 3 - cbb - 7 seg display/l3 sv files struct/test_decode.sv
-    Info (12023): Found entity 1: test_decode File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/test_decode.sv Line: 1
+    Info (12023): Found entity 1: test_decode File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/test_decode.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 3 - cbb - 7 seg display/l3 sv files struct/dec416.sv
-    Info (12023): Found entity 1: dec416 File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/dec416.sv Line: 1
+    Info (12023): Found entity 1: dec416 File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/dec416.sv Line: 9
 Info (12127): Elaborating entity "test_decode" for the top level hierarchy
-Info (12128): Elaborating entity "dec416" for hierarchy "dec416:decoder" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/test_decode.sv Line: 11
+Info (12128): Elaborating entity "dec416" for hierarchy "dec416:decoder" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/test_decode.sv Line: 15
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 Q4/output_files/test_decode.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -283,10 +283,10 @@ Info (21057): Implemented 53 device resources after synthesis - the final resour
     Info (21059): Implemented 16 output pins
     Info (21061): Implemented 32 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4786 megabytes
-    Info: Processing ended: Wed Sep 20 23:44:44 2023
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 4790 megabytes
+    Info: Processing ended: Thu Sep 21 08:12:03 2023
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:09
 
 
 +------------------------------------------+

@@ -4,22 +4,22 @@ in[1] => in[1].IN1
 in[2] => in[2].IN1
 in[3] => in[3].IN1
 enable => enable.IN1
-out[0] << dec416:decoder.out
-out[1] << dec416:decoder.out
-out[2] << dec416:decoder.out
-out[3] << dec416:decoder.out
-out[4] << dec416:decoder.out
-out[5] << dec416:decoder.out
-out[6] << dec416:decoder.out
-out[7] << dec416:decoder.out
-out[8] << dec416:decoder.out
-out[9] << dec416:decoder.out
-out[10] << dec416:decoder.out
-out[11] << dec416:decoder.out
-out[12] << dec416:decoder.out
-out[13] << dec416:decoder.out
-out[14] << dec416:decoder.out
-out[15] << dec416:decoder.out
+out[0] <= dec416:decoder.out
+out[1] <= dec416:decoder.out
+out[2] <= dec416:decoder.out
+out[3] <= dec416:decoder.out
+out[4] <= dec416:decoder.out
+out[5] <= dec416:decoder.out
+out[6] <= dec416:decoder.out
+out[7] <= dec416:decoder.out
+out[8] <= dec416:decoder.out
+out[9] <= dec416:decoder.out
+out[10] <= dec416:decoder.out
+out[11] <= dec416:decoder.out
+out[12] <= dec416:decoder.out
+out[13] <= dec416:decoder.out
+out[14] <= dec416:decoder.out
+out[15] <= dec416:decoder.out
 
 
 |test_decode|dec416:decoder

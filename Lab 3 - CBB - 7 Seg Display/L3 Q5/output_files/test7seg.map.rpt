@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test7seg
-Thu Sep 21 00:46:12 2023
+Thu Sep 21 10:50:47 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -14,11 +14,10 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "seven_seg:seg1"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
- 13. Analysis & Synthesis Suppressed Messages
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
+ 12. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -45,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 21 00:46:12 2023          ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 21 10:50:47 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; test7seg                                       ;
 ; Top-level Entity Name              ; test7seg                                       ;
@@ -54,7 +53,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Total combinational functions  ; 14                                             ;
 ;     Dedicated logic registers      ; 0                                              ;
 ; Total registers                    ; 0                                              ;
-; Total pins                         ; 13                                             ;
+; Total pins                         ; 12                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -171,6 +170,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path   ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                                                  ; Library ;
 +------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../L3 SV Files Struct/dec416.sv    ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/dec416.sv    ;         ;
 ; ../L3 SV Files Struct/test7seg.sv  ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/test7seg.sv  ;         ;
 ; ../L3 SV Files Struct/seven_seg.sv ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/seven_seg.sv ;         ;
 +------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
@@ -197,14 +197,14 @@ https://fpgasoftware.intel.com/eula.
 ;     -- Dedicated logic registers            ; 0            ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
-; I/O pins                                    ; 13           ;
+; I/O pins                                    ; 12           ;
 ;                                             ;              ;
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; enable~input ;
 ; Maximum fan-out                             ; 7            ;
-; Total fan-out                               ; 62           ;
-; Average fan-out                             ; 1.55         ;
+; Total fan-out                               ; 61           ;
+; Average fan-out                             ; 1.61         ;
 +---------------------------------------------+--------------+
 
 
@@ -213,7 +213,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name      ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-------------+--------------+
-; |test7seg                  ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 13   ; 0            ; 0          ; |test7seg                ; test7seg    ; work         ;
+; |test7seg                  ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 12   ; 0            ; 0          ; |test7seg                ; test7seg    ; work         ;
 ;    |seven_seg:seg1|        ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |test7seg|seven_seg:seg1 ; seven_seg   ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -234,29 +234,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "seven_seg:seg1"                                                                                                                                                       ;
-+------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                                               ;
-+------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; out  ; Output ; Warning  ; Output or bidir port (7 bits) is smaller than the port expression (8 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-+------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 13                          ;
-; cycloneiii_lcell_comb ; 15                          ;
-;     normal            ; 15                          ;
-;         0 data inputs ; 1                           ;
+; boundary_port         ; 12                          ;
+; cycloneiii_lcell_comb ; 14                          ;
+;     normal            ; 14                          ;
 ;         2 data inputs ; 7                           ;
 ;         4 data inputs ; 7                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.85                        ;
+; Average LUT depth     ; 1.95                        ;
 +-----------------------+-----------------------------+
 
 
@@ -275,7 +265,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Thu Sep 21 00:46:04 2023
+    Info: Processing started: Thu Sep 21 10:50:39 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test7seg -c test7seg
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
@@ -287,22 +277,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: seven_seg File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/seven_seg.sv Line: 6
 Info (12127): Elaborating entity "test7seg" for the top level hierarchy
 Info (12128): Elaborating entity "seven_seg" for hierarchy "seven_seg:seg1" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/test7seg.sv Line: 18
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "out[7]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/test7seg.sv Line: 12
+Info (12128): Elaborating entity "dec416" for hierarchy "seven_seg:seg1|dec416:dec1" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/seven_seg.sv Line: 25
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 Q5/output_files/test7seg.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 27 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 26 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 8 output pins
+    Info (21059): Implemented 7 output pins
     Info (21061): Implemented 14 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4798 megabytes
-    Info: Processing ended: Thu Sep 21 00:46:12 2023
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4790 megabytes
+    Info: Processing ended: Thu Sep 21 10:50:47 2023
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 
 +------------------------------------------+
