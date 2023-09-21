@@ -5,12 +5,20 @@
 
 module seven_seg(
     input [3:0] in,
-    output reg [6:0] out
+    input enable,        //enable: enable signal
+    output logic [15:0] out     //out: 16-bit output signal
 );
 
-wire [3:0] dec_in;
-assign dec_in = (in > 4'd9) ? 4'd15 : in;
+// wire [3:0] dec_in;
+// assign dec_in = (in > 4'd9) ? 4'd15 : in;
 
-dec416 dec1(.in(dec_in), .out(out));
+// dec416 dec1(.in(dec_in), .out(out));
+
+dec416 decoder (
+    .in(in),    //in: 4-bit input signal (connected to in)
+    .enable(enable),    //enable: enable signal (connected to enable)
+    .out(out)   //out: 16-bit output signal
+);
+
 
 endmodule
