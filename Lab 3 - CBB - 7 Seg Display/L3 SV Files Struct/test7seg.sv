@@ -8,13 +8,13 @@
 module test7seg(
     input logic [3:0] in,  //in: 4-bit input signal
     input enable,        //enable: enable signal
-    output logic [7:0] out //out: 16-bit output signal
+    output logic [6:0] out //out: 16-bit output signal
 );
 
 seven_seg seg1(
-    .in(in),    //in: 4-bit input signal (connected to in)
-    .enable(enable),    //enable: enable signal (connected to enable)
-    .out(out)   //out: 16-bit output signal
+    .sevIn(in),    //in: 4-bit input signal (connected to in)
+    .sevEnable(enable),    //enable: enable signal (connected to enable)
+    .sevOut(out)   //out: 16-bit output signal
 );
 
 endmodule
