@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test_decode
-Wed Sep 20 14:34:41 2023
+Wed Sep 20 23:44:44 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -10,7 +10,14 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
+ 12. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,22 +44,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Sep 20 14:34:41 2023              ;
+; Analysis & Synthesis Status        ; Successful - Wed Sep 20 23:44:44 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; test_decode                                    ;
 ; Top-level Entity Name              ; test_decode                                    ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
-; UFM blocks                         ; N/A until Partition Merge                      ;
-; ADC blocks                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 32                                             ;
+;     Total combinational functions  ; 32                                             ;
+;     Dedicated logic registers      ; 0                                              ;
+; Total registers                    ; 0                                              ;
+; Total pins                         ; 21                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -158,60 +165,133 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                            ;
++--------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path     ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                                                    ; Library ;
++--------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../L3 SV Files Struct/test_decode.sv ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/test_decode.sv ;         ;
+; ../L3 SV Files Struct/dec416.sv      ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/dec416.sv      ;         ;
++--------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 32           ;
+;                                             ;              ;
+; Total combinational functions               ; 32           ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 16           ;
+;     -- 3 input functions                    ; 0            ;
+;     -- <=2 input functions                  ; 16           ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 32           ;
+;     -- arithmetic mode                      ; 0            ;
+;                                             ;              ;
+; Total registers                             ; 0            ;
+;     -- Dedicated logic registers            ; 0            ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 21           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; enable~input ;
+; Maximum fan-out                             ; 16           ;
+; Total fan-out                               ; 133          ;
+; Average fan-out                             ; 1.80         ;
++---------------------------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                        ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name         ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------+-------------+--------------+
+; |test_decode               ; 32 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 21   ; 0            ; 0          ; |test_decode                ; test_decode ; work         ;
+;    |dec416:decoder|        ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |test_decode|dec416:decoder ; dec416      ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 21                          ;
+; cycloneiii_lcell_comb ; 32                          ;
+;     normal            ; 32                          ;
+;         2 data inputs ; 16                          ;
+;         4 data inputs ; 16                          ;
+;                       ;                             ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.97                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Wed Sep 20 14:34:34 2023
+    Info: Processing started: Wed Sep 20 23:44:36 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_decode -c test_decode
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 3 - cbb - 7 seg display/l3 sv files/test_decode.sv
-    Info (12023): Found entity 1: test_decode File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/test_decode.sv Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 3 - cbb - 7 seg display/l3 sv files/dec416.sv
-    Info (12023): Found entity 1: dec416 File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 3 - cbb - 7 seg display/l3 sv files struct/test_decode.sv
+    Info (12023): Found entity 1: test_decode File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/test_decode.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 3 - cbb - 7 seg display/l3 sv files struct/dec416.sv
+    Info (12023): Found entity 1: dec416 File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/dec416.sv Line: 1
 Info (12127): Elaborating entity "test_decode" for the top level hierarchy
-Info (12128): Elaborating entity "dec416" for hierarchy "dec416:dec1" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/test_decode.sv Line: 17
-Info (10041): Inferred latch for "out[0]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[1]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[2]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[3]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[4]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[5]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[6]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[7]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[8]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[9]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[10]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[11]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[12]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[13]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[14]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Info (10041): Inferred latch for "out[15]" at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Error (10028): Can't resolve multiple constant drivers for net "out[15]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10029): Constant driver at dec416.sv(70) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 70
-Error (10028): Can't resolve multiple constant drivers for net "out[14]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[13]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[12]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[11]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[10]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[9]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[8]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[7]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[6]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[5]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[4]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[3]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[2]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[1]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (10028): Can't resolve multiple constant drivers for net "out[0]" at dec416.sv(49) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/dec416.sv Line: 49
-Error (12152): Can't elaborate user hierarchy "dec416:dec1" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files/test_decode.sv Line: 17
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 18 errors, 1 warning
-    Error: Peak virtual memory: 4722 megabytes
-    Error: Processing ended: Wed Sep 20 14:34:41 2023
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:06
+Info (12128): Elaborating entity "dec416" for hierarchy "dec416:decoder" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 SV Files Struct/test_decode.sv Line: 11
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 Q4/output_files/test_decode.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 53 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 32 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4786 megabytes
+    Info: Processing ended: Wed Sep 20 23:44:44 2023
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 3 - CBB - 7 Seg Display/L3 Q4/output_files/test_decode.map.smsg.
 
 

@@ -62,6 +62,20 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE "../L3 SV Files/test_decode.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../L3 SV Files/dec416.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../L3 SV Files Struct/test_decode.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../L3 SV Files Struct/dec416.sv"
+set_location_assignment PIN_F15 -to enable
+set_location_assignment PIN_A8 -to out[0]
+set_location_assignment PIN_A9 -to out[1]
+set_location_assignment PIN_A10 -to out[2]
+set_location_assignment PIN_B10 -to out[3]
+set_location_assignment PIN_D13 -to out[4]
+set_location_assignment PIN_C13 -to out[5]
+set_location_assignment PIN_E14 -to out[6]
+set_location_assignment PIN_D14 -to out[7]
+set_location_assignment PIN_A11 -to out[8]
+set_location_assignment PIN_C10 -to in[0]
+set_location_assignment PIN_C11 -to in[1]
+set_location_assignment PIN_D12 -to in[2]
+set_location_assignment PIN_C12 -to in[3]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
