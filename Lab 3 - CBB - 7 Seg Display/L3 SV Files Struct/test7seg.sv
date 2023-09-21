@@ -6,12 +6,15 @@
  * @param out 7-bit output signal to display the corresponding digit on the seven-segment display.
  */
 module test7seg(
-    input [3:0] in,
-    output reg [6:0] out
+    input logic [3:0] in,  //in: 4-bit input signal
+    input enable,        //enable: enable signal
+    output logic [15:0] out //out: 16-bit output signal
 );
 
 seven_seg seg1(
-    .in(in),
-    .out(out));
+    .in(in),    //in: 4-bit input signal (connected to in)
+    .enable(enable),    //enable: enable signal (connected to enable)
+    .out(out)   //out: 16-bit output signal
+);
 
 endmodule
