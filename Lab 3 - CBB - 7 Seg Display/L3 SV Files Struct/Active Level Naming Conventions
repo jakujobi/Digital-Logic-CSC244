@@ -1,0 +1,18 @@
+3. System Verilog
+In all labs (and projects) you should have exactly one SV module per .sv file.
+The module should have well documented inputs, outputs, and internal logic connections using comments.
+Use proper indentation using TAB to make your SV easier to read.
+When connecting multiple modules together using structural SV, you must use explicit port mapping and not locational port mapping.
+You will lose points if you do not use explicit port mapping.
+
+4. Active Level Naming Conventions
+Pick your variable names to mean something.
+If a signal has a logic-1 when a door is open, name it something like doorOpen.
+If a signal has a logic-0 when a window is closed, you might name it windowClosedL where the “L” indicates that this signal is “active-low,” or that it has the value of zero when asserted.
+Obviously this signal could also be named windowOpen which would be active-high, but suppose the signal gave a zero when a fuel tank was full.
+In that case a good name would be fuelTankFullL but fuelTankEmpty would not be a good way to avoid the active-low signal because “not all the way full” is different from “empty”.
+It should be noted that there is no “H” on the end of active-high signal names.
+Signal names are assumed to be active-high unless designated as active-low.
+Also note that we should not try to avoid active-low signals, just label them appropriately.
+There is nothing inherently bad about an active-low signal.
+In fact, proper use of active-high and active-low signals can make the logic simpler or circuit faster.
