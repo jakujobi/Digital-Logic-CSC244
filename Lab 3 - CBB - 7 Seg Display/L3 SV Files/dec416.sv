@@ -33,8 +33,8 @@
 
 
 module dec416 (
-    //input logic [D:C:B:A] in,
     input logic [3:0] in,
+    //input logic A, B, C, D, // 4-bit input signal
     
     input enable, // enable signal
     
@@ -42,8 +42,12 @@ module dec416 (
     output logic [15:0] out
 );
 
-    //assign out = enableL ? {16{1'b0}} : (1 << in);
+    logic
 
+    
+
+    //assign out = enableL ? {16{1'b0}} : (1 << in);
+    
     // The decoder logic
     always_comb begin
         case (in)
