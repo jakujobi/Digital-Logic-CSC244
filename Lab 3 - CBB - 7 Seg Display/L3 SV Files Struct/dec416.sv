@@ -33,7 +33,6 @@
 
 
 module dec416 (
-    input logic [3:0] in,
     input logic A, B, C, D, // 4-bit input signal
     
     input logic enable, // enable signal
@@ -41,30 +40,49 @@ module dec416 (
     output logic E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T // 16-bit output signal
 );
 
-logic nA, nB, nC, nD;
+logic nA, nB, nC, nD, rawE, rawF, rawG, rawH, rawI, rawJ, rawK, rawL, rawM, rawN, rawO, rawP, rawQ, rawR, rawS, rawT;
+// raw F is F before the output signal enabled
 
-or (E, nA, nB, nC, nD); // 0000
-or (F, nA, nB, nC, D);  //0001
-or (G, nA, nB, C, nD);  //0010
-or (H, nA, nB, C, D);   //0011
-or (I, nA, B, nC, nD); //0100
-or (J, nA, B, nC, D);  //0101
-or (K, nA, B, C, nD);  //0110
-or (L, nA, B, C, D);   //0111
-or (M, A, nB, nC, nD); //1000
-or (N, A, nB, nC, D);  //1001
-or (O, A, nB, C, nD);  //1010
-or (P, A, nB, C, D);   //1011
-or (Q, A, B, nC, nD); //1100
-or (R, A, B, nC, D);  //1101
-or (S, A, B, C, nD);  //1110
-or (T, A, B, C, D);   //1111
+not (nA, A);
+not (nB, B);
+not (nC, C);
+not (nD, D);
 
 
+or (rawE, nA, nB, nC, nD); // 0000
+or (rawF, nA, nB, nC, D); //0001
+or (rawG, nA, nB, C, nD); //0010
+or (rawH, nA, nB, C, D); //0011
+or (rawI, nA, B, nC, nD); //0100
+or (rawJ, nA, B, nC, D); //0101
+or (rawK, nA, B, C, nD); //0110
+or (rawL, nA, B, C, D); //0111
+or (rawM, A, nB, nC, nD); //1000
+or (rawN, A, nB, nC, D); //1001
+or (rawO, A, nB, C, nD); //1010
+or (rawP, A, nB, C, D); //1011
+or (rawQ, A, B, nC, nD); //1100
+or (rawR, A, B, nC, D); //1101
+or (rawS, A, B, C, nD); //1110
+or (rawT, A, B, C, D); //1111
 
 
-
-    // Output is disabled when enable is low
-    assign out = enable ? out : 16'b0000000000000000;
+//and the rawOutput with Enable
+and (E, rawE, enable);
+and (F, rawF, enable);
+and (G, rawG, enable);
+and (H, rawH, enable);
+and (I, rawI, enable);
+and (J, rawJ, enable);
+and (K, rawK, enable);
+and (L, rawL, enable);
+and (M, rawM, enable);
+and (N, rawN, enable);
+and (O, rawO, enable);
+and (P, rawP, enable);
+and (Q, rawQ, enable);
+and (R, rawR, enable);
+and (S, rawS, enable);
+and (T, rawT, enable);
 
 endmodule
