@@ -16,11 +16,25 @@ d_latch primary(
 );
 
 d_latch secondary(
-    .d(Qpimary),
+    .d(Qprimary),
     .clk(clk),
     .q(q),
     .q_bar(q_bar)
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // module d_ff(

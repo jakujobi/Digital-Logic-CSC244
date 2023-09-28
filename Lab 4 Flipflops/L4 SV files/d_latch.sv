@@ -5,10 +5,6 @@ module d_latch(
     output logic q_bar
 );
 
-    // assign r = ~d & clk;
-    // assign s = d & clk;
-    // assign  q = ~(r | q_bar);
-    // assign q_bar = ~(s | q);
 
 logic DandCLK, DnandCLK;
 
@@ -21,6 +17,25 @@ sr_latch latch (
     .q (q), //q: 1-bit output signal
     .q_bar (q_bar) //q_bar: 1-bit output signal
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// assign r = ~d & clk;
+// assign s = d & clk;
+// assign  q = ~(r | q_bar);
+// assign q_bar = ~(s | q);
 
 // module d_latch(
 //     input logic d,

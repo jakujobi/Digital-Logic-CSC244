@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "q",
+					"strict" : false
+				},
+				{
+					"name" : "q_bar",
+					"strict" : false
+				},
+				{
+					"name" : "rawclock",
+					"strict" : false
+				},
+				{
+					"name" : "Clock50M",
+					"strict" : false
+				},
+				{
+					"name" : "k",
+					"strict" : false
+				},
+				{
+					"name" : "dorjort",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

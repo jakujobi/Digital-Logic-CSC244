@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ff_toplevel
-Thu Sep 28 09:32:51 2023
+Thu Sep 28 10:50:55 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -10,12 +10,16 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Logic Cells Representing Combinational Loops
-  6. Parameter Settings for User Entity Instance: debouncer:module1
-  7. Port Connectivity Checks: "d_ff:module2|d_latch:primary"
-  8. Post-Synthesis Netlist Statistics for Top Partition
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Logic Cells Representing Combinational Loops
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: debouncer:module1
+ 11. Port Connectivity Checks: "jk_ff:module3|d_ff:module1|d_latch:primary"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -42,22 +46,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 28 09:32:51 2023          ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 28 10:50:55 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; ff_toplevel                                    ;
 ; Top-level Entity Name              ; ff_toplevel                                    ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
-; UFM blocks                         ; N/A until Partition Merge                      ;
-; ADC blocks                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 26                                             ;
+;     Total combinational functions  ; 26                                             ;
+;     Dedicated logic registers      ; 17                                             ;
+; Total registers                    ; 17                                             ;
+; Total pins                         ; 6                                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -164,16 +168,94 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops               ;
-+--------------------------------------------------------+---+
-; Logic Cell Name                                        ;   ;
-+--------------------------------------------------------+---+
-; d_ff:module2|d_latch:secondary|sr_latch:latch|q~0      ;   ;
-; d_ff:module2|d_latch:primary|sr_latch:latch|q~0        ;   ;
-; Number of logic cells representing combinational loops ; 2 ;
-+--------------------------------------------------------+---+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../L4 SV files/sr_latch.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/sr_latch.sv    ;         ;
+; ../L4 SV files/jk_ff.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/jk_ff.sv       ;         ;
+; ../L4 SV files/ff_toplevel.sv    ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/ff_toplevel.sv ;         ;
+; ../L4 SV files/debouncer.sv      ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/debouncer.sv   ;         ;
+; ../L4 SV files/d_latch.sv        ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/d_latch.sv     ;         ;
+; ../L4 SV files/d_ff.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/d_ff.sv        ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 26             ;
+;                                             ;                ;
+; Total combinational functions               ; 26             ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 5              ;
+;     -- 3 input functions                    ; 5              ;
+;     -- <=2 input functions                  ; 16             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 11             ;
+;     -- arithmetic mode                      ; 15             ;
+;                                             ;                ;
+; Total registers                             ; 17             ;
+;     -- Dedicated logic registers            ; 17             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 6              ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; Clock50M~input ;
+; Maximum fan-out                             ; 17             ;
+; Total fan-out                               ; 124            ;
+; Average fan-out                             ; 2.25           ;
++---------------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                       ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                      ; Entity Name ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------+-------------+--------------+
+; |ff_toplevel                 ; 26 (0)              ; 17 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 6    ; 0            ; 0          ; |ff_toplevel                                                             ; ff_toplevel ; work         ;
+;    |debouncer:module1|       ; 22 (22)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ff_toplevel|debouncer:module1                                           ; debouncer   ; work         ;
+;    |jk_ff:module3|           ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ff_toplevel|jk_ff:module3                                               ; jk_ff       ; work         ;
+;       |d_ff:module1|         ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ff_toplevel|jk_ff:module3|d_ff:module1                                  ; d_ff        ; work         ;
+;          |d_latch:primary|   ; 2 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ff_toplevel|jk_ff:module3|d_ff:module1|d_latch:primary                  ; d_latch     ; work         ;
+;             |sr_latch:latch| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ff_toplevel|jk_ff:module3|d_ff:module1|d_latch:primary|sr_latch:latch   ; sr_latch    ; work         ;
+;          |d_latch:secondary| ; 2 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ff_toplevel|jk_ff:module3|d_ff:module1|d_latch:secondary                ; d_latch     ; work         ;
+;             |sr_latch:latch| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ff_toplevel|jk_ff:module3|d_ff:module1|d_latch:secondary|sr_latch:latch ; sr_latch    ; work         ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                        ;
++-----------------------------------------------------------------+---+
+; Logic Cell Name                                                 ;   ;
++-----------------------------------------------------------------+---+
+; jk_ff:module3|d_ff:module1|d_latch:secondary|sr_latch:latch|q~0 ;   ;
+; jk_ff:module3|d_ff:module1|d_latch:primary|sr_latch:latch|q~0   ;   ;
+; Number of logic cells representing combinational loops          ; 2 ;
++-----------------------------------------------------------------+---+
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 17    ;
+; Number of registers using Synchronous Clear  ; 16    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
 
 
 +----------------------------------------------------------------+
@@ -187,7 +269,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "d_ff:module2|d_latch:primary"                                                        ;
+; Port Connectivity Checks: "jk_ff:module3|d_ff:module1|d_latch:primary"                                          ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port  ; Type   ; Severity ; Details                                                                             ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
@@ -204,16 +286,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_ff         ; 17                          ;
 ;     SCLR              ; 16                          ;
 ;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 27                          ;
+; cycloneiii_lcell_comb ; 28                          ;
 ;     arith             ; 15                          ;
 ;         2 data inputs ; 15                          ;
-;     normal            ; 12                          ;
+;     normal            ; 13                          ;
 ;         1 data inputs ; 3                           ;
 ;         3 data inputs ; 5                           ;
-;         4 data inputs ; 4                           ;
+;         4 data inputs ; 5                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.36                        ;
+; Average LUT depth     ; 2.38                        ;
 +-----------------------+-----------------------------+
 
 
@@ -232,33 +314,41 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Thu Sep 28 09:32:44 2023
+    Info: Processing started: Thu Sep 28 10:50:48 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ff_toplevel -c ff_toplevel
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 - sequential circuits/lab 4 sv files/ff_toplevel.sv
-    Info (12023): Found entity 1: ff_toplevel File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/Lab 4 SV files/ff_toplevel.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 - sequential circuits/lab 4 sv files/t_ff.sv
-    Info (12023): Found entity 1: t_ff File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/Lab 4 SV files/t_ff.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 - sequential circuits/lab 4 sv files/sr_latch.sv
-    Info (12023): Found entity 1: sr_latch File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/Lab 4 SV files/sr_latch.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 - sequential circuits/lab 4 sv files/jk_ff.sv
-    Info (12023): Found entity 1: jk_ff File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/Lab 4 SV files/jk_ff.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 - sequential circuits/lab 4 sv files/debouncer.sv
-    Info (12023): Found entity 1: debouncer File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/Lab 4 SV files/debouncer.sv Line: 15
-Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 - sequential circuits/lab 4 sv files/d_latch.sv
-    Info (12023): Found entity 1: d_latch File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/Lab 4 SV files/d_latch.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 - sequential circuits/lab 4 sv files/d_ff.sv
-    Info (12023): Found entity 1: d_ff File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/Lab 4 SV files/d_ff.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 flipflops/l4 sv files/t_ff.sv
+    Info (12023): Found entity 1: t_ff File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/t_ff.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 flipflops/l4 sv files/sr_latch.sv
+    Info (12023): Found entity 1: sr_latch File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/sr_latch.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 flipflops/l4 sv files/jk_ff.sv
+    Info (12023): Found entity 1: jk_ff File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/jk_ff.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 flipflops/l4 sv files/ff_toplevel.sv
+    Info (12023): Found entity 1: ff_toplevel File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/ff_toplevel.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 flipflops/l4 sv files/debouncer.sv
+    Info (12023): Found entity 1: debouncer File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/debouncer.sv Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 flipflops/l4 sv files/d_latch.sv
+    Info (12023): Found entity 1: d_latch File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/d_latch.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 4 flipflops/l4 sv files/d_ff.sv
+    Info (12023): Found entity 1: d_ff File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/d_ff.sv Line: 1
 Info (12127): Elaborating entity "ff_toplevel" for the top level hierarchy
-Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:module1" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/Lab 4 SV files/ff_toplevel.sv Line: 17
-Info (12128): Elaborating entity "d_ff" for hierarchy "d_ff:module2" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/Lab 4 SV files/ff_toplevel.sv Line: 24
-Info (12128): Elaborating entity "d_latch" for hierarchy "d_ff:module2|d_latch:primary" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/Lab 4 SV files/d_ff.sv Line: 15
-Info (12128): Elaborating entity "sr_latch" for hierarchy "d_ff:module2|d_latch:primary|sr_latch:latch" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/Lab 4 SV files/d_latch.sv Line: 23
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:module1" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/ff_toplevel.sv Line: 17
+Info (12128): Elaborating entity "jk_ff" for hierarchy "jk_ff:module3" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/ff_toplevel.sv Line: 33
+Info (12128): Elaborating entity "d_ff" for hierarchy "jk_ff:module3|d_ff:module1" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/jk_ff.sv Line: 23
+Info (12128): Elaborating entity "d_latch" for hierarchy "jk_ff:module3|d_ff:module1|d_latch:primary" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/d_ff.sv Line: 16
+Info (12128): Elaborating entity "sr_latch" for hierarchy "jk_ff:module3|d_ff:module1|d_latch:primary|sr_latch:latch" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 Flipflops/L4 SV files/d_latch.sv Line: 19
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Error (114010): Illegal database file name "C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/L4 3.2 D-T-JK Flipflops/incremental_db/compiled_partitions/ff_toplevel.root_partition.map.hbdb.cdb" -- file name is too long
-Error (114010): Illegal database file name "C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 4 - Sequential Circuits/L4 3.2 D-T-JK Flipflops/incremental_db/compiled_partitions/ff_toplevel.root_partition.map.hbdb.cdb" -- file name is too long
+Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 26 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4830 megabytes
+    Info: Processing ended: Thu Sep 28 10:50:55 2023
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:05
 
 

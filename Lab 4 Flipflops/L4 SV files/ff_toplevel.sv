@@ -2,7 +2,7 @@ module ff_toplevel (
     input logic rawclock, //raw clock from the switch
     input logic Clock50M, //50 MHz internal clock
     input logic dorjort,    //represents d, j, and k
-    //input logic k,
+    input logic k,
     output logic q,
     output logic q_bar
 );
@@ -16,25 +16,28 @@ debouncer module1 (
     .A(cleanclk)
 );
 
-d_ff module2 (
-    .d(dorjort),
-    .clk(cleanclk),
-    .q(q),
-    .q_bar(q_bar)
-);
-
-// jk_ff module3 (
-//     .j(dorjort),
-//     .k(d),
+// d_ff module2 (
+//     .d(dorjort),
 //     .clk(cleanclk),
 //     .q(q),
 //     .q_bar(q_bar)
 // );
 
+
+jk_ff module3 (
+    .j(dorjort),
+    .k(k),
+    .clk(cleanclk),
+    .q(q),
+    .q_bar(q_bar)
+);
+
+
 // t_ff module4 (
 //     .t(dorjort),
 //     .clk(cleanclk),
-//     .q(q)
+//     .q(q),
+// 	.q_bar(q_bar)
 // );
 
 

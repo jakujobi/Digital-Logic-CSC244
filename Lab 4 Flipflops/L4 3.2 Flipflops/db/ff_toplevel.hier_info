@@ -2,9 +2,9 @@
 rawclock => rawclock.IN1
 Clock50M => Clock50M.IN1
 dorjort => dorjort.IN1
-k => ~NO_FANOUT~
-q <= d_ff:module2.q
-q_bar <= d_ff:module2.q_bar
+k => k.IN1
+q <= jk_ff:module3.q
+q_bar <= jk_ff:module3.q_bar
 
 
 |ff_toplevel|debouncer:module1
@@ -31,14 +31,22 @@ CLK50M => COUNT[15].CLK
 A <= A~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ff_toplevel|d_ff:module2
+|ff_toplevel|jk_ff:module3
+j => jandq_bar.IN1
+k => knandq.IN1
+clk => clk.IN1
+q <= d_ff:module1.q
+q_bar <= d_ff:module1.q_bar
+
+
+|ff_toplevel|jk_ff:module3|d_ff:module1
 d => d.IN1
-clk => clk.IN2
+clk => clk.IN1
 q <= d_latch:secondary.q
 q_bar <= d_latch:secondary.q_bar
 
 
-|ff_toplevel|d_ff:module2|d_latch:primary
+|ff_toplevel|jk_ff:module3|d_ff:module1|d_latch:primary
 d => DandCLK.IN0
 d => DnandCLK.IN0
 clk => DandCLK.IN1
@@ -47,14 +55,14 @@ q <= sr_latch:latch.q
 q_bar <= sr_latch:latch.q_bar
 
 
-|ff_toplevel|d_ff:module2|d_latch:primary|sr_latch:latch
+|ff_toplevel|jk_ff:module3|d_ff:module1|d_latch:primary|sr_latch:latch
 s => q_bar.IN0
 r => q.IN1
 q <= q.DB_MAX_OUTPUT_PORT_TYPE
 q_bar <= q_bar.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ff_toplevel|d_ff:module2|d_latch:secondary
+|ff_toplevel|jk_ff:module3|d_ff:module1|d_latch:secondary
 d => DandCLK.IN0
 d => DnandCLK.IN0
 clk => DandCLK.IN1
@@ -63,7 +71,7 @@ q <= sr_latch:latch.q
 q_bar <= sr_latch:latch.q_bar
 
 
-|ff_toplevel|d_ff:module2|d_latch:secondary|sr_latch:latch
+|ff_toplevel|jk_ff:module3|d_ff:module1|d_latch:secondary|sr_latch:latch
 s => q_bar.IN0
 r => q.IN1
 q <= q.DB_MAX_OUTPUT_PORT_TYPE
