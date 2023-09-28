@@ -1,0 +1,16 @@
+|d_latch
+d => DandCLK.IN0
+d => DnandCLK.IN0
+clk => DandCLK.IN1
+clk => DnandCLK.IN1
+q << sr_latch:latch.q
+q_bar << sr_latch:latch.q_bar
+
+
+|d_latch|sr_latch:latch
+s => q_bar.IN0
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+q_bar <= q_bar.DB_MAX_OUTPUT_PORT_TYPE
+
+
