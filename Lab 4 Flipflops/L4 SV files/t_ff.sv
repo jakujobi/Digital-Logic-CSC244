@@ -5,19 +5,19 @@ module t_ff(
     output logic q_bar
 );
 
-logic tn, tnandqbar, tnandq, tnandqbarortnandq;
+logic tn, tandq_bar, tnandq, tnandq_barortnandq;
 // tn = not t
 // tnandqbar = tn & q_bar
 // tnandq = tn & q
 // tnandqbarortnandq = tnandqbar | tnandq
 
 assign tn = ~t;
-assign tnandqbar = tn & q_bar;
 assign tnandq = tn & q;
-assign tnandqbarortnandq = tnandqbar | tnandq;
+assign tandq_bar = t & q_bar;
+assign tnandq_barortnandq = tandq_bar | tnandq;
 
-d_latch latch (
-    .d(tn),
+d_ff module1 (
+    .d(tnandq_barortnandq),
     .clk(clk),
     .q(q),
     .q_bar(q_bar)
