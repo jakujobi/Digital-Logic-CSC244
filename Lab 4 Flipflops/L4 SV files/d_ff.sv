@@ -5,17 +5,18 @@ module d_ff(
     output logic q_bar
 );
 
-logic Qp, nQp;
+logic Qprimary, nclk, nQprimary;
+not( nclk , clk);
 
 d_latch primary(
     .d(d),
-    .clk(clk),
-    .q(Qp),
-    .q_bar(nQp)
+    .clk(nclk),
+    .q(Qprimary),
+    .q_bar(nQprimary)
 );
 
 d_latch secondary(
-    .d(Qp),
+    .d(Qpimary),
     .clk(clk),
     .q(q),
     .q_bar(q_bar)
