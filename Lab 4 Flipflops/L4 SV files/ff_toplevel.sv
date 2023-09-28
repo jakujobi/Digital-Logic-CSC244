@@ -2,7 +2,7 @@ module ff_toplevel (
     input logic rawclock, //raw clock from the switch
     input logic Clock50M, //50 MHz internal clock
     input logic dorjort,    //represents d, j, and k
-    input logic k,
+    //input logic k,
     output logic q,
     output logic q_bar
 );
