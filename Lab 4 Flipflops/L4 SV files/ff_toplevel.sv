@@ -10,7 +10,7 @@ module ff_toplevel (
 
 logic cleanclk;
 
-debounce module1 (
+debouncer module1 (
     .A_noisy(rawclock),
     .CLK50M(Clock50M),
     .A(cleanclk)

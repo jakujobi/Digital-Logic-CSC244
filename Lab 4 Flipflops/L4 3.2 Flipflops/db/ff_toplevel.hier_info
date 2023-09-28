@@ -1,0 +1,72 @@
+|ff_toplevel
+rawclock => rawclock.IN1
+Clock50M => Clock50M.IN1
+dorjort => dorjort.IN1
+k => ~NO_FANOUT~
+q <= d_ff:module2.q
+q_bar <= d_ff:module2.q_bar
+
+
+|ff_toplevel|debouncer:module1
+A_noisy => Anext.IN1
+A_noisy => t_r.IN1
+A_noisy => t_r.IN1
+CLK50M => A~reg0.CLK
+CLK50M => COUNT[0].CLK
+CLK50M => COUNT[1].CLK
+CLK50M => COUNT[2].CLK
+CLK50M => COUNT[3].CLK
+CLK50M => COUNT[4].CLK
+CLK50M => COUNT[5].CLK
+CLK50M => COUNT[6].CLK
+CLK50M => COUNT[7].CLK
+CLK50M => COUNT[8].CLK
+CLK50M => COUNT[9].CLK
+CLK50M => COUNT[10].CLK
+CLK50M => COUNT[11].CLK
+CLK50M => COUNT[12].CLK
+CLK50M => COUNT[13].CLK
+CLK50M => COUNT[14].CLK
+CLK50M => COUNT[15].CLK
+A <= A~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ff_toplevel|d_ff:module2
+d => d.IN1
+clk => clk.IN2
+q <= d_latch:secondary.q
+q_bar <= d_latch:secondary.q_bar
+
+
+|ff_toplevel|d_ff:module2|d_latch:primary
+d => DandCLK.IN0
+d => DnandCLK.IN0
+clk => DandCLK.IN1
+clk => DnandCLK.IN1
+q <= sr_latch:latch.q
+q_bar <= sr_latch:latch.q_bar
+
+
+|ff_toplevel|d_ff:module2|d_latch:primary|sr_latch:latch
+s => q_bar.IN0
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+q_bar <= q_bar.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ff_toplevel|d_ff:module2|d_latch:secondary
+d => DandCLK.IN0
+d => DnandCLK.IN0
+clk => DandCLK.IN1
+clk => DnandCLK.IN1
+q <= sr_latch:latch.q
+q_bar <= sr_latch:latch.q_bar
+
+
+|ff_toplevel|d_ff:module2|d_latch:secondary|sr_latch:latch
+s => q_bar.IN0
+r => q.IN1
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+q_bar <= q_bar.DB_MAX_OUTPUT_PORT_TYPE
+
+
