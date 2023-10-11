@@ -1,4 +1,4 @@
-//Create a SV file named “machineComparison.sv” that contains one SV module named machineComparison.
+//Create a SV file named “machineComparison.sv” that contains one SV module named machineComparison.
 //Write structural SV to combine the two FSM modules together
 
 module machineComparison ( 
