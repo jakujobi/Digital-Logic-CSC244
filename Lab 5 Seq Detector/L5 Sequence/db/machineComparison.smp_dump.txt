@@ -1,0 +1,7 @@
+
+State Machine - |machineComparison|sequenceDetectorMealy:module1|state_reg
+Name state_reg.S3 state_reg.S2 state_reg.S1 state_reg.S0 
+state_reg.S0 0 0 0 0 
+state_reg.S1 0 0 1 1 
+state_reg.S2 0 1 0 1 
+state_reg.S3 1 0 0 1 

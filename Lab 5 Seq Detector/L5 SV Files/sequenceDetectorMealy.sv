@@ -3,7 +3,7 @@ module sequenceDetectorMealy (
     input logic reset,
     input logic data_in,
     output logic seq_detected,
-    output logic state_out [1:0]
+    output logic [1:0] state_out
 );
 
 // Define the states using an enum

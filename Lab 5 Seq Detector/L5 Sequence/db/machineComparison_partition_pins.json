@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Z_moore",
+					"strict" : false
+				},
+				{
+					"name" : "S_moore[0]",
+					"strict" : false
+				},
+				{
+					"name" : "S_moore[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Z_mealy",
+					"strict" : false
+				},
+				{
+					"name" : "S_mealy[0]",
+					"strict" : false
+				},
+				{
+					"name" : "S_mealy[1]",
+					"strict" : false
+				},
+				{
+					"name" : "A",
+					"strict" : false
+				},
+				{
+					"name" : "rawclock",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,44 @@
+|machineComparison
+rawclock => rawclock.IN2
+Clock50M => ~NO_FANOUT~
+A => A.IN2
+Z_moore << sequenceDetectorMoore:module2.detected
+S_moore[0] << sequenceDetectorMoore:module2.state_out
+S_moore[1] << sequenceDetectorMoore:module2.state_out
+S_moore[2] << sequenceDetectorMoore:module2.state_out
+Z_mealy << sequenceDetectorMealy:module1.seq_detected
+S_mealy[0] << sequenceDetectorMealy:module1.state_out
+S_mealy[1] << sequenceDetectorMealy:module1.state_out
+
+
+|machineComparison|sequenceDetectorMealy:module1
+clk => state_reg~2.DATAIN
+reset => state_reg~4.DATAIN
+data_in => state_reg.DATAB
+data_in => Selector1.IN1
+data_in => Selector0.IN1
+data_in => Selector2.IN1
+seq_detected <= seq_detected.DB_MAX_OUTPUT_PORT_TYPE
+state_out[0] <= state_out.DB_MAX_OUTPUT_PORT_TYPE
+state_out[1] <= state_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|machineComparison|sequenceDetectorMoore:module2
+clk => output_reg[1].CLK
+clk => state_reg[0].CLK
+clk => state_reg[1].CLK
+reset => output_reg[1].ACLR
+reset => state_reg[0].ACLR
+reset => state_reg[1].ACLR
+data_in => Mux0.IN3
+data_in => Mux2.IN3
+data_in => Mux0.IN2
+data_in => Mux1.IN2
+data_in => Mux2.IN2
+data_in => Mux1.IN3
+detected <= output_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+state_out[0] <= state_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+state_out[1] <= state_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+state_out[2] <= <GND>
+
+

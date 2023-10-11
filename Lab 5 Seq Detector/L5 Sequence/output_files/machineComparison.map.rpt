@@ -1,5 +1,5 @@
 Analysis & Synthesis report for machineComparison
-Wed Oct 11 16:43:42 2023
+Wed Oct 11 17:34:40 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -10,7 +10,16 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |machineComparison|sequenceDetectorMealy:module1|state_reg
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: sequenceDetectorMoore:module2
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -37,22 +46,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Oct 11 16:43:42 2023              ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 11 17:34:40 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; machineComparison                              ;
 ; Top-level Entity Name              ; machineComparison                              ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
-; UFM blocks                         ; N/A until Partition Merge                      ;
-; ADC blocks                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 9                                              ;
+;     Total combinational functions  ; 9                                              ;
+;     Dedicated logic registers      ; 7                                              ;
+; Total registers                    ; 7                                              ;
+; Total pins                         ; 10                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -151,11 +160,147 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 10          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 10          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-10        ;   0.0%      ;
 +----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                         ;
++-----------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path        ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                                              ; Library ;
++-----------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../L5 SV Files/sequenceDetectorMoore.sv ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv ;         ;
+; ../L5 SV Files/sequenceDetectorMealy.sv ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMealy.sv ;         ;
+; ../L5 SV Files/machineComparison.sv     ; yes             ; User SystemVerilog HDL File  ; C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/machineComparison.sv     ;         ;
++-----------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 9       ;
+;                                             ;         ;
+; Total combinational functions               ; 9       ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 0       ;
+;     -- 3 input functions                    ; 4       ;
+;     -- <=2 input functions                  ; 5       ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 9       ;
+;     -- arithmetic mode                      ; 0       ;
+;                                             ;         ;
+; Total registers                             ; 7       ;
+;     -- Dedicated logic registers            ; 7       ;
+;     -- I/O registers                        ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 10      ;
+;                                             ;         ;
+; Embedded Multiplier 9-bit elements          ; 0       ;
+;                                             ;         ;
+; Maximum fan-out node                        ; A~input ;
+; Maximum fan-out                             ; 7       ;
+; Total fan-out                               ; 52      ;
+; Average fan-out                             ; 1.44    ;
++---------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                               ;
++------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                              ; Entity Name           ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+-----------------------+--------------+
+; |machineComparison                 ; 9 (0)               ; 7 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 10   ; 0            ; 0          ; |machineComparison                               ; machineComparison     ; work         ;
+;    |sequenceDetectorMealy:module1| ; 6 (6)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |machineComparison|sequenceDetectorMealy:module1 ; sequenceDetectorMealy ; work         ;
+;    |sequenceDetectorMoore:module2| ; 3 (3)               ; 3 (3)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |machineComparison|sequenceDetectorMoore:module2 ; sequenceDetectorMoore ; work         ;
++------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------+
+; State Machine - |machineComparison|sequenceDetectorMealy:module1|state_reg ;
++--------------+--------------+--------------+--------------+----------------+
+; Name         ; state_reg.S3 ; state_reg.S2 ; state_reg.S1 ; state_reg.S0   ;
++--------------+--------------+--------------+--------------+----------------+
+; state_reg.S0 ; 0            ; 0            ; 0            ; 0              ;
+; state_reg.S1 ; 0            ; 0            ; 1            ; 1              ;
+; state_reg.S2 ; 0            ; 1            ; 0            ; 1              ;
+; state_reg.S3 ; 1            ; 0            ; 0            ; 1              ;
++--------------+--------------+--------------+--------------+----------------+
+
+
++----------------------------------------------------------------+
+; Registers Removed During Synthesis                             ;
++-------------------------------------------+--------------------+
+; Register name                             ; Reason for Removal ;
++-------------------------------------------+--------------------+
+; sequenceDetectorMealy:module1|state_reg~5 ; Lost fanout        ;
+; sequenceDetectorMealy:module1|state_reg~6 ; Lost fanout        ;
+; Total Number of Removed Registers = 2     ;                    ;
++-------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 7     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sequenceDetectorMoore:module2 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; INIT_STATE     ; 0000  ; Unsigned Binary                                   ;
+; FINAL_STATE    ; 0100  ; Unsigned Binary                                   ;
+; SEQ            ; 10    ; Unsigned Binary                                   ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 10                          ;
+; cycloneiii_ff         ; 7                           ;
+;     plain             ; 7                           ;
+; cycloneiii_lcell_comb ; 12                          ;
+;     normal            ; 12                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 4                           ;
+;                       ;                             ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.19                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -164,27 +309,50 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Wed Oct 11 16:43:24 2023
+    Info: Processing started: Wed Oct 11 17:34:33 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off machineComparison -c machineComparison
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
-Warning (10229): Verilog HDL Expression warning at sequenceDetectorMoore.sv(21): truncated literal to match 2 bits File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 21
-Warning (10229): Verilog HDL Expression warning at sequenceDetectorMoore.sv(72): truncated literal to match 2 bits File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 72
+Warning (10229): Verilog HDL Expression warning at sequenceDetectorMoore.sv(22): truncated literal to match 2 bits File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 22
+Warning (10229): Verilog HDL Expression warning at sequenceDetectorMoore.sv(74): truncated literal to match 2 bits File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 74
 Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 5 seq detector/l5 sv files/sequencedetectormoore.sv
-    Info (12023): Found entity 1: sequenceDetectorMoore File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 1
+    Info (12023): Found entity 1: sequenceDetectorMoore File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 5 seq detector/l5 sv files/sequencedetectormealy.sv
     Info (12023): Found entity 1: sequenceDetectorMealy File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMealy.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 5 seq detector/l5 sv files/machinecomparison.sv
     Info (12023): Found entity 1: machineComparison File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/machineComparison.sv Line: 4
 Warning (10236): Verilog HDL Implicit Net warning at machineComparison.sv(17): created implicit net for "reset" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/machineComparison.sv Line: 17
 Info (12127): Elaborating entity "machineComparison" for the top level hierarchy
-Error (10928): SystemVerilog error at machineComparison.sv(28): packed array type cannot be assigned to unpacked array type - types do not match File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/machineComparison.sv Line: 28
-Error (10715): SystemVerilog error at machineComparison.sv(28): can't pass value from formal output state_out to actual with incompatible type File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/machineComparison.sv Line: 28
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 4 warnings
-    Error: Peak virtual memory: 4723 megabytes
-    Error: Processing ended: Wed Oct 11 16:43:42 2023
-    Error: Elapsed time: 00:00:18
-    Error: Total CPU time (on all processors): 00:00:26
+Info (12128): Elaborating entity "sequenceDetectorMealy" for hierarchy "sequenceDetectorMealy:module1" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/machineComparison.sv Line: 21
+Info (12128): Elaborating entity "sequenceDetectorMoore" for hierarchy "sequenceDetectorMoore:module2" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/machineComparison.sv Line: 29
+Warning (10230): Verilog HDL assignment warning at sequenceDetectorMoore.sv(32): truncated value with size 4 to match size of target (2) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 32
+Warning (10230): Verilog HDL assignment warning at sequenceDetectorMoore.sv(38): truncated value with size 4 to match size of target (2) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 38
+Warning (10230): Verilog HDL assignment warning at sequenceDetectorMoore.sv(41): truncated value with size 4 to match size of target (2) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 41
+Warning (10230): Verilog HDL assignment warning at sequenceDetectorMoore.sv(47): truncated value with size 4 to match size of target (2) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 47
+Warning (10230): Verilog HDL assignment warning at sequenceDetectorMoore.sv(50): truncated value with size 4 to match size of target (2) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 50
+Warning (10230): Verilog HDL assignment warning at sequenceDetectorMoore.sv(56): truncated value with size 4 to match size of target (2) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at sequenceDetectorMoore.sv(59): truncated value with size 4 to match size of target (2) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 59
+Warning (10230): Verilog HDL assignment warning at sequenceDetectorMoore.sv(65): truncated value with size 4 to match size of target (2) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 65
+Warning (10230): Verilog HDL assignment warning at sequenceDetectorMoore.sv(68): truncated value with size 4 to match size of target (2) File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 68
+Warning (10199): Verilog HDL Case Statement warning at sequenceDetectorMoore.sv(72): case item expression never matches the case expression File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/sequenceDetectorMoore.sv Line: 72
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "reset" is missing source, defaulting to GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/machineComparison.sv Line: 17
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "S_moore[2]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/machineComparison.sv Line: 10
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Clock50M" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 5 Seq Detector/L5 SV Files/machineComparison.sv Line: 6
+Info (21057): Implemented 19 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 7 output pins
+    Info (21061): Implemented 9 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4818 megabytes
+    Info: Processing ended: Wed Oct 11 17:34:40 2023
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:04
 
 

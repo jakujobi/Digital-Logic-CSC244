@@ -2,17 +2,17 @@
 //Write structural SV to combine the two FSM modules together
 
 module machineComparison ( 
-    input logic rawclock, //raw clock from the switch
-    input logic Clock50M, //50 MHz internal clock
-    input logic A,
+    input logic rawclock, //raw clock from the switch //B8
+    input logic Clock50M, //50 MHz internal clock //PIN_P11
+    input logic A,  //C10
 
-    output logic Z_moore,
-    output logic S_moore[2:0],
-    output logic Z_mealy,
-    output logic S_mealy [1:0]
+    output logic Z_moore, //B11
+    output logic [2:0] S_moore, //C13, E14, D14
+    output logic Z_mealy, //A8
+    output logic [1:0] S_mealy //D12 C12
 );
 
-sequenceDetectorMealy mod1 (
+sequenceDetectorMealy module1 (
     .clk(rawclock),
     .reset(reset),
     .data_in(A),
@@ -20,7 +20,7 @@ sequenceDetectorMealy mod1 (
     .state_out(S_mealy)
 );
 
-sequenceDetectorMoore mod2 (
+sequenceDetectorMoore module2 (
     .clk(rawclock),
     .reset(reset),
     .data_in(A),

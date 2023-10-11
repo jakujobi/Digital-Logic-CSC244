@@ -1,0 +1,678 @@
+// Copyright (C) 2023  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition"
+
+// DATE "10/11/2023 17:34:51"
+
+// 
+// Device: Altera 10M50DCF484C7G Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for Questa Intel FPGA (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module machineComparison (
+	rawclock,
+	Clock50M,
+	A,
+	Z_moore,
+	S_moore,
+	Z_mealy,
+	S_mealy);
+input 	rawclock;
+input 	Clock50M;
+input 	A;
+output 	Z_moore;
+output 	[2:0] S_moore;
+output 	Z_mealy;
+output 	[1:0] S_mealy;
+
+// Design Ports Information
+// Clock50M	=>  Location: PIN_P11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Z_moore	=>  Location: PIN_B11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// S_moore[0]	=>  Location: PIN_C13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// S_moore[1]	=>  Location: PIN_E14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// S_moore[2]	=>  Location: PIN_D14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Z_mealy	=>  Location: PIN_A8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// S_mealy[0]	=>  Location: PIN_A10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// S_mealy[1]	=>  Location: PIN_B10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// A	=>  Location: PIN_C10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// rawclock	=>  Location: PIN_B8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \Clock50M~input_o ;
+wire \~QUARTUS_CREATED_GND~I_combout ;
+wire \~QUARTUS_CREATED_UNVM~~busy ;
+wire \~QUARTUS_CREATED_ADC1~~eoc ;
+wire \~QUARTUS_CREATED_ADC2~~eoc ;
+wire \Z_moore~output_o ;
+wire \S_moore[0]~output_o ;
+wire \S_moore[1]~output_o ;
+wire \S_moore[2]~output_o ;
+wire \Z_mealy~output_o ;
+wire \S_mealy[0]~output_o ;
+wire \S_mealy[1]~output_o ;
+wire \rawclock~input_o ;
+wire \A~input_o ;
+wire \module2|Mux1~0_combout ;
+wire \module2|Mux0~0_combout ;
+wire \module2|Mux2~0_combout ;
+wire \module1|Selector1~0_combout ;
+wire \module1|state_reg.S1~q ;
+wire \module1|Selector0~0_combout ;
+wire \module1|state_reg.S0~q ;
+wire \module1|Selector2~0_combout ;
+wire \module1|state_reg.S2~q ;
+wire \module1|state_reg~11_combout ;
+wire \module1|state_reg.S3~q ;
+wire \module1|state_out~1_combout ;
+wire \module1|state_out~2_combout ;
+wire [1:0] \module2|output_reg ;
+wire [1:0] \module2|state_reg ;
+
+
+hard_block auto_generated_inst(
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Location: LCCOMB_X44_Y41_N24
+fiftyfivenm_lcell_comb \~QUARTUS_CREATED_GND~I (
+// Equation(s):
+// \~QUARTUS_CREATED_GND~I_combout  = GND
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\~QUARTUS_CREATED_GND~I_combout ),
+	.cout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_GND~I .lut_mask = 16'h0000;
+defparam \~QUARTUS_CREATED_GND~I .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: IOOBUF_X49_Y54_N9
+fiftyfivenm_io_obuf \Z_moore~output (
+	.i(\module2|output_reg [1]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Z_moore~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Z_moore~output .bus_hold = "false";
+defparam \Z_moore~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X58_Y54_N23
+fiftyfivenm_io_obuf \S_moore[0]~output (
+	.i(\module2|state_reg [0]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\S_moore[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \S_moore[0]~output .bus_hold = "false";
+defparam \S_moore[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X66_Y54_N23
+fiftyfivenm_io_obuf \S_moore[1]~output (
+	.i(\module2|state_reg [1]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\S_moore[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \S_moore[1]~output .bus_hold = "false";
+defparam \S_moore[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X56_Y54_N9
+fiftyfivenm_io_obuf \S_moore[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\S_moore[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \S_moore[2]~output .bus_hold = "false";
+defparam \S_moore[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X46_Y54_N2
+fiftyfivenm_io_obuf \Z_mealy~output (
+	.i(\module1|state_reg.S3~q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Z_mealy~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Z_mealy~output .bus_hold = "false";
+defparam \Z_mealy~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X51_Y54_N16
+fiftyfivenm_io_obuf \S_mealy[0]~output (
+	.i(!\module1|state_out~1_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\S_mealy[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \S_mealy[0]~output .bus_hold = "false";
+defparam \S_mealy[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X46_Y54_N9
+fiftyfivenm_io_obuf \S_mealy[1]~output (
+	.i(!\module1|state_out~2_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\S_mealy[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \S_mealy[1]~output .bus_hold = "false";
+defparam \S_mealy[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X46_Y54_N29
+fiftyfivenm_io_ibuf \rawclock~input (
+	.i(rawclock),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\rawclock~input_o ));
+// synopsys translate_off
+defparam \rawclock~input .bus_hold = "false";
+defparam \rawclock~input .listen_to_nsleep_signal = "false";
+defparam \rawclock~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X51_Y54_N29
+fiftyfivenm_io_ibuf \A~input (
+	.i(A),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\A~input_o ));
+// synopsys translate_off
+defparam \A~input .bus_hold = "false";
+defparam \A~input .listen_to_nsleep_signal = "false";
+defparam \A~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X47_Y53_N6
+fiftyfivenm_lcell_comb \module2|Mux1~0 (
+// Equation(s):
+// \module2|Mux1~0_combout  = (!\A~input_o  & !\module2|state_reg [0])
+
+	.dataa(\A~input_o ),
+	.datab(gnd),
+	.datac(\module2|state_reg [0]),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\module2|Mux1~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \module2|Mux1~0 .lut_mask = 16'h0505;
+defparam \module2|Mux1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X47_Y53_N7
+dffeas \module2|state_reg[0] (
+	.clk(\rawclock~input_o ),
+	.d(\module2|Mux1~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\module2|state_reg [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \module2|state_reg[0] .is_wysiwyg = "true";
+defparam \module2|state_reg[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X47_Y53_N0
+fiftyfivenm_lcell_comb \module2|Mux0~0 (
+// Equation(s):
+// \module2|Mux0~0_combout  = (\A~input_o  & (!\module2|state_reg [1] & \module2|state_reg [0])) # (!\A~input_o  & (\module2|state_reg [1] & !\module2|state_reg [0]))
+
+	.dataa(\A~input_o ),
+	.datab(gnd),
+	.datac(\module2|state_reg [1]),
+	.datad(\module2|state_reg [0]),
+	.cin(gnd),
+	.combout(\module2|Mux0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \module2|Mux0~0 .lut_mask = 16'h0A50;
+defparam \module2|Mux0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X47_Y53_N1
+dffeas \module2|state_reg[1] (
+	.clk(\rawclock~input_o ),
+	.d(\module2|Mux0~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\module2|state_reg [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \module2|state_reg[1] .is_wysiwyg = "true";
+defparam \module2|state_reg[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X47_Y53_N20
+fiftyfivenm_lcell_comb \module2|Mux2~0 (
+// Equation(s):
+// \module2|Mux2~0_combout  = (\module2|state_reg [1] & (\A~input_o  $ (!\module2|state_reg [0])))
+
+	.dataa(\A~input_o ),
+	.datab(gnd),
+	.datac(\module2|state_reg [0]),
+	.datad(\module2|state_reg [1]),
+	.cin(gnd),
+	.combout(\module2|Mux2~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \module2|Mux2~0 .lut_mask = 16'hA500;
+defparam \module2|Mux2~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X47_Y53_N21
+dffeas \module2|output_reg[1] (
+	.clk(\rawclock~input_o ),
+	.d(\module2|Mux2~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\module2|output_reg [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \module2|output_reg[1] .is_wysiwyg = "true";
+defparam \module2|output_reg[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X47_Y53_N30
+fiftyfivenm_lcell_comb \module1|Selector1~0 (
+// Equation(s):
+// \module1|Selector1~0_combout  = (\A~input_o  & !\module1|state_reg.S2~q )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\A~input_o ),
+	.datad(\module1|state_reg.S2~q ),
+	.cin(gnd),
+	.combout(\module1|Selector1~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \module1|Selector1~0 .lut_mask = 16'h00F0;
+defparam \module1|Selector1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X47_Y53_N31
+dffeas \module1|state_reg.S1 (
+	.clk(\rawclock~input_o ),
+	.d(\module1|Selector1~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\module1|state_reg.S1~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \module1|state_reg.S1 .is_wysiwyg = "true";
+defparam \module1|state_reg.S1 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X47_Y53_N18
+fiftyfivenm_lcell_comb \module1|Selector0~0 (
+// Equation(s):
+// \module1|Selector0~0_combout  = (\A~input_o ) # ((\module1|state_reg.S1~q ) # (\module1|state_reg.S3~q ))
+
+	.dataa(\A~input_o ),
+	.datab(gnd),
+	.datac(\module1|state_reg.S1~q ),
+	.datad(\module1|state_reg.S3~q ),
+	.cin(gnd),
+	.combout(\module1|Selector0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \module1|Selector0~0 .lut_mask = 16'hFFFA;
+defparam \module1|Selector0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X47_Y53_N19
+dffeas \module1|state_reg.S0 (
+	.clk(\rawclock~input_o ),
+	.d(\module1|Selector0~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\module1|state_reg.S0~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \module1|state_reg.S0 .is_wysiwyg = "true";
+defparam \module1|state_reg.S0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X47_Y53_N28
+fiftyfivenm_lcell_comb \module1|Selector2~0 (
+// Equation(s):
+// \module1|Selector2~0_combout  = (!\A~input_o  & (!\module1|state_reg.S2~q  & \module1|state_reg.S0~q ))
+
+	.dataa(\A~input_o ),
+	.datab(gnd),
+	.datac(\module1|state_reg.S2~q ),
+	.datad(\module1|state_reg.S0~q ),
+	.cin(gnd),
+	.combout(\module1|Selector2~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \module1|Selector2~0 .lut_mask = 16'h0500;
+defparam \module1|Selector2~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X47_Y53_N29
+dffeas \module1|state_reg.S2 (
+	.clk(\rawclock~input_o ),
+	.d(\module1|Selector2~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\module1|state_reg.S2~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \module1|state_reg.S2 .is_wysiwyg = "true";
+defparam \module1|state_reg.S2 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X47_Y53_N10
+fiftyfivenm_lcell_comb \module1|state_reg~11 (
+// Equation(s):
+// \module1|state_reg~11_combout  = (\A~input_o  & \module1|state_reg.S2~q )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\A~input_o ),
+	.datad(\module1|state_reg.S2~q ),
+	.cin(gnd),
+	.combout(\module1|state_reg~11_combout ),
+	.cout());
+// synopsys translate_off
+defparam \module1|state_reg~11 .lut_mask = 16'hF000;
+defparam \module1|state_reg~11 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X47_Y53_N11
+dffeas \module1|state_reg.S3 (
+	.clk(\rawclock~input_o ),
+	.d(\module1|state_reg~11_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\module1|state_reg.S3~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \module1|state_reg.S3 .is_wysiwyg = "true";
+defparam \module1|state_reg.S3 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X47_Y53_N24
+fiftyfivenm_lcell_comb \module1|state_out~1 (
+// Equation(s):
+// \module1|state_out~1_combout  = (\module1|state_reg.S2~q ) # (!\module1|state_reg.S0~q )
+
+	.dataa(\module1|state_reg.S0~q ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\module1|state_reg.S2~q ),
+	.cin(gnd),
+	.combout(\module1|state_out~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \module1|state_out~1 .lut_mask = 16'hFF55;
+defparam \module1|state_out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X47_Y53_N16
+fiftyfivenm_lcell_comb \module1|state_out~2 (
+// Equation(s):
+// \module1|state_out~2_combout  = (\module1|state_reg.S1~q ) # (!\module1|state_reg.S0~q )
+
+	.dataa(gnd),
+	.datab(\module1|state_reg.S1~q ),
+	.datac(gnd),
+	.datad(\module1|state_reg.S0~q ),
+	.cin(gnd),
+	.combout(\module1|state_out~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \module1|state_out~2 .lut_mask = 16'hCCFF;
+defparam \module1|state_out~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: IOIBUF_X34_Y0_N29
+fiftyfivenm_io_ibuf \Clock50M~input (
+	.i(Clock50M),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\Clock50M~input_o ));
+// synopsys translate_off
+defparam \Clock50M~input .bus_hold = "false";
+defparam \Clock50M~input .listen_to_nsleep_signal = "false";
+defparam \Clock50M~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: UNVM_X0_Y40_N40
+fiftyfivenm_unvm \~QUARTUS_CREATED_UNVM~ (
+	.arclk(vcc),
+	.arshft(vcc),
+	.drclk(vcc),
+	.drshft(vcc),
+	.drdin(vcc),
+	.nprogram(vcc),
+	.nerase(vcc),
+	.nosc_ena(\~QUARTUS_CREATED_GND~I_combout ),
+	.par_en(vcc),
+	.xe_ye(\~QUARTUS_CREATED_GND~I_combout ),
+	.se(\~QUARTUS_CREATED_GND~I_combout ),
+	.ardin(23'b11111111111111111111111),
+	.busy(\~QUARTUS_CREATED_UNVM~~busy ),
+	.osc(),
+	.bgpbusy(),
+	.sp_pass(),
+	.se_pass(),
+	.drdout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_UNVM~ .addr_range1_end_addr = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .addr_range1_offset = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .addr_range2_end_addr = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .addr_range2_offset = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .addr_range3_offset = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .is_compressed_image = "false";
+defparam \~QUARTUS_CREATED_UNVM~ .is_dual_boot = "false";
+defparam \~QUARTUS_CREATED_UNVM~ .is_eram_skip = "false";
+defparam \~QUARTUS_CREATED_UNVM~ .max_ufm_valid_addr = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .max_valid_addr = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .min_ufm_valid_addr = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .min_valid_addr = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .part_name = "quartus_created_unvm";
+defparam \~QUARTUS_CREATED_UNVM~ .reserve_block = "true";
+// synopsys translate_on
+
+// Location: ADCBLOCK_X43_Y52_N0
+fiftyfivenm_adcblock \~QUARTUS_CREATED_ADC1~ (
+	.soc(\~QUARTUS_CREATED_GND~I_combout ),
+	.usr_pwd(vcc),
+	.tsen(\~QUARTUS_CREATED_GND~I_combout ),
+	.clkin_from_pll_c0(gnd),
+	.chsel({\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout }),
+	.eoc(\~QUARTUS_CREATED_ADC1~~eoc ),
+	.dout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_ADC1~ .analog_input_pin_mask = 0;
+defparam \~QUARTUS_CREATED_ADC1~ .clkdiv = 1;
+defparam \~QUARTUS_CREATED_ADC1~ .device_partname_fivechar_prefix = "none";
+defparam \~QUARTUS_CREATED_ADC1~ .is_this_first_or_second_adc = 1;
+defparam \~QUARTUS_CREATED_ADC1~ .prescalar = 0;
+defparam \~QUARTUS_CREATED_ADC1~ .pwd = 1;
+defparam \~QUARTUS_CREATED_ADC1~ .refsel = 0;
+defparam \~QUARTUS_CREATED_ADC1~ .reserve_block = "true";
+defparam \~QUARTUS_CREATED_ADC1~ .testbits = 66;
+defparam \~QUARTUS_CREATED_ADC1~ .tsclkdiv = 1;
+defparam \~QUARTUS_CREATED_ADC1~ .tsclksel = 0;
+// synopsys translate_on
+
+// Location: ADCBLOCK_X43_Y51_N0
+fiftyfivenm_adcblock \~QUARTUS_CREATED_ADC2~ (
+	.soc(\~QUARTUS_CREATED_GND~I_combout ),
+	.usr_pwd(vcc),
+	.tsen(\~QUARTUS_CREATED_GND~I_combout ),
+	.clkin_from_pll_c0(gnd),
+	.chsel({\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout }),
+	.eoc(\~QUARTUS_CREATED_ADC2~~eoc ),
+	.dout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_ADC2~ .analog_input_pin_mask = 0;
+defparam \~QUARTUS_CREATED_ADC2~ .clkdiv = 1;
+defparam \~QUARTUS_CREATED_ADC2~ .device_partname_fivechar_prefix = "none";
+defparam \~QUARTUS_CREATED_ADC2~ .is_this_first_or_second_adc = 2;
+defparam \~QUARTUS_CREATED_ADC2~ .prescalar = 0;
+defparam \~QUARTUS_CREATED_ADC2~ .pwd = 1;
+defparam \~QUARTUS_CREATED_ADC2~ .refsel = 0;
+defparam \~QUARTUS_CREATED_ADC2~ .reserve_block = "true";
+defparam \~QUARTUS_CREATED_ADC2~ .testbits = 66;
+defparam \~QUARTUS_CREATED_ADC2~ .tsclkdiv = 1;
+defparam \~QUARTUS_CREATED_ADC2~ .tsclksel = 0;
+// synopsys translate_on
+
+assign Z_moore = \Z_moore~output_o ;
+
+assign S_moore[0] = \S_moore[0]~output_o ;
+
+assign S_moore[1] = \S_moore[1]~output_o ;
+
+assign S_moore[2] = \S_moore[2]~output_o ;
+
+assign Z_mealy = \Z_mealy~output_o ;
+
+assign S_mealy[0] = \S_mealy[0]~output_o ;
+
+assign S_mealy[1] = \S_mealy[1]~output_o ;
+
+endmodule
+
+module hard_block (
+
+	devpor,
+	devclrn,
+	devoe);
+
+// Design Ports Information
+// ~ALTERA_TMS~	=>  Location: PIN_H2,	 I/O Standard: 2.5 V Schmitt Trigger,	 Current Strength: Default
+// ~ALTERA_TCK~	=>  Location: PIN_G2,	 I/O Standard: 2.5 V Schmitt Trigger,	 Current Strength: Default
+// ~ALTERA_TDI~	=>  Location: PIN_L4,	 I/O Standard: 2.5 V Schmitt Trigger,	 Current Strength: Default
+// ~ALTERA_TDO~	=>  Location: PIN_M5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_nCONFIG~	=>  Location: PIN_H9,	 I/O Standard: 2.5 V Schmitt Trigger,	 Current Strength: Default
+// ~ALTERA_nSTATUS~	=>  Location: PIN_G9,	 I/O Standard: 2.5 V Schmitt Trigger,	 Current Strength: Default
+// ~ALTERA_CONF_DONE~	=>  Location: PIN_F8,	 I/O Standard: 2.5 V Schmitt Trigger,	 Current Strength: Default
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \~ALTERA_TMS~~padout ;
+wire \~ALTERA_TCK~~padout ;
+wire \~ALTERA_TDI~~padout ;
+wire \~ALTERA_nCONFIG~~padout ;
+wire \~ALTERA_nSTATUS~~padout ;
+wire \~ALTERA_CONF_DONE~~padout ;
+wire \~ALTERA_TMS~~ibuf_o ;
+wire \~ALTERA_TCK~~ibuf_o ;
+wire \~ALTERA_TDI~~ibuf_o ;
+wire \~ALTERA_nCONFIG~~ibuf_o ;
+wire \~ALTERA_nSTATUS~~ibuf_o ;
+wire \~ALTERA_CONF_DONE~~ibuf_o ;
+
+
+endmodule

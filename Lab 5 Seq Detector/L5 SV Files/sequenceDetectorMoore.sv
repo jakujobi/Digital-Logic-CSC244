@@ -24,6 +24,7 @@ module sequenceDetectorMoore (
     // Define state register and output register
     logic [1:0] state_reg;
     logic [1:0] output_reg;
+    logic something;
 
     // Define combinational logic for the next state and output
     always_ff @(posedge clk, posedge reset) begin
@@ -77,7 +78,8 @@ module sequenceDetectorMoore (
     end
 
     // Assign the output to the output register
-    assign detected = output_reg[1]; // The detected output is the second bit of the output register
+    assign something = output_reg[1]; // The output is the first bit of the output register, which is something
+    assign detected = something; // The detected output is the something output
     assign state_out = state_reg; // The state_out output is the state register
 
 endmodule
