@@ -35,19 +35,24 @@ always_ff @(posedge clk, posedge reset) begin
                     begin
                         state_reg <= S1;
                     end
+
             S1: if (data_in == 1'b0)
                     begin
                         state_reg <= S2;
-                end
+                    end
                 else
                 begin
                         state_reg <= S1;
                     end
-            S2: if (data_in == 1'b0) begin
-                        state_reg <= S0;
-                    end else begin
+
+            S2: if (data_in == 1'b0)
+                begin
+                    state_reg <= S0;
+                end
+                    else begin
                         state_reg <= S3;
                     end
+
             S3: if (data_in == 1'b0) begin
                         state_reg <= S2;
                     end else begin

@@ -7,7 +7,25 @@ module machineComparison (
     input logic A,
 
     output logic Z_moore,
-    output logic S_moore,
+    output logic S_moore[2:0],
     output logic Z_mealy,
-    output logic S_mealy
+    output logic S_mealy [1:0]
 );
+
+sequenceDetectorMealy mod1 (
+    .clk(rawclock),
+    .reset(reset),
+    .data_in(A),
+    .seq_detected(Z_mealy),
+    .state_out(S_mealy)
+);
+
+sequenceDetectorMoore mod2 (
+    .clk(rawclock),
+    .reset(reset),
+    .data_in(A),
+    .detected(Z_moore),
+    .state_out(S_moore)
+);
+
+endmodule
