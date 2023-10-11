@@ -6,14 +6,8 @@
 module seven_seg(
     input [3:0] sevIn,
     input sevEnable,        //enable: enable signal
-    output logic [6:0] sevOut     //out: 16-bit output signal
+    output logic [6:0] sevOut     //out: 7-bit output signal
 );
-
-// This wire is used to store the input value in decimal format
-//wire [3:0] dec_in;
-
-// // This assign statement checks if the input value is greater than 9. If it is, it assigns 4'b1111 (15 in decimal) to dec_in. Otherwise, it assigns the input value to dec_in.
-//assign dec_in = (in > 4'd9) ? 4'd15 : in;
 
 logic [15:0] decOut;
 
@@ -32,6 +26,8 @@ assign sevOut[3] = sevEnable & ~(decOut[0] | decOut[2] | decOut[3] | decOut[5] |
 assign sevOut[4] = sevEnable & ~(decOut[0] | decOut[2] | decOut[6] | decOut[8] | decOut[10]| decOut[11]| decOut[12] | decOut[13] | decOut[14] | decOut[15]);
 assign sevOut[5] = sevEnable & ~(decOut[0] | decOut[4] | decOut[5] | decOut[6] | decOut[8] | decOut[9] | decOut[10] | decOut[11] | decOut[12] | decOut[14] | decOut[15]);
 assign sevOut[6] = sevEnable & ~(decOut[2] | decOut[3] | decOut[4] | decOut[5] | decOut[6] |  decOut[8] |decOut[9] | decOut[10] | decOut[11] | decOut[13] | decOut[14] | decOut[15]);
+
+endmodule
 
 // //or ( sevOut[#], decOut[0], decOut[1], decOut[2], decOut[3], decOut[4], decOut[5], decOut[6], decOut[7], decOut[8], decOut[9], decOut[10], decOut[11], decOut[12], decOut[14], decOut[15]);
 // assign sevOut[0] = sevEnable & ~decOut[2] | ~decOut[3] | ~decOut[5] | ~decOut[6] | ~decOut[7] | ~decOut[8] | ~decOut[9] | ~decOut[10] | ~decOut[12] | ~decOut[14] | ~decOut[15];
@@ -142,4 +138,3 @@ assign sevOut[6] = sevEnable & ~(decOut[2] | decOut[3] | decOut[4] | decOut[5] |
 // end
 
 
-endmodule
