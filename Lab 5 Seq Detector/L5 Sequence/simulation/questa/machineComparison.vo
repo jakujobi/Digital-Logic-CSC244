@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition"
 
-// DATE "10/11/2023 17:34:51"
+// DATE "10/11/2023 17:44:49"
 
 // 
 // Device: Altera 10M50DCF484C7G Package FBGA484
@@ -92,7 +92,7 @@ wire \module1|Selector0~0_combout ;
 wire \module1|state_reg.S0~q ;
 wire \module1|Selector2~0_combout ;
 wire \module1|state_reg.S2~q ;
-wire \module1|state_reg~11_combout ;
+wire \module1|state_reg~9_combout ;
 wire \module1|state_reg.S3~q ;
 wire \module1|state_out~1_combout ;
 wire \module1|state_out~2_combout ;
@@ -454,26 +454,26 @@ defparam \module1|state_reg.S2 .power_up = "low";
 // synopsys translate_on
 
 // Location: LCCOMB_X47_Y53_N10
-fiftyfivenm_lcell_comb \module1|state_reg~11 (
+fiftyfivenm_lcell_comb \module1|state_reg~9 (
 // Equation(s):
-// \module1|state_reg~11_combout  = (\A~input_o  & \module1|state_reg.S2~q )
+// \module1|state_reg~9_combout  = (\A~input_o  & \module1|state_reg.S2~q )
 
 	.dataa(gnd),
 	.datab(gnd),
 	.datac(\A~input_o ),
 	.datad(\module1|state_reg.S2~q ),
 	.cin(gnd),
-	.combout(\module1|state_reg~11_combout ),
+	.combout(\module1|state_reg~9_combout ),
 	.cout());
 // synopsys translate_off
-defparam \module1|state_reg~11 .lut_mask = 16'hF000;
-defparam \module1|state_reg~11 .sum_lutc_input = "datac";
+defparam \module1|state_reg~9 .lut_mask = 16'hF000;
+defparam \module1|state_reg~9 .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: FF_X47_Y53_N11
 dffeas \module1|state_reg.S3 (
 	.clk(\rawclock~input_o ),
-	.d(\module1|state_reg~11_combout ),
+	.d(\module1|state_reg~9_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),

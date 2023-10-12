@@ -1,7 +1,7 @@
 // Define the module sequenceDetectorMoore with inputs clk, reset, and data_in, and outputs detected and state_out
 module sequenceDetectorMoore (
     input logic clk,
-    input logic reset,
+    //input logic reset,
     input logic data_in,
     output logic detected,
     output logic [2:0] state_out
@@ -27,11 +27,9 @@ module sequenceDetectorMoore (
     logic something;
 
     // Define combinational logic for the next state and output
-    always_ff @(posedge clk, posedge reset) begin
-        if (reset) begin
-            state_reg <= INIT_STATE; // Set the state register to the initial state when reset is high
-            output_reg <= 2'b0; // Set the output register to 0 when reset is high
-        end else begin
+    always_ff @(posedge clk)
+	 begin
+        //always_ff @(posedge clk, posedge reset) begin
             case (state_reg) // Check the current state of the state register
                 IDLE: begin // If the current state is IDLE
                     if (data_in == SEQ[0]) begin // Check if the input matches the first bit of the sequence
@@ -75,7 +73,7 @@ module sequenceDetectorMoore (
                 end
             endcase
         end
-    end
+    //end
 
     // Assign the output to the output register
     assign something = output_reg[1]; // The output is the first bit of the output register, which is something

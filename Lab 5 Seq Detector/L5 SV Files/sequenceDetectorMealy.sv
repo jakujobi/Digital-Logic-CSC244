@@ -1,6 +1,6 @@
 module sequenceDetectorMealy (
     input logic clk,
-    input logic reset,
+    //input logic reset,
     input logic data_in,
     output logic seq_detected,
     output logic [1:0] state_out
@@ -18,13 +18,7 @@ typedef enum logic [1:0] {
 state_t state_reg = S0;
 
 // Define the next state logic
-always_ff @(posedge clk, posedge reset) begin
-    if (reset)
-    begin
-        state_reg <= S0;
-    end
-    
-    else
+always_ff @(posedge clk) begin
     begin
         case (state_reg)
             S0: if (data_in == 1'b0)

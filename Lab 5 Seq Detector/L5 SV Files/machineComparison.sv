@@ -14,7 +14,7 @@ module machineComparison (
 
 sequenceDetectorMealy module1 (
     .clk(rawclock),
-    .reset(reset),
+    //.reset(reset),
     .data_in(A),
     .seq_detected(Z_mealy),
     .state_out(S_mealy)
@@ -22,7 +22,7 @@ sequenceDetectorMealy module1 (
 
 sequenceDetectorMoore module2 (
     .clk(rawclock),
-    .reset(reset),
+    //.reset(reset),
     .data_in(A),
     .detected(Z_moore),
     .state_out(S_moore)
