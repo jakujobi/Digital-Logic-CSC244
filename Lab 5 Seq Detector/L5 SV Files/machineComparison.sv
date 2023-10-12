@@ -13,19 +13,17 @@ module machineComparison (
 );
 
 sequenceDetectorMealy module1 (
-    .clk(rawclock),
-    //.reset(reset),
-    .data_in(A),
-    .seq_detected(Z_mealy),
-    .state_out(S_mealy)
+    .CLK(rawclock),
+    .A(A),
+    .Z(Z_mealy),
+    .stateOut(S_mealy)
 );
 
 sequenceDetectorMoore module2 (
-    .clk(rawclock),
-    //.reset(reset),
-    .data_in(A),
-    .detected(Z_moore),
-    .state_out(S_moore)
+    .CLK(rawclock),
+    .A(A),
+    .Z(Z_moore),
+    .stateOut(S_moore)
 );
 
 endmodule
