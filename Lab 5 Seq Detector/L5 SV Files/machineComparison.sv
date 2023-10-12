@@ -1,5 +1,14 @@
-//Create a SV file named “machineComparison.sv” that contains one SV module named machineComparison.
-//Write structural SV to combine the two FSM modules together
+//machineComparison.sv
+
+// Author: John Akujobi
+// Date: Oct 12 2023
+// Description: 
+/**
+ * The module machineComparison compares the outputs of two sequence detectors, one implemented using Mealy machine and the other using Moore machine.
+ * It takes in a raw clock signal from a switch, a 50 MHz internal clock, and an input signal A.
+ * It outputs the outputs of the Mealy machine and Moore machine sequence detectors, Z_mealy and Z_moore respectively, along with their current states S_mealy and S_moore respectively.
+ * The raw clock signal is debounced using a debouncer module before being used as the clock input for the sequence detectors.
+ */
 
 module machineComparison ( 
     input logic rawclock, //raw clock from the switch //B8

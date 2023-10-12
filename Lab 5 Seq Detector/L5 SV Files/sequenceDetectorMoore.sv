@@ -1,5 +1,8 @@
 // sequenceDetectorMoore.sv
 
+// Author: John Akujobi
+// Date: Oct 12 2023
+// Description: 
 /**
  * The sequenceDetectorMoore module is a Moore state machine that detects a specific sequence of inputs.
  * It has one input, A, and one output, Z, which is high when the sequence is detected.
@@ -14,13 +17,15 @@ module sequenceDetectorMoore (
     output logic [2:0] stateOut  // Corrected to 3 bits
 );
 
-    typedef enum {S0, S1, S2, S3, S4} state_t;
-    state_t currentState = S0, nextState;
+    typedef enum {S0, S1, S2, S3, S4} state_t;  // Define the states using an enum
+    state_t currentState = S0, nextState;   // Define the state register and initialize to S0
 
-    always_ff @(posedge CLK) begin
-        currentState <= nextState;
+    // always_ff block updates the currentState of the state machine on the positive edge of the clock
+    always_ff @(posedge CLK) begin 
+        currentState <= nextState;  // Update the currentState
     end
 
+    // always_comb block defines the nextState of the state machine based on the currentState and input A
     always_comb begin
         nextState = currentState; // Default
         case(currentState)
@@ -32,9 +37,10 @@ module sequenceDetectorMoore (
         endcase
     end
 
+    // always_comb block defines the stateOut of the state machine based on the currentState
     always_comb begin
-        Z = (currentState == S4);
-        stateOut = currentState[2:0]; // Corrected to 3 bits
+        Z = (currentState == S4);   // Z is high when the sequence is detected
+        stateOut = currentState[2:0];   // Corrected to 3 bits
     end
 
 endmodule

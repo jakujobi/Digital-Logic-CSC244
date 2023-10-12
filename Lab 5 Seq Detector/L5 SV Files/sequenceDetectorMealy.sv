@@ -1,17 +1,18 @@
 // sequenceDetectorMealy.sv
 
-
-
+// Author: John Akujobi
+// Date: Oct 12 2023
+// Description: 
 /**
  * The sequenceDetectorMealy module detects a specific sequence of inputs (A) using a Mealy state machine.
  * The module has one clock input (CLK) and one input (A) for the sequence to be detected.
  * The module has two outputs: Z and stateOut.
- * Z is high when the sequence is detected and A is low.
- * stateOut is a 2-bit output that represents the current state of the Mealy state machine.
+ * - Z is high when the sequence is detected and A is low.
+ * - stateOut is a 2-bit output that represents the current state of the Mealy state machine.
  * The module uses an enum to define the states of the Mealy state machine.
  * The module uses two always blocks: always_ff and always_comb.
- * always_ff block updates the currentState of the Mealy state machine on the positive edge of the clock.
- * always_comb block defines the nextState of the Mealy state machine based on the currentState and input A.
+ * - always_ff block updates the currentState of the Mealy state machine on the positive edge of the clock.
+ * - always_comb block defines the nextState of the Mealy state machine based on the currentState and input A.
  */
 // sequenceDetectorMealy.sv
 
@@ -21,24 +22,26 @@ module sequenceDetectorMealy (
     output logic [1:0] stateOut
 );
 
-    typedef enum {S0, S1, S2, S3} state_t;
-    state_t currentState = S0, nextState;
+    typedef enum {S0, S1, S2, S3} state_t; // Define the states using an enum
+    state_t currentState = S0, nextState;   // Define the state register and initialize to S0
 
+    // always_ff block updates the currentState of the Mealy state machine on the positive edge of the clock
     always_ff @(posedge CLK) begin
         currentState <= nextState;
     end
 
+    // always_comb block defines the nextState of the Mealy state machine based on the currentState and input A
     always_comb begin
         nextState = currentState; // Default
         case(currentState)
-            S0: nextState = A ? S1 : S0;
-            S1: nextState = A ? S1 : S2;
-            S2: nextState = A ? S3 : S0;
-            S3: nextState = A ? S1 : S0;
+            S0: nextState = A ? S1 : S0;    // If A is high, nextState is S1, else nextState is S0
+            S1: nextState = A ? S1 : S2;    // If A is high, nextState is S1, else nextState is S2
+            S2: nextState = A ? S3 : S0;    // If A is high, nextState is S3, else nextState is S0
+            S3: nextState = A ? S1 : S0;    // If A is high, nextState is S1, else nextState is S0
         endcase
 
-        Z = (currentState == S3) && !A;
-        stateOut = currentState[1:0];
+        Z = (currentState == S3) && !A;     // Z is high when the sequence is detected and A is low
+        stateOut = currentState[1:0];   // stateOut is a 2-bit output that represents the current state of the Mealy state machine
     end
 
 endmodule

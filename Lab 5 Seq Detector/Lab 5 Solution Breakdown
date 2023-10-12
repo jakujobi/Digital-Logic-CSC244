@@ -1,0 +1,18 @@
+# Moore Machine:
+The Moore machine will progress through states based on the detected bits of the sequence '1010'.
+The sequence detector will have five states:
+- S0 – Initial state or any time the sequence breaks.
+- S1 – Detected '1'.
+- S2 – Detected '10'.
+- S3 – Detected '101'.
+- S4 – Detected '1010' (output Z will be high only in this state).
+If a wrong bit is detected at any state, it will go back to S0.
+
+# Mealy Machine:
+The Mealy machine will progress similarly, but the output can be asserted as soon as the last '0' of '1010' is detected.
+Therefore, it will have only four states:
+
+- S0 – Initial state.
+- S1 – Detected '1'.
+- S2 – Detected '10'.
+- S3 – Detected '101' (output Z will be high when in this state and detecting '0').
