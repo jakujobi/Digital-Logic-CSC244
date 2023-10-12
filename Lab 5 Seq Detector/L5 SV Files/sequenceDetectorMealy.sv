@@ -1,5 +1,20 @@
 // sequenceDetectorMealy.sv
 
+
+
+/**
+ * The sequenceDetectorMealy module detects a specific sequence of inputs (A) using a Mealy state machine.
+ * The module has one clock input (CLK) and one input (A) for the sequence to be detected.
+ * The module has two outputs: Z and stateOut.
+ * Z is high when the sequence is detected and A is low.
+ * stateOut is a 2-bit output that represents the current state of the Mealy state machine.
+ * The module uses an enum to define the states of the Mealy state machine.
+ * The module uses two always blocks: always_ff and always_comb.
+ * always_ff block updates the currentState of the Mealy state machine on the positive edge of the clock.
+ * always_comb block defines the nextState of the Mealy state machine based on the currentState and input A.
+ */
+// sequenceDetectorMealy.sv
+
 module sequenceDetectorMealy (
     input logic CLK, A,
     output logic Z,
@@ -29,7 +44,7 @@ module sequenceDetectorMealy (
 endmodule
 
 
-
+//! Old machine that didn't work
 // module sequenceDetectorMealy (
 //     input logic clk,
 //     //input logic reset,

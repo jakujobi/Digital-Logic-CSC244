@@ -16,6 +16,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "S_moore[2]",
+					"strict" : false
+				},
+				{
 					"name" : "Z_mealy",
 					"strict" : false
 				},
@@ -33,6 +37,10 @@
 				},
 				{
 					"name" : "rawclock",
+					"strict" : false
+				},
+				{
+					"name" : "Clock50M",
 					"strict" : false
 				}
 			]

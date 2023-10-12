@@ -12,15 +12,24 @@ module machineComparison (
     output logic [1:0] S_mealy //D12 C12
 );
 
+logic cleanCLK;
+
+//Debouncer to clean up the noisy clock input
+debouncer mod1 (
+    .A_noisy(rawclock),
+    .CLK50M(Clock50M),
+    .A(cleanCLK)
+);
+
 sequenceDetectorMealy module1 (
-    .CLK(rawclock),
+    .CLK(cleanCLK),
     .A(A),
     .Z(Z_mealy),
     .stateOut(S_mealy)
 );
 
 sequenceDetectorMoore module2 (
-    .CLK(rawclock),
+    .CLK(cleanCLK),
     .A(A),
     .Z(Z_moore),
     .stateOut(S_moore)

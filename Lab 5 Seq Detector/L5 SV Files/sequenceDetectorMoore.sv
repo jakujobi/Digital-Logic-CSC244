@@ -1,5 +1,13 @@
 // sequenceDetectorMoore.sv
 
+/**
+ * The sequenceDetectorMoore module is a Moore state machine that detects a specific sequence of inputs.
+ * It has one input, A, and one output, Z, which is high when the sequence is detected.
+ * The module also has a 3-bit output, stateOut, which indicates the current state of the state machine.
+ * The state machine has 5 states, S0 to S4, and transitions between states based on the input A.
+ * The module operates on the positive edge of the clock signal, CLK.
+ */
+
 module sequenceDetectorMoore (
     input logic CLK, A,
     output logic Z,
@@ -32,7 +40,7 @@ module sequenceDetectorMoore (
 endmodule
 
 
-
+//! Old machine that didn't work
 // // Define the module sequenceDetectorMoore with inputs clk, reset, and data_in, and outputs detected and state_out
 // module sequenceDetectorMoore (
 //     input logic clk,
