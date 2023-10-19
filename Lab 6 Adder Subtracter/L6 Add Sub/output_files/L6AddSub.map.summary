@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Oct 19 10:10:43 2023
+Analysis & Synthesis Status : Successful - Thu Oct 19 10:37:51 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : L6AddSub
 Top-level Entity Name : L6AddSub
 Family : MAX 10
-Total logic elements : 15
-    Total combinational functions : 15
+Total logic elements : 29
+    Total combinational functions : 29
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 24
+Total pins : 39
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

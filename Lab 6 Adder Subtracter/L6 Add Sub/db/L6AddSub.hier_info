@@ -1,28 +1,91 @@
 |L6AddSub
-A[0] => A[0].IN1
-A[1] => A[1].IN1
-A[2] => A[2].IN1
-A[3] => A[3].IN1
-B[0] => B[0].IN1
-B[1] => B[1].IN1
-B[2] => B[2].IN1
-B[3] => B[3].IN1
-HEX0[0] << decimal7decoder:decoder_module.HEX0
-HEX0[1] << decimal7decoder:decoder_module.HEX0
-HEX0[2] << decimal7decoder:decoder_module.HEX0
-HEX0[3] << decimal7decoder:decoder_module.HEX0
-HEX0[4] << decimal7decoder:decoder_module.HEX0
-HEX0[5] << decimal7decoder:decoder_module.HEX0
-HEX0[6] << decimal7decoder:decoder_module.HEX0
-HEX1[0] << decimal7decoder:decoder_module.HEX1
-HEX1[1] << decimal7decoder:decoder_module.HEX1
-HEX1[2] << decimal7decoder:decoder_module.HEX1
-HEX1[3] << decimal7decoder:decoder_module.HEX1
-HEX1[4] << decimal7decoder:decoder_module.HEX1
-HEX1[5] << decimal7decoder:decoder_module.HEX1
-HEX1[6] << decimal7decoder:decoder_module.HEX1
+A[0] => A[0].IN2
+A[1] => A[1].IN2
+A[2] => A[2].IN2
+A[3] => A[3].IN2
+B[0] => B[0].IN2
+B[1] => B[1].IN2
+B[2] => B[2].IN2
+B[3] => B[3].IN2
+sub => ~NO_FANOUT~
+HEX0[0] << decimal7decoder:decoder_module.numHEX
+HEX0[1] << decimal7decoder:decoder_module.numHEX
+HEX0[2] << decimal7decoder:decoder_module.numHEX
+HEX0[3] << decimal7decoder:decoder_module.numHEX
+HEX0[4] << decimal7decoder:decoder_module.numHEX
+HEX0[5] << decimal7decoder:decoder_module.numHEX
+HEX0[6] << decimal7decoder:decoder_module.numHEX
+HEX1[0] << decimal7decoder:decoder_module.signHEX
+HEX1[1] << decimal7decoder:decoder_module.signHEX
+HEX1[2] << decimal7decoder:decoder_module.signHEX
+HEX1[3] << decimal7decoder:decoder_module.signHEX
+HEX1[4] << decimal7decoder:decoder_module.signHEX
+HEX1[5] << decimal7decoder:decoder_module.signHEX
+HEX1[6] << decimal7decoder:decoder_module.signHEX
+HEX2[0] << decimal7decoder:decodeB.numHEX
+HEX2[1] << decimal7decoder:decodeB.numHEX
+HEX2[2] << decimal7decoder:decodeB.numHEX
+HEX2[3] << decimal7decoder:decodeB.numHEX
+HEX2[4] << decimal7decoder:decodeB.numHEX
+HEX2[5] << decimal7decoder:decodeB.numHEX
+HEX2[6] << decimal7decoder:decodeB.numHEX
+HEX3[0] << decimal7decoder:decodeA.numHEX
+HEX3[1] << decimal7decoder:decodeA.numHEX
+HEX3[2] << decimal7decoder:decodeA.numHEX
+HEX3[3] << decimal7decoder:decodeA.numHEX
+HEX3[4] << decimal7decoder:decodeA.numHEX
+HEX3[5] << decimal7decoder:decodeA.numHEX
+HEX3[6] << decimal7decoder:decodeA.numHEX
 C4 << addsub4:addsub_module.C
 V << addsub4:addsub_module.V
+
+
+|L6AddSub|decimal7decoder:decodeA
+SW[0] => Decoder0.IN3
+SW[0] => Decoder1.IN2
+SW[1] => Decoder0.IN2
+SW[1] => Decoder1.IN1
+SW[2] => Decoder0.IN1
+SW[2] => Decoder1.IN0
+SW[3] => Decoder0.IN0
+numHEX[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+signHEX[0] <= <VCC>
+signHEX[1] <= <VCC>
+signHEX[2] <= <VCC>
+signHEX[3] <= <VCC>
+signHEX[4] <= <VCC>
+signHEX[5] <= <VCC>
+signHEX[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|L6AddSub|decimal7decoder:decodeB
+SW[0] => Decoder0.IN3
+SW[0] => Decoder1.IN2
+SW[1] => Decoder0.IN2
+SW[1] => Decoder1.IN1
+SW[2] => Decoder0.IN1
+SW[2] => Decoder1.IN0
+SW[3] => Decoder0.IN0
+numHEX[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+signHEX[0] <= <VCC>
+signHEX[1] <= <VCC>
+signHEX[2] <= <VCC>
+signHEX[3] <= <VCC>
+signHEX[4] <= <VCC>
+signHEX[5] <= <VCC>
+signHEX[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |L6AddSub|addsub4:addsub_module
@@ -117,19 +180,19 @@ SW[1] => Decoder1.IN1
 SW[2] => Decoder0.IN1
 SW[2] => Decoder1.IN0
 SW[3] => Decoder0.IN0
-HEX0[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-HEX0[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-HEX0[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
-HEX0[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-HEX0[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-HEX0[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-HEX0[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-HEX1[0] <= <VCC>
-HEX1[1] <= <VCC>
-HEX1[2] <= <VCC>
-HEX1[3] <= <VCC>
-HEX1[4] <= <VCC>
-HEX1[5] <= <VCC>
-HEX1[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+numHEX[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+signHEX[0] <= <VCC>
+signHEX[1] <= <VCC>
+signHEX[2] <= <VCC>
+signHEX[3] <= <VCC>
+signHEX[4] <= <VCC>
+signHEX[5] <= <VCC>
+signHEX[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
 
 

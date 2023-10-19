@@ -6,24 +6,32 @@ module L6AddSub (
 
     output logic [6:0] HEX0, // 7-segment display for numeral
     output logic [6:0] HEX1, // 7-segment display for sign
+	 output logic [6:0] HEX2, // 7-segment display for B
+	 output logic [6:0] HEX3, // 7-segment display for sign
+
+
     output logic C4, // Carry-out or Borrow-out flag
     output logic V  // Overflow flag
 );
 
+logic [6:0] g;
+logic [6:0] k;
+
+
 //!Display A in HEX
 // Instantiate the decimal7decoder module to show the 4-bit A
-decimal7decoder decoder_module (
+decimal7decoder decodeA (
     .SW(A),
-    .numHEX(HEX0),
-    .signHEX(HEX1)
+    .numHEX(HEX3),
+    .signHEX(g)
 );
 
 //!Display B in HEX
 // Instantiate the decimal7decoder module to show the 4-bit B
-decimal7decoder decoder_module (
+decimal7decoder decodeB (
     .SW(B),
-    .numHEX(HEX0),
-    .signHEX(HEX1)
+    .numHEX(HEX2),
+    .signHEX(k)
 );
 
 
