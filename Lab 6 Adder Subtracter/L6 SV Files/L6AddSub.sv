@@ -2,30 +2,50 @@
 module L6AddSub (
     input logic [3:0] A, // 4-bit input A
     input logic [3:0] B, // 4-bit input B
+    input logic sub,      // Subtraction control signal
+
     output logic [6:0] HEX0, // 7-segment display for numeral
     output logic [6:0] HEX1, // 7-segment display for sign
     output logic C4, // Carry-out or Borrow-out flag
     output logic V  // Overflow flag
 );
 
-    // Intermediate signal to hold the sum or difference
-    logic [3:0] Result;
+//!Display A in HEX
+// Instantiate the decimal7decoder module to show the 4-bit A
+decimal7decoder decoder_module (
+    .SW(A),
+    .numHEX(HEX0),
+    .signHEX(HEX1)
+);
 
-    // Instantiate the addsub4 module
-    addsub4 addsub_module (
-        .A(A),  
-        .B(B),
-        .S(Result),
-        .C(C4),
-        .V(V)
-    );
+//!Display B in HEX
+// Instantiate the decimal7decoder module to show the 4-bit B
+decimal7decoder decoder_module (
+    .SW(B),
+    .numHEX(HEX0),
+    .signHEX(HEX1)
+);
 
-    // Instantiate the decimal7decoder module
-    decimal7decoder decoder_module (
-        .SW(Result),
-        .HEX0(HEX0),
-        .HEX1(HEX1)
-    );
+
+//!AddSub
+// Intermediate signal to hold the sum or difference
+logic [3:0] Result;
+
+// Instantiate the addsub4 module
+addsub4 addsub_module (
+    .A(A),  
+    .B(B),
+    .S(Result),
+    .C(C4),
+    .V(V)
+);
+
+// Instantiate the decimal7decoder module to show the sume of the 4-bit
+decimal7decoder decoder_module (
+    .SW(Result),
+    .numHEX(HEX0),
+    .signHEX(HEX1)
+);
 
 endmodule
 

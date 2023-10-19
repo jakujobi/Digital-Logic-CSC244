@@ -1,12 +1,12 @@
-// Completed Module for 7-segment decoder
+// This module implements a 7-segment decoder that takes a 4-bit 2's complement input and outputs the corresponding 7-segment display output.
 module decimal7decoder(
     input [3:0] SW, // 4-bit 2's complement input
-    output reg [6:0] HEX0, // 7-segment display output
-    output logic [6:0] HEX1
+    output logic [6:0] numHEX, // 7-segment display output
+    output logic [6:0] signHEX // sign bit for negative numbers
 );
 
-logic [6:0] seg;
-logic [6:0] sign;
+logic [6:0] seg; // 7-segment display output
+logic [6:0] sign; // sign bit for negative numbers
 
     always @(*) begin
         case(SW)
@@ -44,8 +44,8 @@ logic [6:0] sign;
         endcase
     end
 
-    assign HEX0 = seg;
-    assign HEX1 = sign;
+    assign numHEX = seg; // assign 7-segment display output to HEX0
+    assign signHEX = sign; // assign sign bit for negative numbers to HEX1
 
 endmodule
 
