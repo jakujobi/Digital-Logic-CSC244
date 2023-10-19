@@ -43,6 +43,7 @@ logic [3:0] Result;
 addsub4 addsub_module (
     .A(A),  
     .B(B),
+    .sub(sub),
     .S(Result),
     .C(C4),
     .V(V)

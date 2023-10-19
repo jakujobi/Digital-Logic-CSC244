@@ -1,5 +1,5 @@
 Analysis & Synthesis report for L6AddSub
-Thu Oct 19 10:37:51 2023
+Thu Oct 19 10:47:13 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -14,12 +14,11 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "addsub4:addsub_module"
- 10. Port Connectivity Checks: "decimal7decoder:decodeB"
- 11. Port Connectivity Checks: "decimal7decoder:decodeA"
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "decimal7decoder:decodeB"
+ 10. Port Connectivity Checks: "decimal7decoder:decodeA"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -46,13 +45,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 19 10:37:51 2023          ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 19 10:47:13 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; L6AddSub                                       ;
 ; Top-level Entity Name              ; L6AddSub                                       ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 29                                             ;
-;     Total combinational functions  ; 29                                             ;
+; Total logic elements               ; 30                                             ;
+;     Total combinational functions  ; 30                                             ;
 ;     Dedicated logic registers      ; 0                                              ;
 ; Total registers                    ; 0                                              ;
 ; Total pins                         ; 39                                             ;
@@ -185,16 +184,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Estimated Total logic elements              ; 29         ;
+; Estimated Total logic elements              ; 30         ;
 ;                                             ;            ;
-; Total combinational functions               ; 29         ;
+; Total combinational functions               ; 30         ;
 ; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 19         ;
-;     -- 3 input functions                    ; 9          ;
+;     -- 4 input functions                    ; 24         ;
+;     -- 3 input functions                    ; 5          ;
 ;     -- <=2 input functions                  ; 1          ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 29         ;
+;     -- normal mode                          ; 30         ;
 ;     -- arithmetic mode                      ; 0          ;
 ;                                             ;            ;
 ; Total registers                             ; 0          ;
@@ -206,9 +205,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0          ;
 ;                                             ;            ;
 ; Maximum fan-out node                        ; A[0]~input ;
-; Maximum fan-out                             ; 12         ;
-; Total fan-out                               ; 168        ;
-; Average fan-out                             ; 1.57       ;
+; Maximum fan-out                             ; 11         ;
+; Total fan-out                               ; 176        ;
+; Average fan-out                             ; 1.63       ;
 +---------------------------------------------+------------+
 
 
@@ -217,13 +216,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                       ; Entity Name     ; Library Name ;
 +-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------+-----------------+--------------+
-; |L6AddSub                           ; 29 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 39   ; 0            ; 0          ; |L6AddSub                                                 ; L6AddSub        ; work         ;
-;    |addsub4:addsub_module|          ; 8 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L6AddSub|addsub4:addsub_module                           ; addsub4         ; work         ;
+; |L6AddSub                           ; 30 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 39   ; 0            ; 0          ; |L6AddSub                                                 ; L6AddSub        ; work         ;
+;    |addsub4:addsub_module|          ; 9 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L6AddSub|addsub4:addsub_module                           ; addsub4         ; work         ;
 ;       |adder4:add4|                 ; 8 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L6AddSub|addsub4:addsub_module|adder4:add4               ; adder4          ; work         ;
-;          |fulladder:fa0|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L6AddSub|addsub4:addsub_module|adder4:add4|fulladder:fa0 ; fulladder       ; work         ;
+;          |fulladder:fa0|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L6AddSub|addsub4:addsub_module|adder4:add4|fulladder:fa0 ; fulladder       ; work         ;
 ;          |fulladder:fa1|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L6AddSub|addsub4:addsub_module|adder4:add4|fulladder:fa1 ; fulladder       ; work         ;
 ;          |fulladder:fa2|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L6AddSub|addsub4:addsub_module|adder4:add4|fulladder:fa2 ; fulladder       ; work         ;
-;          |fulladder:fa3|            ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L6AddSub|addsub4:addsub_module|adder4:add4|fulladder:fa3 ; fulladder       ; work         ;
+;          |fulladder:fa3|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L6AddSub|addsub4:addsub_module|adder4:add4|fulladder:fa3 ; fulladder       ; work         ;
 ;    |decimal7decoder:decodeA|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L6AddSub|decimal7decoder:decodeA                         ; decimal7decoder ; work         ;
 ;    |decimal7decoder:decodeB|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L6AddSub|decimal7decoder:decodeB                         ; decimal7decoder ; work         ;
 ;    |decimal7decoder:decoder_module| ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L6AddSub|decimal7decoder:decoder_module                  ; decimal7decoder ; work         ;
@@ -244,15 +243,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "addsub4:addsub_module"                                                                                                                      ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                      ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; sub  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -279,16 +269,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 39                          ;
-; cycloneiii_lcell_comb ; 34                          ;
-;     normal            ; 34                          ;
+; cycloneiii_lcell_comb ; 35                          ;
+;     normal            ; 35                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 4                           ;
 ;         2 data inputs ; 1                           ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 19                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 24                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.88                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.43                        ;
 +-----------------------+-----------------------------+
 
 
@@ -307,7 +297,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Thu Oct 19 10:37:44 2023
+    Info: Processing started: Thu Oct 19 10:47:06 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off L6AddSub -c L6AddSub
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
@@ -323,10 +313,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: adder4 File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 6 Adder Subtracter/L6 SV Files/adder4.sv Line: 4
 Info (12127): Elaborating entity "L6AddSub" for the top level hierarchy
 Info (12128): Elaborating entity "decimal7decoder" for hierarchy "decimal7decoder:decodeA" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 6 Adder Subtracter/L6 SV Files/L6AddSub.sv Line: 27
-Info (12128): Elaborating entity "addsub4" for hierarchy "addsub4:addsub_module" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 6 Adder Subtracter/L6 SV Files/L6AddSub.sv Line: 49
+Info (12128): Elaborating entity "addsub4" for hierarchy "addsub4:addsub_module" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 6 Adder Subtracter/L6 SV Files/L6AddSub.sv Line: 50
 Info (12128): Elaborating entity "adder4" for hierarchy "addsub4:addsub_module|adder4:add4" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 6 Adder Subtracter/L6 SV Files/addsub4.sv Line: 26
 Info (12128): Elaborating entity "fulladder" for hierarchy "addsub4:addsub_module|adder4:add4|fulladder:fa0" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 6 Adder Subtracter/L6 SV Files/adder4.sv Line: 14
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 6 Adder Subtracter/L6 SV Files/L6AddSub.sv Line: 8
     Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 6 Adder Subtracter/L6 SV Files/L6AddSub.sv Line: 8
@@ -337,15 +326,13 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "sub" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 6 Adder Subtracter/L6 SV Files/L6AddSub.sv Line: 5
-Info (21057): Implemented 68 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 69 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 30 output pins
-    Info (21061): Implemented 29 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info (21061): Implemented 30 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
     Info: Peak virtual memory: 4790 megabytes
-    Info: Processing ended: Thu Oct 19 10:37:51 2023
+    Info: Processing ended: Thu Oct 19 10:47:13 2023
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:06
 

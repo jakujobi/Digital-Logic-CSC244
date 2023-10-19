@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Oct 19 10:37:56 2023
+Fitter Status : Successful - Thu Oct 19 10:47:17 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : L6AddSub
 Top-level Entity Name : L6AddSub
 Family : MAX 10
 Device : 10M50DAF484C6GES
 Timing Models : Preliminary
-Total logic elements : 30 / 49,760 ( < 1 % )
-    Total combinational functions : 30 / 49,760 ( < 1 % )
+Total logic elements : 31 / 49,760 ( < 1 % )
+    Total combinational functions : 31 / 49,760 ( < 1 % )
     Dedicated logic registers : 0 / 49,760 ( 0 % )
 Total registers : 0
 Total pins : 39 / 360 ( 11 % )
