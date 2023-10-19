@@ -1,0 +1,135 @@
+|L6AddSub
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+HEX0[0] << decimal7decoder:decoder_module.HEX0
+HEX0[1] << decimal7decoder:decoder_module.HEX0
+HEX0[2] << decimal7decoder:decoder_module.HEX0
+HEX0[3] << decimal7decoder:decoder_module.HEX0
+HEX0[4] << decimal7decoder:decoder_module.HEX0
+HEX0[5] << decimal7decoder:decoder_module.HEX0
+HEX0[6] << decimal7decoder:decoder_module.HEX0
+HEX1[0] << decimal7decoder:decoder_module.HEX1
+HEX1[1] << decimal7decoder:decoder_module.HEX1
+HEX1[2] << decimal7decoder:decoder_module.HEX1
+HEX1[3] << decimal7decoder:decoder_module.HEX1
+HEX1[4] << decimal7decoder:decoder_module.HEX1
+HEX1[5] << decimal7decoder:decoder_module.HEX1
+HEX1[6] << decimal7decoder:decoder_module.HEX1
+C4 << addsub4:addsub_module.C
+V << addsub4:addsub_module.V
+
+
+|L6AddSub|addsub4:addsub_module
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => comb.DATAA
+B[0] => comb.DATAB
+B[1] => comb.DATAA
+B[1] => comb.DATAB
+B[2] => comb.DATAA
+B[2] => comb.DATAB
+B[3] => comb.DATAA
+B[3] => comb.DATAB
+sub => C0.IN1
+S[0] <= adder4:add4.S
+S[1] <= adder4:add4.S
+S[2] <= adder4:add4.S
+S[3] <= adder4:add4.S
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+V <= adder4:add4.V
+
+
+|L6AddSub|addsub4:addsub_module|adder4:add4
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+C0 => C0.IN1
+S[0] <= fulladder:fa0.S
+S[1] <= fulladder:fa1.S
+S[2] <= fulladder:fa2.S
+S[3] <= fulladder:fa3.S
+C4 <= fulladder:fa3.Cout
+V <= V.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|L6AddSub|addsub4:addsub_module|adder4:add4|fulladder:fa0
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|L6AddSub|addsub4:addsub_module|adder4:add4|fulladder:fa1
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|L6AddSub|addsub4:addsub_module|adder4:add4|fulladder:fa2
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|L6AddSub|addsub4:addsub_module|adder4:add4|fulladder:fa3
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|L6AddSub|decimal7decoder:decoder_module
+SW[0] => Decoder0.IN3
+SW[0] => Decoder1.IN2
+SW[1] => Decoder0.IN2
+SW[1] => Decoder1.IN1
+SW[2] => Decoder0.IN1
+SW[2] => Decoder1.IN0
+SW[3] => Decoder0.IN0
+HEX0[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[2] <= seg.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[0] <= <VCC>
+HEX1[1] <= <VCC>
+HEX1[2] <= <VCC>
+HEX1[3] <= <VCC>
+HEX1[4] <= <VCC>
+HEX1[5] <= <VCC>
+HEX1[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+
+
