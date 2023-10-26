@@ -1,5 +1,5 @@
 Analysis & Synthesis report for L7Multiplier
-Thu Oct 26 09:31:34 2023
+Thu Oct 26 10:05:40 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -14,12 +14,12 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "decimal7decoder:dec0"
- 10. Port Connectivity Checks: "decimal7decoder:dec1"
- 11. Port Connectivity Checks: "decimal7decoder:dec2"
- 12. Port Connectivity Checks: "mult4:my_multiplier|PP4:pp0|adder4:my_adder"
- 13. Port Connectivity Checks: "mult4:my_multiplier|PP4:pp0"
- 14. Port Connectivity Checks: "mult4:my_multiplier"
+  9. Port Connectivity Checks: "decimal7decoder:decP1"
+ 10. Port Connectivity Checks: "decimal7decoder:decP0"
+ 11. Port Connectivity Checks: "decimal7decoder:decB"
+ 12. Port Connectivity Checks: "decimal7decoder:decA"
+ 13. Port Connectivity Checks: "mult4:my_multiplier|PP4:pp0|adder4:my_adder"
+ 14. Port Connectivity Checks: "mult4:my_multiplier|PP4:pp0"
  15. Post-Synthesis Netlist Statistics for Top Partition
  16. Elapsed Time Per Partition
  17. Analysis & Synthesis Messages
@@ -50,16 +50,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 26 09:31:34 2023          ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 26 10:05:40 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; L7Multiplier                                   ;
 ; Top-level Entity Name              ; L7Multiplier                                   ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 8                                              ;
-;     Total combinational functions  ; 8                                              ;
+; Total logic elements               ; 22                                             ;
+;     Total combinational functions  ; 22                                             ;
 ;     Dedicated logic registers      ; 0                                              ;
 ; Total registers                    ; 0                                              ;
-; Total pins                         ; 29                                             ;
+; Total pins                         ; 36                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -190,42 +190,44 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Estimated Total logic elements              ; 8          ;
+; Estimated Total logic elements              ; 22         ;
 ;                                             ;            ;
-; Total combinational functions               ; 8          ;
+; Total combinational functions               ; 22         ;
 ; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 5          ;
-;     -- 3 input functions                    ; 2          ;
-;     -- <=2 input functions                  ; 1          ;
+;     -- 4 input functions                    ; 16         ;
+;     -- 3 input functions                    ; 1          ;
+;     -- <=2 input functions                  ; 5          ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 8          ;
+;     -- normal mode                          ; 22         ;
 ;     -- arithmetic mode                      ; 0          ;
 ;                                             ;            ;
 ; Total registers                             ; 0          ;
 ;     -- Dedicated logic registers            ; 0          ;
 ;     -- I/O registers                        ; 0          ;
 ;                                             ;            ;
-; I/O pins                                    ; 29         ;
+; I/O pins                                    ; 36         ;
 ;                                             ;            ;
 ; Embedded Multiplier 9-bit elements          ; 0          ;
 ;                                             ;            ;
-; Maximum fan-out node                        ; B[0]~input ;
-; Maximum fan-out                             ; 7          ;
-; Total fan-out                               ; 68         ;
-; Average fan-out                             ; 1.03       ;
+; Maximum fan-out node                        ; A[1]~input ;
+; Maximum fan-out                             ; 13         ;
+; Total fan-out                               ; 139        ;
+; Average fan-out                             ; 1.48       ;
 +---------------------------------------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                ; Entity Name     ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------+-----------------+--------------+
-; |L7Multiplier              ; 8 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 29   ; 0            ; 0          ; |L7Multiplier                      ; L7Multiplier    ; work         ;
-;    |decimal7decoder:dec0|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L7Multiplier|decimal7decoder:dec0 ; decimal7decoder ; work         ;
-;    |decimal7decoder:dec1|  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L7Multiplier|decimal7decoder:dec1 ; decimal7decoder ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------+-----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                 ; Entity Name     ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+-----------------+--------------+
+; |L7Multiplier              ; 22 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 36   ; 0            ; 0          ; |L7Multiplier                       ; L7Multiplier    ; work         ;
+;    |decimal7decoder:decA|  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L7Multiplier|decimal7decoder:decA  ; decimal7decoder ; work         ;
+;    |decimal7decoder:decB|  ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L7Multiplier|decimal7decoder:decB  ; decimal7decoder ; work         ;
+;    |decimal7decoder:decP0| ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L7Multiplier|decimal7decoder:decP0 ; decimal7decoder ; work         ;
+;    |decimal7decoder:decP1| ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |L7Multiplier|decimal7decoder:decP1 ; decimal7decoder ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -244,18 +246,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "decimal7decoder:dec0"                                                                                                                                                               ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; SW      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (4 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; signHEX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "decimal7decoder:dec1"                                                                  ;
+; Port Connectivity Checks: "decimal7decoder:decP1"                                                                 ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                             ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
@@ -263,15 +255,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "decimal7decoder:dec2"                                                                                                        ;
-+---------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                                                                   ;
-+---------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
-; numHEX  ; Output ; Warning  ; Output or bidir port (7 bits) is wider than the port expression (1 bits) it drives; bit(s) "numHEX[6..1]" have no fanouts ;
-; numHEX  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
-; signHEX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
-+---------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decimal7decoder:decP0"                                                                 ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; signHEX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decimal7decoder:decB"                                                                  ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; signHEX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decimal7decoder:decA"                                                                  ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; signHEX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -294,31 +302,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------+-------+----------+----------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mult4:my_multiplier"                                                                   ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; P[7..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 29                          ;
-; cycloneiii_lcell_comb ; 11                          ;
-;     normal            ; 11                          ;
+; boundary_port         ; 36                          ;
+; cycloneiii_lcell_comb ; 28                          ;
+;     normal            ; 28                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 5                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.53                        ;
+; Average LUT depth     ; 1.47                        ;
 +-----------------------+-----------------------------+
 
 
@@ -337,7 +336,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Thu Oct 26 09:31:27 2023
+    Info: Processing started: Thu Oct 26 10:05:29 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off L7Multiplier -c L7Multiplier
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
@@ -354,45 +353,39 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: L7Multiplier File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file /users/akujo_2rtofyy/onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/lab 7 - multiplier alu/sv files/decimal7decoder.sv
     Info (12023): Found entity 1: decimal7decoder File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/decimal7decoder.sv Line: 2
-Warning (10236): Verilog HDL Implicit Net warning at L7Multiplier.sv(23): created implicit net for "HEX2" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 23
 Info (12127): Elaborating entity "L7Multiplier" for the top level hierarchy
-Warning (10034): Output port "HEXA" at L7Multiplier.sv(6) has no driver File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 6
-Info (12128): Elaborating entity "mult4" for hierarchy "mult4:my_multiplier" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 18
+Info (12128): Elaborating entity "mult4" for hierarchy "mult4:my_multiplier" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 22
 Info (12128): Elaborating entity "PP4" for hierarchy "mult4:my_multiplier|PP4:pp0" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/mult4.sv Line: 11
 Info (12128): Elaborating entity "adder4" for hierarchy "mult4:my_multiplier|PP4:pp0|adder4:my_adder" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/partialproduct4.sv Line: 13
 Info (12128): Elaborating entity "fulladder" for hierarchy "mult4:my_multiplier|PP4:pp0|adder4:my_adder|fulladder:fa0" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/adder4.sv Line: 14
-Info (12128): Elaborating entity "decimal7decoder" for hierarchy "decimal7decoder:dec2" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 25
+Info (12128): Elaborating entity "decimal7decoder" for hierarchy "decimal7decoder:decA" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 32
+Warning (10272): Verilog HDL Case Statement warning at decimal7decoder.sv(33): case item expression covers a value already covered by a previous case item File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/decimal7decoder.sv Line: 33
+Warning (10272): Verilog HDL Case Statement warning at decimal7decoder.sv(34): case item expression covers a value already covered by a previous case item File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/decimal7decoder.sv Line: 34
+Warning (10272): Verilog HDL Case Statement warning at decimal7decoder.sv(35): case item expression covers a value already covered by a previous case item File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/decimal7decoder.sv Line: 35
+Warning (10272): Verilog HDL Case Statement warning at decimal7decoder.sv(36): case item expression covers a value already covered by a previous case item File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/decimal7decoder.sv Line: 36
+Warning (10272): Verilog HDL Case Statement warning at decimal7decoder.sv(37): case item expression covers a value already covered by a previous case item File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/decimal7decoder.sv Line: 37
+Warning (10272): Verilog HDL Case Statement warning at decimal7decoder.sv(38): case item expression covers a value already covered by a previous case item File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/decimal7decoder.sv Line: 38
+Warning (10272): Verilog HDL Case Statement warning at decimal7decoder.sv(39): case item expression covers a value already covered by a previous case item File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/decimal7decoder.sv Line: 39
+Warning (10272): Verilog HDL Case Statement warning at decimal7decoder.sv(40): case item expression covers a value already covered by a previous case item File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/decimal7decoder.sv Line: 40
 Warning (12020): Port "ordered port 2" on the entity instantiation of "my_adder" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/partialproduct4.sv Line: 13
 Warning (12020): Port "ordered port 2" on the entity instantiation of "my_adder" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/partialproduct4.sv Line: 13
 Warning (12020): Port "ordered port 2" on the entity instantiation of "my_adder" is connected to a signal of width 32. The formal width of the signal in the module is 1.  The extra bits will be ignored. File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/partialproduct4.sv Line: 13
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEXA[0]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 6
-    Warning (13410): Pin "HEXA[1]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 6
-    Warning (13410): Pin "HEXA[2]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 6
-    Warning (13410): Pin "HEXA[3]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 6
-    Warning (13410): Pin "HEXA[4]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 6
-    Warning (13410): Pin "HEXA[5]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 6
-    Warning (13410): Pin "HEXA[6]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 6
-    Warning (13410): Pin "HEXP[1]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 9
-    Warning (13410): Pin "HEXP[2]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 9
-    Warning (13410): Pin "HEXP[5]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 9
+    Warning (13410): Pin "HEXP0[5]" is stuck at GND File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/L7 Multiplier/output_files/L7Multiplier.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "A[3]" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 3
-    Warning (15610): No output dependent on input pin "A[2]" File: C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/SV Files/L7Multiplier.sv Line: 3
-Info (21057): Implemented 37 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 58 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 21 output pins
-    Info (21061): Implemented 8 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 4793 megabytes
-    Info: Processing ended: Thu Oct 26 09:31:34 2023
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 22 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4786 megabytes
+    Info: Processing ended: Thu Oct 26 10:05:40 2023
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:10
 
 
 +------------------------------------------+

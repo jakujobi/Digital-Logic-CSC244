@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Oct 26 09:31:34 2023
+Analysis & Synthesis Status : Successful - Thu Oct 26 10:05:40 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : L7Multiplier
 Top-level Entity Name : L7Multiplier
 Family : MAX 10
-Total logic elements : 8
-    Total combinational functions : 8
+Total logic elements : 22
+    Total combinational functions : 22
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 29
+Total pins : 36
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
