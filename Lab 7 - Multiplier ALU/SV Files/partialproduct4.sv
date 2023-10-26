@@ -9,6 +9,7 @@ module PP4(
     // Assuming you have a 4-bit adder module named 'adder4'
     wire [3:0] sum;
     wire C4, V;
+    
     adder4 my_adder(A, PP_prev, 0, sum, C4, V);
     assign PP_next = sum;
     assign Pi = C4;
