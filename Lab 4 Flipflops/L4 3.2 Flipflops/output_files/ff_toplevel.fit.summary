@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Sep 28 10:51:01 2023
+Fitter Status : Successful - Thu Sep 28 10:49:59 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : ff_toplevel
 Top-level Entity Name : ff_toplevel
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 27 / 49,760 ( < 1 % )
-    Total combinational functions : 27 / 49,760 ( < 1 % )
+Total logic elements : 32 / 49,760 ( < 1 % )
+    Total combinational functions : 26 / 49,760 ( < 1 % )
     Dedicated logic registers : 17 / 49,760 ( < 1 % )
 Total registers : 17
 Total pins : 6 / 360 ( 2 % )
