@@ -1,0 +1,6 @@
+
+State Machine - |ALUcontroller|controller:_cont|current_state
+Name current_state.00 current_state.10 current_state.01 
+current_state.00 0 0 0 
+current_state.01 1 0 1 
+current_state.10 1 1 0 

@@ -11,23 +11,11 @@
  * @param Cout  Output wire Cout (carry-out)
  */
 module fulladder (
-    input wire A, B, Cin,
+    input wire A,
+    input wire B,
+    input wire Cin,
     output wire S, Cout
 );
     assign S = A ^ B ^ Cin;
     assign Cout = (A & B) | (Cin & (A ^ B));
 endmodule
-
-
-// module full_adder(
-//     input bit a,
-//     input bit b,
-//     input bit cin,
-//     output bit sum,
-//     output bit cout
-// );
-
-//     assign sum = a ^ b ^ cin;
-//     assign cout = (a & b) | (cin & (a ^ b));
-
-// endmodule

@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:clkdeb|A'
+Slack : -4.097
+TNS   : -23.119
+
+Type  : Slow 1200mV 85C Model Setup 'CLK50M'
+Slack : -3.765
+TNS   : -63.797
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:clkdeb|A'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLK50M'
+Slack : 0.630
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK50M'
+Slack : -3.000
+TNS   : -26.851
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:clkdeb|A'
+Slack : -1.403
+TNS   : -23.851
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:clkdeb|A'
+Slack : -3.712
+TNS   : -19.952
+
+Type  : Slow 1200mV 0C Model Setup 'CLK50M'
+Slack : -3.431
+TNS   : -58.147
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:clkdeb|A'
+Slack : 0.367
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLK50M'
+Slack : 0.580
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK50M'
+Slack : -3.000
+TNS   : -26.851
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:clkdeb|A'
+Slack : -1.403
+TNS   : -23.851
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:clkdeb|A'
+Slack : -1.108
+TNS   : -3.862
+
+Type  : Fast 1200mV 0C Model Setup 'CLK50M'
+Slack : -1.056
+TNS   : -17.863
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:clkdeb|A'
+Slack : 0.157
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLK50M'
+Slack : 0.244
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK50M'
+Slack : -3.000
+TNS   : -20.459
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:clkdeb|A'
+Slack : -1.000
+TNS   : -17.000
+
+------------------------------------------------------------

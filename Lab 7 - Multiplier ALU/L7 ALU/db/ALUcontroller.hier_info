@@ -1,0 +1,333 @@
+|ALUcontroller
+INPUT[0] => INPUT[0].IN2
+INPUT[1] => INPUT[1].IN2
+INPUT[2] => INPUT[2].IN2
+INPUT[3] => INPUT[3].IN2
+INPUT[4] => INPUT[4].IN2
+INPUT[5] => INPUT[5].IN2
+INPUT[6] => INPUT[6].IN2
+INPUT[7] => INPUT[7].IN2
+ALUcontrol[0] => ALUcontrol[0].IN1
+ALUcontrol[1] => ALUcontrol[1].IN1
+CLKb => CLKb.IN1
+CLK50M => CLK50M.IN1
+Aseg[0][6] << <GND>
+Aseg[0][5] << <GND>
+Aseg[0][4] << <GND>
+Aseg[0][3] << <GND>
+Aseg[0][2] << <GND>
+Aseg[0][1] << <GND>
+Aseg[0][0] << <GND>
+Aseg[1][6] << <GND>
+Aseg[1][5] << <GND>
+Aseg[1][4] << <GND>
+Aseg[1][3] << <GND>
+Aseg[1][2] << <GND>
+Aseg[1][1] << <GND>
+Aseg[1][0] << <GND>
+Bseg[0][6] << <GND>
+Bseg[0][5] << <GND>
+Bseg[0][4] << <GND>
+Bseg[0][3] << <GND>
+Bseg[0][2] << <GND>
+Bseg[0][1] << <GND>
+Bseg[0][0] << <GND>
+Bseg[1][6] << <GND>
+Bseg[1][5] << <GND>
+Bseg[1][4] << <GND>
+Bseg[1][3] << <GND>
+Bseg[1][2] << <GND>
+Bseg[1][1] << <GND>
+Bseg[1][0] << <GND>
+Cseg[0][6] << <GND>
+Cseg[0][5] << <GND>
+Cseg[0][4] << <GND>
+Cseg[0][3] << <GND>
+Cseg[0][2] << <GND>
+Cseg[0][1] << <GND>
+Cseg[0][0] << <GND>
+Cseg[1][6] << <GND>
+Cseg[1][5] << <GND>
+Cseg[1][4] << <GND>
+Cseg[1][3] << <GND>
+Cseg[1][2] << <GND>
+Cseg[1][1] << <GND>
+Cseg[1][0] << <GND>
+V << regN:statusreg.Q
+C << regN:statusreg.Q
+Neg << regN:statusreg.Q
+Z << regN:statusreg.Q
+
+
+|ALUcontroller|debouncer:clkdeb
+A_noisy => Anext.IN1
+A_noisy => t_r.IN1
+A_noisy => t_r.IN1
+CLK50M => A~reg0.CLK
+CLK50M => COUNT[0].CLK
+CLK50M => COUNT[1].CLK
+CLK50M => COUNT[2].CLK
+CLK50M => COUNT[3].CLK
+CLK50M => COUNT[4].CLK
+CLK50M => COUNT[5].CLK
+CLK50M => COUNT[6].CLK
+CLK50M => COUNT[7].CLK
+CLK50M => COUNT[8].CLK
+CLK50M => COUNT[9].CLK
+CLK50M => COUNT[10].CLK
+CLK50M => COUNT[11].CLK
+CLK50M => COUNT[12].CLK
+CLK50M => COUNT[13].CLK
+CLK50M => COUNT[14].CLK
+CLK50M => COUNT[15].CLK
+A <= A~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|controller:_cont
+CLKb => current_state~1.DATAIN
+enA <= enA.DB_MAX_OUTPUT_PORT_TYPE
+enC <= enC.DB_MAX_OUTPUT_PORT_TYPE
+enALU <= enALU.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|regN:Areg
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+D[4] => Q[4]~reg0.DATAIN
+D[5] => Q[5]~reg0.DATAIN
+D[6] => Q[6]~reg0.DATAIN
+D[7] => Q[7]~reg0.DATAIN
+CLKb => Q[0]~reg0.CLK
+CLKb => Q[1]~reg0.CLK
+CLKb => Q[2]~reg0.CLK
+CLKb => Q[3]~reg0.CLK
+CLKb => Q[4]~reg0.CLK
+CLKb => Q[5]~reg0.CLK
+CLKb => Q[6]~reg0.CLK
+CLKb => Q[7]~reg0.CLK
+E => Q[0]~reg0.ENA
+E => Q[1]~reg0.ENA
+E => Q[2]~reg0.ENA
+E => Q[3]~reg0.ENA
+E => Q[4]~reg0.ENA
+E => Q[5]~reg0.ENA
+E => Q[6]~reg0.ENA
+E => Q[7]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|regN:Creg
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+D[4] => Q[4]~reg0.DATAIN
+D[5] => Q[5]~reg0.DATAIN
+D[6] => Q[6]~reg0.DATAIN
+D[7] => Q[7]~reg0.DATAIN
+CLKb => Q[0]~reg0.CLK
+CLKb => Q[1]~reg0.CLK
+CLKb => Q[2]~reg0.CLK
+CLKb => Q[3]~reg0.CLK
+CLKb => Q[4]~reg0.CLK
+CLKb => Q[5]~reg0.CLK
+CLKb => Q[6]~reg0.CLK
+CLKb => Q[7]~reg0.CLK
+E => Q[0]~reg0.ENA
+E => Q[1]~reg0.ENA
+E => Q[2]~reg0.ENA
+E => Q[3]~reg0.ENA
+E => Q[4]~reg0.ENA
+E => Q[5]~reg0.ENA
+E => Q[6]~reg0.ENA
+E => Q[7]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|regN:ALUreg
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+CLKb => Q[0]~reg0.CLK
+CLKb => Q[1]~reg0.CLK
+E => Q[0]~reg0.ENA
+E => Q[1]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|regN:statusreg
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+CLKb => Q[0]~reg0.CLK
+CLKb => Q[1]~reg0.CLK
+CLKb => Q[2]~reg0.CLK
+CLKb => Q[3]~reg0.CLK
+E => Q[0]~reg0.ENA
+E => Q[1]~reg0.ENA
+E => Q[2]~reg0.ENA
+E => Q[3]~reg0.ENA
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|ALU:_ALU
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B_true.IN0
+B[0] => Result.IN0
+B[0] => Result.IN0
+B[1] => B_true.IN0
+B[1] => Result.IN0
+B[1] => Result.IN0
+B[2] => B_true.IN0
+B[2] => Result.IN0
+B[2] => Result.IN0
+B[3] => B_true.IN0
+B[3] => Result.IN0
+B[3] => Result.IN0
+B[4] => B_true.IN0
+B[4] => Result.IN0
+B[4] => Result.IN0
+B[5] => B_true.IN0
+B[5] => Result.IN0
+B[5] => Result.IN0
+B[6] => B_true.IN0
+B[6] => Result.IN0
+B[6] => Result.IN0
+B[7] => B_true.IN0
+B[7] => Result.IN0
+B[7] => Result.IN0
+ALUControl[0] => Equal0.IN3
+ALUControl[0] => Equal1.IN3
+ALUControl[0] => Equal2.IN3
+ALUControl[1] => Equal0.IN2
+ALUControl[1] => Equal1.IN2
+ALUControl[1] => Equal2.IN2
+Result[0] <= Selector7.DB_MAX_OUTPUT_PORT_TYPE
+Result[1] <= Selector6.DB_MAX_OUTPUT_PORT_TYPE
+Result[2] <= Selector5.DB_MAX_OUTPUT_PORT_TYPE
+Result[3] <= Selector4.DB_MAX_OUTPUT_PORT_TYPE
+Result[4] <= Selector3.DB_MAX_OUTPUT_PORT_TYPE
+Result[5] <= Selector2.DB_MAX_OUTPUT_PORT_TYPE
+Result[6] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
+Result[7] <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+V <= V.DB_MAX_OUTPUT_PORT_TYPE
+C <= fulladder:seven.Cout
+Neg <= fulladder:seven.S
+Z <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|ALU:_ALU|fulladder:zero
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|ALU:_ALU|fulladder:one
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|ALU:_ALU|fulladder:two
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|ALU:_ALU|fulladder:three
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|ALU:_ALU|fulladder:four
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|ALU:_ALU|fulladder:five
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|ALU:_ALU|fulladder:six
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|ALU:_ALU|fulladder:seven
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

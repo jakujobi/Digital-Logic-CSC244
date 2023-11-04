@@ -1,0 +1,73 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "V",
+					"strict" : false
+				},
+				{
+					"name" : "C",
+					"strict" : false
+				},
+				{
+					"name" : "Neg",
+					"strict" : false
+				},
+				{
+					"name" : "Z",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUcontrol[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUcontrol[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CLKb",
+					"strict" : false
+				},
+				{
+					"name" : "CLK50M",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

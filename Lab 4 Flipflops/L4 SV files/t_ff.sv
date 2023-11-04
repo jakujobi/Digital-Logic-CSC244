@@ -6,10 +6,6 @@ module t_ff(
 );
 
 logic tn, tandq_bar, tnandq, tnandq_barortnandq;
-// tn = not t
-// tnandqbar = tn & q_bar
-// tnandq = tn & q
-// tnandqbarortnandq = tnandqbar | tnandq
 
 assign tn = ~t;
 assign tnandq = tn & q;
@@ -22,17 +18,5 @@ d_ff module1 (
     .q(q),
     .q_bar(q_bar)
 );
-
-
-// module t_ff(input t, input clk, output reg q);
-
-// always @(posedge clk) begin
-//     if (t) begin
-//         q <= ~q;
-//     end
-// end
-
-// endmodule
-
 
 endmodule
