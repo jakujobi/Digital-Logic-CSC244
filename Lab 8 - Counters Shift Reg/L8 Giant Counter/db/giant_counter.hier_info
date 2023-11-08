@@ -1,0 +1,87 @@
+|giant_counter
+KEY0 => KEY0.IN1
+CLK50M => CLK50M.IN1
+LED0 <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|giant_counter|debouncer:debouncer_inst
+A_noisy => Anext.IN1
+A_noisy => t_r.IN1
+A_noisy => t_r.IN1
+CLK50M => A~reg0.CLK
+CLK50M => COUNT[0].CLK
+CLK50M => COUNT[1].CLK
+CLK50M => COUNT[2].CLK
+CLK50M => COUNT[3].CLK
+CLK50M => COUNT[4].CLK
+CLK50M => COUNT[5].CLK
+CLK50M => COUNT[6].CLK
+CLK50M => COUNT[7].CLK
+CLK50M => COUNT[8].CLK
+CLK50M => COUNT[9].CLK
+CLK50M => COUNT[10].CLK
+CLK50M => COUNT[11].CLK
+CLK50M => COUNT[12].CLK
+CLK50M => COUNT[13].CLK
+CLK50M => COUNT[14].CLK
+CLK50M => COUNT[15].CLK
+A <= A~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|giant_counter|counter26bit:counter_inst
+CLK => counter[0].CLK
+CLK => counter[1].CLK
+CLK => counter[2].CLK
+CLK => counter[3].CLK
+CLK => counter[4].CLK
+CLK => counter[5].CLK
+CLK => counter[6].CLK
+CLK => counter[7].CLK
+CLK => counter[8].CLK
+CLK => counter[9].CLK
+CLK => counter[10].CLK
+CLK => counter[11].CLK
+CLK => counter[12].CLK
+CLK => counter[13].CLK
+CLK => counter[14].CLK
+CLK => counter[15].CLK
+CLK => counter[16].CLK
+CLK => counter[17].CLK
+CLK => counter[18].CLK
+CLK => counter[19].CLK
+CLK => counter[20].CLK
+CLK => counter[21].CLK
+CLK => counter[22].CLK
+CLK => counter[23].CLK
+CLK => counter[24].CLK
+CLK => counter[25].CLK
+CLK => enable~1.DATAIN
+reset => ~NO_FANOUT~
+q[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= counter[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= counter[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= counter[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= counter[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= counter[8].DB_MAX_OUTPUT_PORT_TYPE
+q[9] <= counter[9].DB_MAX_OUTPUT_PORT_TYPE
+q[10] <= counter[10].DB_MAX_OUTPUT_PORT_TYPE
+q[11] <= counter[11].DB_MAX_OUTPUT_PORT_TYPE
+q[12] <= counter[12].DB_MAX_OUTPUT_PORT_TYPE
+q[13] <= counter[13].DB_MAX_OUTPUT_PORT_TYPE
+q[14] <= counter[14].DB_MAX_OUTPUT_PORT_TYPE
+q[15] <= counter[15].DB_MAX_OUTPUT_PORT_TYPE
+q[16] <= counter[16].DB_MAX_OUTPUT_PORT_TYPE
+q[17] <= counter[17].DB_MAX_OUTPUT_PORT_TYPE
+q[18] <= counter[18].DB_MAX_OUTPUT_PORT_TYPE
+q[19] <= counter[19].DB_MAX_OUTPUT_PORT_TYPE
+q[20] <= counter[20].DB_MAX_OUTPUT_PORT_TYPE
+q[21] <= counter[21].DB_MAX_OUTPUT_PORT_TYPE
+q[22] <= counter[22].DB_MAX_OUTPUT_PORT_TYPE
+q[23] <= counter[23].DB_MAX_OUTPUT_PORT_TYPE
+q[24] <= counter[24].DB_MAX_OUTPUT_PORT_TYPE
+q[25] <= counter[25].DB_MAX_OUTPUT_PORT_TYPE
+
+

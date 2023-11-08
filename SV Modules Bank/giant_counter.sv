@@ -1,12 +1,12 @@
-module top_level (
+module giant_counter (
     input logic KEY0,
     input logic CLK50M,
-    output logic [3:0] LED,
-    output logic IO0
+    output logic LED0
+    //output logic IO0
 );
 
     logic [25:0] counter;
-    logic [0:0] toggle_ff;
+    //logic toggle_ff;
     logic [0:0] logic_var;
 
     debouncer debouncer_inst (
@@ -17,19 +17,15 @@ module top_level (
 
     counter26bit counter_inst (
         .CLK(CLK_50),
-        .ENP(debouncer_inst.Q),
-        .ENT(debouncer_inst.Q),
-        .LD(1'b0),
-        .CLR(1'b0),
-        .QA_QZ(counter),
-        .rco(toggle_ff)
+        .reset(reset),
+        .q(counter)
     );
 
-    assign LED = counter[3:0];
-    assign IO0 = toggle_ff;
+    assign LED0 = logic_var;
+    //assign IO0 = toggle_ff;
 
     always_comb begin
-        if (counter < 26_000_000) begin
+        if (counter < 25_000_000) begin
             logic_var = 1'b0;
         end
         else begin
@@ -37,6 +33,6 @@ module top_level (
         end
     end
 
-    assign debouncer_inst.CLK = CLK_50;
+    //assign debouncer_inst.CLK = CLK_50;
 
 endmodule

@@ -1,11 +1,11 @@
-Fitter Status : Successful - Sat Nov  4 13:14:40 2023
+Fitter Status : Successful - Wed Nov  8 17:44:47 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : ALUcontroller
 Top-level Entity Name : ALUcontroller
 Family : MAX 10
-Device : 10M50DAF484C7G
-Timing Models : Final
-Total logic elements : 50 / 49,760 ( < 1 % )
+Device : 10M50DAF484C6GES
+Timing Models : Preliminary
+Total logic elements : 52 / 49,760 ( < 1 % )
     Total combinational functions : 48 / 49,760 ( < 1 % )
     Dedicated logic registers : 34 / 49,760 ( < 1 % )
 Total registers : 34

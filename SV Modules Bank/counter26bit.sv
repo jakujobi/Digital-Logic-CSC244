@@ -1,12 +1,36 @@
-module counter26bit (
+module counter26bit #(parameter N = 26)(
     input logic CLK,
-    input logic ENP,
-    input logic ENT,
-    input logic LD,    //active low load
-    input logic CLR,   //active low
-    output logic [25:0] QA_QZ,
-    output logic rco
+    input logic reset,
+    output logic [N-1:0] q
 );
+
+// logic p;
+
+// always_ff @(posedge CLK, posedge reset)
+// begin
+//     if (reset) q <= 0;
+//     else q <= q + 1;
+// end
+
+// always_comb
+// begin
+//     if (q == 50000000) q <= 0;
+
+//     // if (q < 25000000) p=0;
+//     // else p=1;
+// end
+
+// endmodule
+
+// module counter26bit (
+//     input logic CLK,
+//     input logic ENP,
+//     input logic ENT,
+//     input logic LD,    //active low load
+//     input logic CLR,   //active low
+//     output logic [25:0] QA_QZ,
+//     output logic rco
+// );
 
     logic [25:0] counter;
     logic [25:0] next_counter;
@@ -15,6 +39,9 @@ module counter26bit (
     logic [1:0] enable;
     logic [25:0] reset_value = 26'h0;
     logic [0:0] toggle_ff;
+
+    assign LD = 1'b0;
+    assign CLR = 1'b0;
 
     always_ff @(posedge CLK) begin
         if (CLR == 1'b0) begin
@@ -35,11 +62,10 @@ module counter26bit (
         end
     end
 
-    assign QA_QZ = counter[25:0];
+    assign q = counter[25:0];
     assign rco = (counter == max_value) ? 1'b1 : 1'b0;
 
 endmodule
-
 
 
 

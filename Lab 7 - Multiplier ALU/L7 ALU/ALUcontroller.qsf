@@ -38,7 +38,7 @@
 
 
 set_global_assignment -name FAMILY "MAX 10"
-set_global_assignment -name DEVICE 10M50DAF484C7G
+set_global_assignment -name DEVICE 10M50DAF484C6GES
 set_global_assignment -name TOP_LEVEL_ENTITY ALUcontroller
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:34:20  NOVEMBER 04, 2023"
@@ -77,7 +77,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/ALUcontrol
 set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/ALU.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/addsub4.sv"
 set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/adder4.sv"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_location_assignment PIN_C10 -to INPUT[0]
 set_location_assignment PIN_C11 -to INPUT[1]
 set_location_assignment PIN_D12 -to INPUT[2]
@@ -103,3 +102,37 @@ set_location_assignment PIN_C17 -to Cseg[0][6]
 set_location_assignment PIN_C18 -to Cseg[1][0]
 set_location_assignment PIN_D18 -to Cseg[1][1]
 set_location_assignment PIN_E18 -to Cseg[1][2]
+set_location_assignment PIN_B16 -to Cseg[1][3]
+set_location_assignment PIN_A17 -to Cseg[1][4]
+set_location_assignment PIN_A18 -to Cseg[1][5]
+set_location_assignment PIN_B17 -to Cseg[1][6]
+set_location_assignment PIN_B20 -to Bseg[0][0]
+set_location_assignment PIN_A20 -to Bseg[0][1]
+set_location_assignment PIN_B19 -to Bseg[0][2]
+set_location_assignment PIN_A21 -to Bseg[0][3]
+set_location_assignment PIN_B21 -to Bseg[0][4]
+set_location_assignment PIN_C22 -to Bseg[0][5]
+set_location_assignment PIN_B22 -to Bseg[0][6]
+set_location_assignment PIN_F21 -to Bseg[1][0]
+set_location_assignment PIN_E22 -to Bseg[1][1]
+set_location_assignment PIN_E21 -to Bseg[1][2]
+set_location_assignment PIN_C19 -to Bseg[1][3]
+set_location_assignment PIN_C20 -to Bseg[1][4]
+set_location_assignment PIN_D19 -to Bseg[1][5]
+set_location_assignment PIN_E17 -to Bseg[1][6]
+set_location_assignment PIN_F18 -to Aseg[0][0]
+set_location_assignment PIN_E20 -to Aseg[0][1]
+set_location_assignment PIN_E19 -to Aseg[0][2]
+set_location_assignment PIN_J18 -to Aseg[0][3]
+set_location_assignment PIN_H19 -to Aseg[0][4]
+set_location_assignment PIN_F19 -to Aseg[0][5]
+set_location_assignment PIN_F20 -to Aseg[0][6]
+set_location_assignment PIN_J20 -to Aseg[1][0]
+set_location_assignment PIN_K20 -to Aseg[1][1]
+set_location_assignment PIN_L18 -to Aseg[1][2]
+set_location_assignment PIN_N18 -to Aseg[1][3]
+set_location_assignment PIN_M20 -to Aseg[1][4]
+set_location_assignment PIN_N19 -to Aseg[1][5]
+set_location_assignment PIN_N20 -to Aseg[1][6]
+set_global_assignment -name BOARD "MAX 10 DE10 - Lite"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

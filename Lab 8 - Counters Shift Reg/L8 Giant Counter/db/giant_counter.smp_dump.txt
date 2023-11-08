@@ -1,0 +1,5 @@
+
+State Machine - |giant_counter|counter26bit:counter_inst|enable
+Name enable.11 
+enable.00 0 
+enable.11 1 
