@@ -1,8 +1,71 @@
-module counter26bit #(parameter N = 26)(
-    input logic CLK,
-    input logic reset,
-    output logic [N-1:0] q
-);
+module counter26bit #(parameter N = 26)
+(
+	input logic ENP, ENT,
+	input logic LDb, CLRb,
+	input logic CLKb,
+	
+	output logic QA, QB, QC, QD,
+	output logic RCO,
+	output logic isHalf
+);	
+
+const int MAX_RANGE = 50000000;
+logic [N-1:0] crrNum;
+logic [3:0] count_4bit;
+
+logic isEnable;
+assign isEnable = ENP | ENT;
+
+//in-module clr
+logic CLR;
+
+logic combine_CLR;
+assign combine_CLR = ~CLRb | CLR;
+
+
+always_ff@(posedge(CLKb))
+    if(combine_CLR)
+        crrNum <= 0;
+    else if(~LDb & isEnable)
+        crrNum <= crrNum + 1;
+    else
+        crrNum = crrNum;
+
+always_comb begin
+// always combinational 
+    if(crrNum > MAX_RANGE)
+        CLR = 1;
+    else
+        CLR = 0;
+        
+    if(crrNum == MAX_RANGE)
+        RCO = ENT;
+    else
+        RCO = 0;
+    
+    if(crrNum > (MAX_RANGE/2))
+        isHalf = 1;
+    else
+        isHalf = 0;
+    
+end
+
+//count_4bit
+assign QA = crrNum[0];
+assign QB = crrNum[1];
+assign QC = crrNum[2];
+assign QD = crrNum[3];
+	
+	
+endmodule
+
+
+
+// module counter26bit #(parameter N = 26)(
+//     input logic CLK,
+//     input logic reset,
+//     output logic [N-1:0] q
+// );
 
 // logic p;
 
@@ -32,40 +95,40 @@ module counter26bit #(parameter N = 26)(
 //     output logic rco
 // );
 
-    logic [25:0] counter;
-    logic [25:0] next_counter;
-    logic [25:0] load_value = 26'h0;
-    logic [25:0] max_value = 26'h2FAF080;
-    logic [1:0] enable;
-    logic [25:0] reset_value = 26'h0;
-    logic [0:0] toggle_ff;
+//     logic [25:0] counter;
+//     logic [25:0] next_counter;
+//     logic [25:0] load_value = 26'h0;
+//     logic [25:0] max_value = 26'h2FAF080;
+//     logic [1:0] enable;
+//     logic [25:0] reset_value = 26'h0;
+//     logic [0:0] toggle_ff;
 
-    assign LD = 1'b0;
-    assign CLR = 1'b0;
+//     assign LD = 1'b0;
+//     assign CLR = 1'b0;
 
-    always_ff @(posedge CLK) begin
-        if (CLR == 1'b0) begin
-            counter <= reset_value;
-            enable <= 2'b0;
-        end
-        else if (LD == 1'b0) begin
-            counter <= load_value;
-            enable <= 2'b0;
-        end
-        else if (enable == 2'b11) begin
-            counter <= next_counter;
-            enable <= 2'b0;
-        end
-        else begin
-            next_counter <= counter + 26'h1;
-            enable <= 2'b11;
-        end
-    end
+//     always_ff @(posedge CLK) begin
+//         if (CLR == 1'b0) begin
+//             counter <= reset_value;
+//             enable <= 2'b0;
+//         end
+//         else if (LD == 1'b0) begin
+//             counter <= load_value;
+//             enable <= 2'b0;
+//         end
+//         else if (enable == 2'b11) begin
+//             counter <= next_counter;
+//             enable <= 2'b0;
+//         end
+//         else begin
+//             next_counter <= counter + 26'h1;
+//             enable <= 2'b11;
+//         end
+//     end
 
-    assign q = counter[25:0];
-    assign rco = (counter == max_value) ? 1'b1 : 1'b0;
+//     assign q = counter[25:0];
+//     assign rco = (counter == max_value) ? 1'b1 : 1'b0;
 
-endmodule
+// endmodule
 
 
 

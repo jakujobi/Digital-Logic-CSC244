@@ -22,12 +22,9 @@ logic Cin;
 
 always_comb //Check if we add or subtract first
 begin
-	
 	case(ALUControl)
-		
 		2'b00 : Cin = 1'b0; //add
 		2'b01 : Cin = 1'b1; //sub
-	
 	default:
 		Cin = 1'b0;
 	endcase
