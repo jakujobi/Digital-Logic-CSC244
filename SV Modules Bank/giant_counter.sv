@@ -20,26 +20,26 @@ debouncer (
     .A(CLK_Db)
 );
 
-// logic isHalf_1, RCO1;
-// logic isHalf_1_DB;
+logic isHalf_1, RCO1;
+logic isHalf_1_DB;
 
 
-// counter26bit halfsecond_step(
-//     .isHalf(isHalf_1),
-//     .RCO(RCO1),
-//     .ENP(1'b1),
-//     .ENT(1'b1),
-//     .LDb(1'b0),
-//     .CLRb(1'b1),
-//     .CLKb(CLK50Mhz)
-// );
+counter26bit halfsecond_step(
+    .isHalf(isHalf_1),
+    .RCO(RCO1),
+    .ENP(1'b1),
+    .ENT(1'b1),
+    .LDb(1'b0),
+    .CLRb(1'b1),
+    .CLKb(CLK50Mhz)
+);
 
-// //debounce isHalfsignal
-// debouncer (
-//     .A(isHalf_1_DB),
-//     .CLK50M(CLK50M),
-//     .A_noisy(isHalf_1)
-// );
+//debounce isHalfsignal
+debouncer (
+    .A(isHalf_1_DB),
+    .CLK50M(CLK50M),
+    .A_noisy(isHalf_1)
+);
 
 counter26bit counter1(
     .ENP(ENP),
