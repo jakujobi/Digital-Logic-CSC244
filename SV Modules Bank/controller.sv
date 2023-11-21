@@ -9,27 +9,28 @@ module controller(
 *	need a combinational logic circuit to assign outputs based on current step - always_comb
 */
 
+logic T;
 
-	always_ff @(posedge CLKb)
-		begin
-			T <= ~T;
-		end
-		
-	always_comb
-		begin
-			if (T == 1)
-				begin
-				enA = 1;
-				enC = 0;
-				enALU = 1;
-				end
-			else
-				begin
-				enA = 0;
-				enC = 1;
-				enALU = 0;
-				end
-		end
+always_ff @(posedge CLKb)
+	begin
+		T <= ~T;
+	end
+	
+always_comb
+	begin
+		if (T == 1)
+			begin
+			enA = 1;
+			enC = 0;
+			enALU = 1;
+			end
+		else
+			begin
+			enA = 0;
+			enC = 1;
+			enALU = 0;
+			end
+	end
 
 
 
