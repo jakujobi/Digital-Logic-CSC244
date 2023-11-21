@@ -9,8 +9,7 @@ module controller(
 *	need a combinational logic circuit to assign outputs based on current step - always_comb
 */
 
-logic T;
-
+logic T;	// T flip flop
 always_ff @(posedge CLKb)
 	begin
 		T <= ~T;
