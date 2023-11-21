@@ -392,7 +392,7 @@ GND                          : N11       : gnd    :                   :         
 VCC                          : N12       : power  :                   : 1.2V    :           :                
 GND                          : N13       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N14       :        :                   :         : 6         :                
-CLK50M                       : N15       : input  : 2.5 V             :         : 6         : N              
+CLK50M                       : N15       : input  : 2.5 V             :         : 6         : Y              
 VCCIO5                       : N16       : power  :                   : 2.5V    : 5         :                
 VCCIO6                       : N17       : power  :                   : 2.5V    : 6         :                
 Aseg[1][3]                   : N18       : output : 2.5 V             :         : 6         : Y              

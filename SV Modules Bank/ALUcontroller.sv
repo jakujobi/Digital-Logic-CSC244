@@ -89,16 +89,12 @@ module ALUcontroller(
 	*	replace the module names with your 7-segment hex decoder
 	*/ 
 	
-	/*
-	seg7hex hexA1(.in(_A[7:4]), .dig_out(Aseg[1]));
-	seg7hex hexA0(.in(_A[3:0]), .dig_out(Aseg[0]));
+	binary4todecimal7decoder hexA1(.binary(_A[7:4]), .sevenSeg(Aseg[1]));
+	binary4todecimal7decoder hexA0(.binary(_A[3:0]), .sevenSeg(Aseg[0]));
 	
-	seg7hex hexB1(.in(INPUT[7:4]), .dig_out(Bseg[1]));
-	seg7hex hexB0(.in(INPUT[3:0]), .dig_out(Bseg[0]));
+	binary4todecimal7decoder hexC1(.binary(_Cout[7:4]), .sevenSeg(Cseg[1]));
+	binary4todecimal7decoder hexC0(.binary(_Cout[3:0]), .sevenSeg(Cseg[0]));
 	
-	seg7hex hexC1(.in(_Cout[7:4]), .dig_out(Cseg[1]));
-	seg7hex hexC0(.in(_Cout[3:0]), .dig_out(Cseg[0]));
-	*/
 
 endmodule
 

@@ -4,6 +4,7 @@ module giant_counter(
     input logic CLK50M,
 	input logic LD,
     input logic CLR,
+
 	input logic ENP,
     input logic ENT,
 	
@@ -14,44 +15,46 @@ module giant_counter(
 
 logic CLK_Db;
 debouncer (
-    .A(CLK_Db),
+    .A_noisy(CLK),
     .CLK50M(CLK50M),
-    .A_noisy(CLK)
+    .A(CLK_Db)
 );
 
-logic isHalf_1, RCO1;
-logic isHalf_1_DB;
+// logic isHalf_1, RCO1;
+// logic isHalf_1_DB;
 
 
-counter26bit halfsecond_step(
-    .isHalf(isHalf_1),
-    .RCO(RCO1),
-    .ENP(1'b1),
-    .ENT(1'b1),
-    .LDb(1'b0),
-    .CLRb(1'b1),
-    .CLKb(CLK50Mhz)
-);
+// counter26bit halfsecond_step(
+//     .isHalf(isHalf_1),
+//     .RCO(RCO1),
+//     .ENP(1'b1),
+//     .ENT(1'b1),
+//     .LDb(1'b0),
+//     .CLRb(1'b1),
+//     .CLKb(CLK50Mhz)
+// );
 
-//debounce isHalfsignal
-debouncer (
-    .A(isHalf_1_DB),
-    .CLK50M(CLK50M),
-    .A_noisy(isHalf_1)
-);
+// //debounce isHalfsignal
+// debouncer (
+//     .A(isHalf_1_DB),
+//     .CLK50M(CLK50M),
+//     .A_noisy(isHalf_1)
+// );
 
 counter26bit counter1(
+    .ENP(ENP),
+    .ENT(ENT),
+    .LDb(LD),
+    .CLRb(CLR),
+    .CLKb(CLK_Db),
+    //.CLKb(RCO1),
+
     .isHalf(isHalf),
     .QA(Q[0]),
     .QB(Q[1]),
     .QC(Q[2]),
     .QD(Q[3]),
-    .RCO(RCO),
-    .ENP(ENP),
-    .ENT(ENT),
-    .LDb(LD),
-    .CLRb(CLR),
-    .CLKb(RCO1)
+    .RCO(RCO)
 );
 
 endmodule

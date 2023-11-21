@@ -1,5 +1,5 @@
 Fitter report for L7Multiplier
-Thu Oct 26 10:05:48 2023
+Fri Nov 17 12:46:11 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -63,15 +63,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Oct 26 10:05:48 2023          ;
+; Fitter Status                      ; Successful - Fri Nov 17 12:46:11 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; L7Multiplier                                   ;
 ; Top-level Entity Name              ; L7Multiplier                                   ;
 ; Family                             ; MAX 10                                         ;
 ; Device                             ; 10M50DAF484C7G                                 ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 23 / 49,760 ( < 1 % )                          ;
-;     Total combinational functions  ; 23 / 49,760 ( < 1 % )                          ;
+; Total logic elements               ; 60 / 49,760 ( < 1 % )                          ;
+;     Total combinational functions  ; 60 / 49,760 ( < 1 % )                          ;
 ;     Dedicated logic registers      ; 0 / 49,760 ( 0 % )                             ;
 ; Total registers                    ; 0                                              ;
 ; Total pins                         ; 36 / 360 ( 10 % )                              ;
@@ -149,12 +149,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 10          ;
 ;                            ;             ;
-; Average used               ; 1.04        ;
+; Average used               ; 1.05        ;
 ; Maximum used               ; 10          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-10        ;   0.4%      ;
+;     Processors 2-10        ;   0.6%      ;
 +----------------------------+-------------+
 
 
@@ -164,8 +164,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 114 ) ; 0.00 % ( 0 / 114 )         ; 0.00 % ( 0 / 114 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 114 ) ; 0.00 % ( 0 / 114 )         ; 0.00 % ( 0 / 114 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 151 ) ; 0.00 % ( 0 / 151 )         ; 0.00 % ( 0 / 151 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 151 ) ; 0.00 % ( 0 / 151 )         ; 0.00 % ( 0 / 151 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -188,7 +188,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 98 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 135 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 16 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -196,7 +196,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/L7 Multiplier/output_files/L7Multiplier.pin.
+The pin-out file can be found in D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/L7 Multiplier/output_files/L7Multiplier.pin.
 
 
 +---------------------------------------------------------------------+
@@ -204,26 +204,26 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 +---------------------------------------------+-----------------------+
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
-; Total logic elements                        ; 23 / 49,760 ( < 1 % ) ;
-;     -- Combinational with no register       ; 23                    ;
+; Total logic elements                        ; 60 / 49,760 ( < 1 % ) ;
+;     -- Combinational with no register       ; 60                    ;
 ;     -- Register only                        ; 0                     ;
 ;     -- Combinational with a register        ; 0                     ;
 ;                                             ;                       ;
 ; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 16                    ;
-;     -- 3 input functions                    ; 1                     ;
-;     -- <=2 input functions                  ; 6                     ;
+;     -- 4 input functions                    ; 46                    ;
+;     -- 3 input functions                    ; 4                     ;
+;     -- <=2 input functions                  ; 10                    ;
 ;     -- Register only                        ; 0                     ;
 ;                                             ;                       ;
 ; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 23                    ;
+;     -- normal mode                          ; 60                    ;
 ;     -- arithmetic mode                      ; 0                     ;
 ;                                             ;                       ;
 ; Total registers*                            ; 0 / 51,509 ( 0 % )    ;
 ;     -- Dedicated logic registers            ; 0 / 49,760 ( 0 % )    ;
 ;     -- I/O registers                        ; 0 / 1,749 ( 0 % )     ;
 ;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 3 / 3,110 ( < 1 % )   ;
+; Total LABs:  partially or completely used   ; 7 / 3,110 ( < 1 % )   ;
 ; Virtual pins                                ; 0                     ;
 ; I/O pins                                    ; 36 / 360 ( 10 % )     ;
 ;     -- Clock pins                           ; 0 / 8 ( 0 % )         ;
@@ -244,11 +244,11 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )         ;
 ; Impedance control blocks                    ; 0 / 1 ( 0 % )         ;
 ; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.1%    ;
-; Peak interconnect usage (total/H/V)         ; 1.0% / 1.0% / 1.1%    ;
+; Peak interconnect usage (total/H/V)         ; 0.9% / 1.2% / 0.7%    ;
 ; Maximum fan-out                             ; 17                    ;
 ; Highest non-global fan-out                  ; 17                    ;
-; Total fan-out                               ; 150                   ;
-; Average fan-out                             ; 1.32                  ;
+; Total fan-out                               ; 289                   ;
+; Average fan-out                             ; 1.91                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -261,26 +261,26 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 23 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
-;     -- Combinational with no register       ; 23                   ; 0                              ;
+; Total logic elements                        ; 60 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
+;     -- Combinational with no register       ; 60                   ; 0                              ;
 ;     -- Register only                        ; 0                    ; 0                              ;
 ;     -- Combinational with a register        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 16                   ; 0                              ;
-;     -- 3 input functions                    ; 1                    ; 0                              ;
-;     -- <=2 input functions                  ; 6                    ; 0                              ;
+;     -- 4 input functions                    ; 46                   ; 0                              ;
+;     -- 3 input functions                    ; 4                    ; 0                              ;
+;     -- <=2 input functions                  ; 10                   ; 0                              ;
 ;     -- Register only                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 23                   ; 0                              ;
+;     -- normal mode                          ; 60                   ; 0                              ;
 ;     -- arithmetic mode                      ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Total registers                             ; 0                    ; 0                              ;
 ;     -- Dedicated logic registers            ; 0 / 49760 ( 0 % )    ; 0 / 49760 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 3 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 7 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 36                   ; 0                              ;
@@ -297,7 +297,7 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 156                  ; 8                              ;
+;     -- Total Connections                    ; 295                  ; 8                              ;
 ;     -- Registered Connections               ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
@@ -330,14 +330,14 @@ The pin-out file can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota 
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; A[0] ; A12   ; 7        ; 54           ; 54           ; 21           ; 12                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; A[1] ; B12   ; 7        ; 49           ; 54           ; 0            ; 13                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; A[2] ; A13   ; 7        ; 54           ; 54           ; 14           ; 12                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; A[3] ; A14   ; 7        ; 58           ; 54           ; 28           ; 12                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; B[0] ; C10   ; 7        ; 51           ; 54           ; 28           ; 7                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; B[1] ; C11   ; 7        ; 51           ; 54           ; 21           ; 7                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; B[2] ; D12   ; 7        ; 51           ; 54           ; 0            ; 7                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
-; B[3] ; C12   ; 7        ; 54           ; 54           ; 28           ; 7                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; A[0] ; A12   ; 7        ; 54           ; 54           ; 21           ; 14                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; A[1] ; B12   ; 7        ; 49           ; 54           ; 0            ; 12                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; A[2] ; A13   ; 7        ; 54           ; 54           ; 14           ; 14                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; A[3] ; A14   ; 7        ; 58           ; 54           ; 28           ; 14                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; B[0] ; C10   ; 7        ; 51           ; 54           ; 28           ; 14                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; B[1] ; C11   ; 7        ; 51           ; 54           ; 21           ; 14                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; B[2] ; D12   ; 7        ; 51           ; 54           ; 0            ; 14                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
+; B[3] ; C12   ; 7        ; 54           ; 54           ; 28           ; 13                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; 0         ;
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -947,17 +947,36 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------+-------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                       ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                 ; Entity Name     ; Library Name ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-------------------------------------+-----------------+--------------+
-; |L7Multiplier              ; 23 (1)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 36   ; 0            ; 23 (1)       ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier                       ; L7Multiplier    ; work         ;
-;    |decimal7decoder:decA|  ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|decimal7decoder:decA  ; decimal7decoder ; work         ;
-;    |decimal7decoder:decB|  ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|decimal7decoder:decB  ; decimal7decoder ; work         ;
-;    |decimal7decoder:decP0| ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|decimal7decoder:decP0 ; decimal7decoder ; work         ;
-;    |decimal7decoder:decP1| ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|decimal7decoder:decP1 ; decimal7decoder ; work         ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-------------------------------------+-----------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                 ;
++-------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-----------------------------------------------------------------------------+--------------------------+--------------+
+; Compilation Hierarchy Node          ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                                                         ; Entity Name              ; Library Name ;
++-------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-----------------------------------------------------------------------------+--------------------------+--------------+
+; |L7Multiplier                       ; 60 (1)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 36   ; 0            ; 60 (1)       ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier                                                               ; L7Multiplier             ; work         ;
+;    |binary4todecimal7decoder:decA|  ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|binary4todecimal7decoder:decA                                 ; binary4todecimal7decoder ; work         ;
+;    |binary4todecimal7decoder:decB|  ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|binary4todecimal7decoder:decB                                 ; binary4todecimal7decoder ; work         ;
+;    |binary4todecimal7decoder:decP0| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|binary4todecimal7decoder:decP0                                ; binary4todecimal7decoder ; work         ;
+;    |binary4todecimal7decoder:decP1| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|binary4todecimal7decoder:decP1                                ; binary4todecimal7decoder ; work         ;
+;    |mult4:my_multiplier|            ; 31 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 31 (0)       ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier                                           ; mult4                    ; work         ;
+;       |PP4:partialone|              ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialone                            ; PP4                      ; work         ;
+;       |PP4:partialtfour|            ; 10 (2)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (2)       ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialtfour                          ; PP4                      ; work         ;
+;          |adder4:fa0|               ; 8 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialtfour|adder4:fa0               ; adder4                   ; work         ;
+;             |fulladder:fa0|         ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialtfour|adder4:fa0|fulladder:fa0 ; fulladder                ; work         ;
+;             |fulladder:fa1|         ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialtfour|adder4:fa0|fulladder:fa1 ; fulladder                ; work         ;
+;             |fulladder:fa2|         ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialtfour|adder4:fa0|fulladder:fa2 ; fulladder                ; work         ;
+;             |fulladder:fa3|         ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialtfour|adder4:fa0|fulladder:fa3 ; fulladder                ; work         ;
+;       |PP4:partialthree|            ; 11 (3)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (3)       ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialthree                          ; PP4                      ; work         ;
+;          |adder4:fa0|               ; 8 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialthree|adder4:fa0               ; adder4                   ; work         ;
+;             |fulladder:fa0|         ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa0 ; fulladder                ; work         ;
+;             |fulladder:fa1|         ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa1 ; fulladder                ; work         ;
+;             |fulladder:fa2|         ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa2 ; fulladder                ; work         ;
+;             |fulladder:fa3|         ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa3 ; fulladder                ; work         ;
+;       |PP4:partialtwo|              ; 9 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (3)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialtwo                            ; PP4                      ; work         ;
+;          |adder4:fa0|               ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialtwo|adder4:fa0                 ; adder4                   ; work         ;
+;             |fulladder:fa0|         ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa0   ; fulladder                ; work         ;
+;             |fulladder:fa1|         ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa1   ; fulladder                ; work         ;
+;             |fulladder:fa2|         ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0          ; |L7Multiplier|mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa2   ; fulladder                ; work         ;
++-------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-----------------------------------------------------------------------------+--------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -998,104 +1017,136 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; A[1]     ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; A[2]     ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; A[3]     ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
-; B[0]     ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; B[0]     ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
 ; B[1]     ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; B[2]     ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; B[3]     ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; B[3]     ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
 +----------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+-----------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                        ;
-+-----------------------------------------+-------------------+---------+
-; Source Pin / Fanout                     ; Pad To Core Index ; Setting ;
-+-----------------------------------------+-------------------+---------+
-; A[0]                                    ;                   ;         ;
-;      - decimal7decoder:decA|WideOr6~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr5~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr4~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr3~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr2~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr1~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr0~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decP0|Decoder0~0 ; 0                 ; 6       ;
-;      - decimal7decoder:decP0|WideOr5~0  ; 0                 ; 6       ;
-;      - decimal7decoder:decP0|WideOr0~0  ; 0                 ; 6       ;
-;      - decimal7decoder:decP1|WideOr5~8  ; 0                 ; 6       ;
-;      - decimal7decoder:decP1|WideOr3~2  ; 0                 ; 6       ;
-; A[1]                                    ;                   ;         ;
-;      - decimal7decoder:decA|WideOr6~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr5~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr4~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr3~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr2~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr1~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr0~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decP0|Decoder0~0 ; 0                 ; 6       ;
-;      - decimal7decoder:decP0|WideOr5~0  ; 0                 ; 6       ;
-;      - decimal7decoder:decP0|WideOr0~0  ; 0                 ; 6       ;
-;      - decimal7decoder:decP1|Decoder0~7 ; 0                 ; 6       ;
-;      - decimal7decoder:decP1|WideOr5~8  ; 0                 ; 6       ;
-;      - decimal7decoder:decP1|WideOr3~2  ; 0                 ; 6       ;
-; A[2]                                    ;                   ;         ;
-;      - decimal7decoder:decA|WideOr6~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr5~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr4~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr3~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr2~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr1~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decA|WideOr0~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decP1|Decoder0~7 ; 0                 ; 6       ;
-;      - decimal7decoder:decP1|WideOr5~8  ; 0                 ; 6       ;
-;      - decimal7decoder:decP1|WideOr4~2  ; 0                 ; 6       ;
-;      - decimal7decoder:decP1|WideOr3~2  ; 0                 ; 6       ;
-;      - decimal7decoder:decP1|WideOr0~2  ; 0                 ; 6       ;
-; A[3]                                    ;                   ;         ;
-;      - decimal7decoder:decA|WideOr6~0   ; 1                 ; 6       ;
-;      - decimal7decoder:decA|WideOr5~0   ; 1                 ; 6       ;
-;      - decimal7decoder:decA|WideOr4~0   ; 1                 ; 6       ;
-;      - decimal7decoder:decA|WideOr3~0   ; 1                 ; 6       ;
-;      - decimal7decoder:decA|WideOr2~0   ; 1                 ; 6       ;
-;      - decimal7decoder:decA|WideOr1~0   ; 1                 ; 6       ;
-;      - decimal7decoder:decA|WideOr0~0   ; 1                 ; 6       ;
-;      - decimal7decoder:decP1|Decoder0~7 ; 1                 ; 6       ;
-;      - decimal7decoder:decP1|WideOr5~8  ; 1                 ; 6       ;
-;      - decimal7decoder:decP1|WideOr4~2  ; 1                 ; 6       ;
-;      - decimal7decoder:decP1|WideOr3~2  ; 1                 ; 6       ;
-;      - decimal7decoder:decP1|WideOr0~2  ; 1                 ; 6       ;
-; B[0]                                    ;                   ;         ;
-;      - decimal7decoder:decB|WideOr6~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr5~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr4~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr3~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr2~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr1~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr0~0   ; 0                 ; 6       ;
-; B[1]                                    ;                   ;         ;
-;      - decimal7decoder:decB|WideOr6~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr5~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr4~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr3~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr2~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr1~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr0~0   ; 0                 ; 6       ;
-; B[2]                                    ;                   ;         ;
-;      - decimal7decoder:decB|WideOr6~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr5~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr4~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr3~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr2~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr1~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr0~0   ; 0                 ; 6       ;
-; B[3]                                    ;                   ;         ;
-;      - decimal7decoder:decB|WideOr6~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr5~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr4~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr3~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr2~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr1~0   ; 0                 ; 6       ;
-;      - decimal7decoder:decB|WideOr0~0   ; 0                 ; 6       ;
-+-----------------------------------------+-------------------+---------+
++-----------------------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                                            ;
++-----------------------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                                         ; Pad To Core Index ; Setting ;
++-----------------------------------------------------------------------------+-------------------+---------+
+; A[0]                                                                        ;                   ;         ;
+;      - binary4todecimal7decoder:decA|WideOr6~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr5~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr4~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr3~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr2~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr1~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr0~0                              ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialone|Ain[0]                            ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa0|S~0      ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa0|Cout~0   ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa0|S~0    ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa0|Cout~0 ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtfour|adder4:fa0|fulladder:fa0|S~0    ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtfour|adder4:fa0|fulladder:fa0|Cout~0 ; 0                 ; 6       ;
+; A[1]                                                                        ;                   ;         ;
+;      - binary4todecimal7decoder:decA|WideOr6~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr5~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr4~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr3~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr2~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr1~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr0~0                              ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa0|S~0      ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|Ain[1]                            ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa0|Cout~0   ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|Ain[1]                          ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtfour|Ain[1]                          ; 0                 ; 6       ;
+; A[2]                                                                        ;                   ;         ;
+;      - binary4todecimal7decoder:decA|WideOr6~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr5~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr4~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr3~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr2~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr1~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr0~0                              ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa1|S        ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa1|Cout~0   ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa2|S~0      ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|Ain[2]                            ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa2|S~0    ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtfour|Ain[2]                          ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|Ain[2]                          ; 0                 ; 6       ;
+; A[3]                                                                        ;                   ;         ;
+;      - binary4todecimal7decoder:decA|WideOr6~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr5~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr4~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr3~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr2~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr1~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decA|WideOr0~0                              ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa2|S~0      ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa2|Cout~0   ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|Ain[3]                            ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|Ain[3]                          ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtfour|adder4:fa0|fulladder:fa3|S~0    ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtfour|adder4:fa0|fulladder:fa3|Cout~0 ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa3|S~2    ; 1                 ; 6       ;
+; B[0]                                                                        ;                   ;         ;
+;      - binary4todecimal7decoder:decB|WideOr6~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr5~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr4~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr3~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr2~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr1~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr0~0                              ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialone|Ain[0]                            ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa0|S~0      ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa0|Cout~0   ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa1|S        ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa1|Cout~0   ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa2|S~0      ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa2|Cout~0   ; 1                 ; 6       ;
+; B[1]                                                                        ;                   ;         ;
+;      - binary4todecimal7decoder:decB|WideOr6~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr5~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr4~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr3~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr2~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr1~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr0~0                              ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa0|S~0      ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|Ain[1]                            ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa0|Cout~0   ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|adder4:fa0|fulladder:fa2|S~0      ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|Ain[2]                            ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtwo|Ain[3]                            ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa3|S~2    ; 0                 ; 6       ;
+; B[2]                                                                        ;                   ;         ;
+;      - binary4todecimal7decoder:decB|WideOr6~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr5~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr4~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr3~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr2~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr1~0                              ; 0                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr0~0                              ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa0|S~0    ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|Ain[1]                          ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa0|Cout~0 ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa2|S~0    ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|Ain[2]                          ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|Ain[3]                          ; 0                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialthree|adder4:fa0|fulladder:fa3|S~2    ; 0                 ; 6       ;
+; B[3]                                                                        ;                   ;         ;
+;      - binary4todecimal7decoder:decB|WideOr6~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr5~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr4~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr3~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr2~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr1~0                              ; 1                 ; 6       ;
+;      - binary4todecimal7decoder:decB|WideOr0~0                              ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtfour|adder4:fa0|fulladder:fa0|S~0    ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtfour|adder4:fa0|fulladder:fa0|Cout~0 ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtfour|Ain[1]                          ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtfour|Ain[2]                          ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtfour|adder4:fa0|fulladder:fa3|S~0    ; 1                 ; 6       ;
+;      - mult4:my_multiplier|PP4:partialtfour|adder4:fa0|fulladder:fa3|Cout~0 ; 1                 ; 6       ;
++-----------------------------------------------------------------------------+-------------------+---------+
 
 
 +------------------------------------------------+
@@ -1103,24 +1154,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 38 / 148,641 ( < 1 % ) ;
+; Block interconnects   ; 71 / 148,641 ( < 1 % ) ;
 ; C16 interconnects     ; 11 / 5,382 ( < 1 % )   ;
-; C4 interconnects      ; 48 / 106,704 ( < 1 % ) ;
-; Direct links          ; 1 / 148,641 ( < 1 % )  ;
+; C4 interconnects      ; 60 / 106,704 ( < 1 % ) ;
+; Direct links          ; 7 / 148,641 ( < 1 % )  ;
 ; Global clocks         ; 0 / 20 ( 0 % )         ;
-; Local interconnects   ; 0 / 49,760 ( 0 % )     ;
+; Local interconnects   ; 20 / 49,760 ( < 1 % )  ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )        ;
-; R24 interconnects     ; 9 / 5,406 ( < 1 % )    ;
-; R4 interconnects      ; 38 / 147,764 ( < 1 % ) ;
+; R24 interconnects     ; 10 / 5,406 ( < 1 % )   ;
+; R4 interconnects      ; 71 / 147,764 ( < 1 % ) ;
 +-----------------------+------------------------+
 
 
 +--------------------------------------------------------------------------+
 ; LAB Logic Elements                                                       ;
 +--------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 7.67) ; Number of LABs  (Total = 3) ;
+; Number of Logic Elements  (Average = 8.57) ; Number of LABs  (Total = 7) ;
 +--------------------------------------------+-----------------------------+
-; 1                                          ; 1                           ;
+; 1                                          ; 2                           ;
 ; 2                                          ; 0                           ;
 ; 3                                          ; 0                           ;
 ; 4                                          ; 0                           ;
@@ -1128,24 +1179,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 6                                          ; 0                           ;
 ; 7                                          ; 1                           ;
 ; 8                                          ; 0                           ;
-; 9                                          ; 0                           ;
-; 10                                         ; 0                           ;
+; 9                                          ; 1                           ;
+; 10                                         ; 1                           ;
 ; 11                                         ; 0                           ;
 ; 12                                         ; 0                           ;
 ; 13                                         ; 0                           ;
 ; 14                                         ; 0                           ;
-; 15                                         ; 1                           ;
-; 16                                         ; 0                           ;
+; 15                                         ; 0                           ;
+; 16                                         ; 2                           ;
 +--------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 7.67) ; Number of LABs  (Total = 3) ;
+; Number of Signals Sourced  (Average = 8.57) ; Number of LABs  (Total = 7) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
-; 1                                           ; 1                           ;
+; 1                                           ; 2                           ;
 ; 2                                           ; 0                           ;
 ; 3                                           ; 0                           ;
 ; 4                                           ; 0                           ;
@@ -1153,50 +1204,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 6                                           ; 0                           ;
 ; 7                                           ; 1                           ;
 ; 8                                           ; 0                           ;
-; 9                                           ; 0                           ;
-; 10                                          ; 0                           ;
+; 9                                           ; 1                           ;
+; 10                                          ; 1                           ;
 ; 11                                          ; 0                           ;
 ; 12                                          ; 0                           ;
 ; 13                                          ; 0                           ;
 ; 14                                          ; 0                           ;
-; 15                                          ; 1                           ;
+; 15                                          ; 0                           ;
+; 16                                          ; 2                           ;
 +---------------------------------------------+-----------------------------+
 
 
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 7.67) ; Number of LABs  (Total = 3) ;
+; Number of Signals Sourced Out  (Average = 5.71) ; Number of LABs  (Total = 7) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
-; 1                                               ; 1                           ;
+; 1                                               ; 2                           ;
 ; 2                                               ; 0                           ;
 ; 3                                               ; 0                           ;
 ; 4                                               ; 0                           ;
 ; 5                                               ; 0                           ;
 ; 6                                               ; 0                           ;
-; 7                                               ; 1                           ;
-; 8                                               ; 0                           ;
-; 9                                               ; 0                           ;
-; 10                                              ; 0                           ;
-; 11                                              ; 0                           ;
-; 12                                              ; 0                           ;
-; 13                                              ; 0                           ;
-; 14                                              ; 0                           ;
-; 15                                              ; 1                           ;
+; 7                                               ; 2                           ;
+; 8                                               ; 3                           ;
 +-------------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 2.67) ; Number of LABs  (Total = 3) ;
+; Number of Distinct Inputs  (Average = 5.14) ; Number of LABs  (Total = 7) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
+; 2                                           ; 1                           ;
 ; 3                                           ; 0                           ;
-; 4                                           ; 2                           ;
+; 4                                           ; 1                           ;
+; 5                                           ; 0                           ;
+; 6                                           ; 2                           ;
+; 7                                           ; 0                           ;
+; 8                                           ; 1                           ;
+; 9                                           ; 0                           ;
+; 10                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -1399,23 +1450,23 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.13 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.10 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
-Info (144001): Generated suppressed messages file C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/L7 Multiplier/output_files/L7Multiplier.fit.smsg
+Info (144001): Generated suppressed messages file D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/L7 Multiplier/output_files/L7Multiplier.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 6063 megabytes
-    Info: Processing ended: Thu Oct 26 10:05:49 2023
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 6006 megabytes
+    Info: Processing ended: Fri Nov 17 12:46:12 2023
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:02
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/L7 Multiplier/output_files/L7Multiplier.fit.smsg.
+The suppressed messages can be found in D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/L7 Multiplier/output_files/L7Multiplier.fit.smsg.
 
 

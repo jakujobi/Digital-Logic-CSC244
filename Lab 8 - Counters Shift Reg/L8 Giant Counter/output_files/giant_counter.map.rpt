@@ -1,5 +1,5 @@
 Analysis & Synthesis report for giant_counter
-Mon Nov 13 20:11:14 2023
+Wed Nov 15 16:41:42 2023
 Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
@@ -13,20 +13,14 @@ Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Parameter Settings for User Entity Instance: debouncer:comb_3
- 12. Parameter Settings for User Entity Instance: counter26bit:halfsecond_step
- 13. Parameter Settings for User Entity Instance: debouncer:comb_4
- 14. Parameter Settings for User Entity Instance: counter26bit:counter1
- 15. Port Connectivity Checks: "debouncer:comb_4"
- 16. Port Connectivity Checks: "counter26bit:halfsecond_step"
- 17. Port Connectivity Checks: "debouncer:comb_3"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
- 21. Analysis & Synthesis Suppressed Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: debouncer:comb_3
+ 11. Parameter Settings for User Entity Instance: counter26bit:counter1
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -53,15 +47,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 13 20:11:14 2023          ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 15 16:41:42 2023          ;
 ; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
 ; Revision Name                      ; giant_counter                                  ;
 ; Top-level Entity Name              ; giant_counter                                  ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 0                                              ;
-;     Total combinational functions  ; 0                                              ;
-;     Dedicated logic registers      ; 0                                              ;
-; Total registers                    ; 0                                              ;
+; Total logic elements               ; 96                                             ;
+;     Total combinational functions  ; 96                                             ;
+;     Dedicated logic registers      ; 43                                             ;
+; Total registers                    ; 43                                             ;
 ; Total pins                         ; 12                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -167,10 +161,12 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 10          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 10          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-10        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -185,77 +181,48 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 12    ;
-;                                             ;       ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; CLK   ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 12    ;
-; Average fan-out                             ; 0.50  ;
-+---------------------------------------------+-------+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                    ;
++---------------------------------------------+----------------------------------+
+; Resource                                    ; Usage                            ;
++---------------------------------------------+----------------------------------+
+; Estimated Total logic elements              ; 96                               ;
+;                                             ;                                  ;
+; Total combinational functions               ; 96                               ;
+; Logic element usage by number of LUT inputs ;                                  ;
+;     -- 4 input functions                    ; 49                               ;
+;     -- 3 input functions                    ; 4                                ;
+;     -- <=2 input functions                  ; 43                               ;
+;                                             ;                                  ;
+; Logic elements by mode                      ;                                  ;
+;     -- normal mode                          ; 56                               ;
+;     -- arithmetic mode                      ; 40                               ;
+;                                             ;                                  ;
+; Total registers                             ; 43                               ;
+;     -- Dedicated logic registers            ; 43                               ;
+;     -- I/O registers                        ; 0                                ;
+;                                             ;                                  ;
+; I/O pins                                    ; 12                               ;
+;                                             ;                                  ;
+; Embedded Multiplier 9-bit elements          ; 0                                ;
+;                                             ;                                  ;
+; Maximum fan-out node                        ; counter26bit:counter1|crrNum[25] ;
+; Maximum fan-out                             ; 30                               ;
+; Total fan-out                               ; 436                              ;
+; Average fan-out                             ; 2.67                             ;
++---------------------------------------------+----------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+---------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name   ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+---------------+--------------+
-; |giant_counter             ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 12   ; 0            ; 0          ; |giant_counter      ; giant_counter ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+---------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                  ; Entity Name   ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------+---------------+--------------+
+; |giant_counter             ; 96 (0)              ; 43 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 12   ; 0            ; 0          ; |giant_counter                       ; giant_counter ; work         ;
+;    |counter26bit:counter1| ; 74 (74)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |giant_counter|counter26bit:counter1 ; counter26bit  ; work         ;
+;    |debouncer:comb_3|      ; 22 (22)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |giant_counter|debouncer:comb_3      ; debouncer     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                ;
-+--------------------------------------------+--------------------------------------+
-; Register name                              ; Reason for Removal                   ;
-+--------------------------------------------+--------------------------------------+
-; counter26bit:halfsecond_step|crrNum[0..25] ; Stuck at GND due to stuck port clock ;
-; counter26bit:counter1|crrNum[0..25]        ; Stuck at GND due to stuck port clock ;
-; Total Number of Removed Registers = 52     ;                                      ;
-+--------------------------------------------+--------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                            ;
-+----------------------------------------+-------------------------+---------------------------------------------------------------------+
-; Register name                          ; Reason for Removal      ; Registers Removed due to This Register                              ;
-+----------------------------------------+-------------------------+---------------------------------------------------------------------+
-; counter26bit:halfsecond_step|crrNum[6] ; Stuck at GND            ; counter26bit:counter1|crrNum[6], counter26bit:counter1|crrNum[3],   ;
-;                                        ; due to stuck port clock ; counter26bit:counter1|crrNum[2], counter26bit:counter1|crrNum[1],   ;
-;                                        ;                         ; counter26bit:counter1|crrNum[0], counter26bit:counter1|crrNum[5],   ;
-;                                        ;                         ; counter26bit:counter1|crrNum[4], counter26bit:counter1|crrNum[7],   ;
-;                                        ;                         ; counter26bit:counter1|crrNum[8], counter26bit:counter1|crrNum[9],   ;
-;                                        ;                         ; counter26bit:counter1|crrNum[10], counter26bit:counter1|crrNum[11], ;
-;                                        ;                         ; counter26bit:counter1|crrNum[12], counter26bit:counter1|crrNum[13], ;
-;                                        ;                         ; counter26bit:counter1|crrNum[14], counter26bit:counter1|crrNum[15], ;
-;                                        ;                         ; counter26bit:counter1|crrNum[16], counter26bit:counter1|crrNum[17], ;
-;                                        ;                         ; counter26bit:counter1|crrNum[18], counter26bit:counter1|crrNum[19], ;
-;                                        ;                         ; counter26bit:counter1|crrNum[20], counter26bit:counter1|crrNum[21], ;
-;                                        ;                         ; counter26bit:counter1|crrNum[22], counter26bit:counter1|crrNum[23], ;
-;                                        ;                         ; counter26bit:counter1|crrNum[24], counter26bit:counter1|crrNum[25]  ;
-+----------------------------------------+-------------------------+---------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -263,38 +230,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 43    ;
+; Number of registers using Synchronous Clear  ; 16    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 24    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |giant_counter|counter26bit:counter1|crrNum[15] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+
+
 +---------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: debouncer:comb_3 ;
-+----------------+------------------+---------------------------+
-; Parameter Name ; Value            ; Type                      ;
-+----------------+------------------+---------------------------+
-; COMPARE        ; 1100001101010000 ; Unsigned Binary           ;
-+----------------+------------------+---------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: counter26bit:halfsecond_step ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; N              ; 26    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: debouncer:comb_4 ;
 +----------------+------------------+---------------------------+
 ; Parameter Name ; Value            ; Type                      ;
 +----------------+------------------+---------------------------+
@@ -313,52 +269,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "debouncer:comb_4"                                                                   ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; A    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter26bit:halfsecond_step"                                                                            ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; ENP  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
-; ENT  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
-; LDb  ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; CLRb ; Input  ; Info     ; Stuck at VCC                                                                                             ;
-; QA   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; QB   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; QC   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; QD   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "debouncer:comb_3"                                                                   ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; A    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 12                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
+; cycloneiii_ff         ; 43                          ;
+;     ENA               ; 24                          ;
+;     SCLR              ; 16                          ;
+;     plain             ; 3                           ;
+; cycloneiii_lcell_comb ; 96                          ;
+;     arith             ; 40                          ;
+;         2 data inputs ; 40                          ;
+;     normal            ; 56                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 49                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 4.01                        ;
 +-----------------------+-----------------------------+
 
 
@@ -377,7 +308,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
-    Info: Processing started: Mon Nov 13 20:11:07 2023
+    Info: Processing started: Wed Nov 15 16:41:34 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off giant_counter -c giant_counter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
@@ -416,39 +347,24 @@ Info (12021): Found 1 design units, including 1 entities, in source file /onedri
     Info (12023): Found entity 1: addsub4 File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/addsub4.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file /onedrive - south dakota state university - sdsu/#sdsu courses/csc 244 - digital logic/digital-logic-csc244/sv modules bank/adder4.sv
     Info (12023): Found entity 1: adder4 File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/adder4.sv Line: 4
-Warning (10236): Verilog HDL Implicit Net warning at giant_counter.sv(33): created implicit net for "CLK50Mhz" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 33
-Critical Warning (10846): Verilog HDL Instantiation warning at giant_counter.sv(20): instance has no name File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 20
-Critical Warning (10846): Verilog HDL Instantiation warning at giant_counter.sv(41): instance has no name File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 41
+Critical Warning (10846): Verilog HDL Instantiation warning at giant_counter.sv(21): instance has no name File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 21
 Info (12127): Elaborating entity "giant_counter" for the top level hierarchy
-Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:comb_3" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 20
-Info (12128): Elaborating entity "counter26bit" for hierarchy "counter26bit:halfsecond_step" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 34
-Warning (10230): Verilog HDL assignment warning at counter26bit.sv(30): truncated value with size 32 to match size of target (26) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/counter26bit.sv Line: 30
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Q[0]" is stuck at GND File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 10
-    Warning (13410): Pin "Q[1]" is stuck at GND File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 10
-    Warning (13410): Pin "Q[2]" is stuck at GND File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 10
-    Warning (13410): Pin "Q[3]" is stuck at GND File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 10
-    Warning (13410): Pin "RCO" is stuck at GND File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 11
-    Warning (13410): Pin "isHalf" is stuck at GND File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 13
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:comb_3" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 21
+Info (12128): Elaborating entity "counter26bit" for hierarchy "counter26bit:counter1" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 58
+Warning (10230): Verilog HDL assignment warning at counter26bit.sv(29): truncated value with size 32 to match size of target (26) File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/counter26bit.sv Line: 29
+Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 8 - Counters Shift Reg/L8 Giant Counter/output_files/giant_counter.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 6 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLK" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 3
-    Warning (15610): No output dependent on input pin "CLK50M" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 4
-    Warning (15610): No output dependent on input pin "LD" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 5
-    Warning (15610): No output dependent on input pin "CLR" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 6
-    Warning (15610): No output dependent on input pin "ENP" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 7
-    Warning (15610): No output dependent on input pin "ENT" File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/giant_counter.sv Line: 8
-Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 108 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 6 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4746 megabytes
-    Info: Processing ended: Mon Nov 13 20:11:14 2023
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:05
+    Info (21061): Implemented 96 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4823 megabytes
+    Info: Processing ended: Wed Nov 15 16:41:42 2023
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +------------------------------------------+

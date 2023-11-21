@@ -80,6 +80,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEXP0[5]",
+					"strict" : false
+				},
+				{
 					"name" : "HEXP0[6]",
 					"strict" : false
 				},
@@ -101,6 +105,10 @@
 				},
 				{
 					"name" : "HEXP1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEXP1[5]",
 					"strict" : false
 				},
 				{

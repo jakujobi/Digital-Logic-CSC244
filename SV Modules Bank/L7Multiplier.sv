@@ -10,10 +10,24 @@ module L7Multiplier(
     output logic [6:0] HEXP1 // 7-segment display outputs
 );
 
-wire [7:0] product;
+// Assuming you have a 7-segment decoder module named 'decimal7decoder'
+binary4todecimal7decoder decA(
+    .binary(A),
+    .sevenSeg(HEXA),
+);
+
+//Display B in HEX
+binary4todecimal7decoder decB(
+    .binary(B),
+    .sevenSeg(HEXB),
+);
+
+
+logic [7:0] product;
 logic [3:0] P0, P1; //This is to split the product into 2
 
-logic [6:0] asign, bsign, P0sign, P1sign;
+assign P0 = product[3:0];
+assign P1 = product[7:4];
 
 mult4 my_multiplier(
     .A(A),
@@ -21,34 +35,15 @@ mult4 my_multiplier(
     .P(product) // 8-bit product
 );
 
-assign P0 = product[3:0];
-assign P1 = product[7:4];
-
-// Assuming you have a 7-segment decoder module named 'decimal7decoder'
-decimal7decoder decA(
-    .SW(A),
-    .numHEX(HEXA),
-    .signHEX(asign)
-);
-
-//Display B in HEX
-decimal7decoder decB(
-    .SW(B),
-    .numHEX(HEXB),
-    .signHEX(bsign)
-);
-
 //Display product in HEX
-decimal7decoder decP0(
-    .SW(P0),
-    .numHEX(HEXP0),
-    .signHEX(P0sign)
+binary4todecimal7decoder decP0(
+    .binary(P0),
+    .sevenSeg(HEXP0),
 );
 
-decimal7decoder decP1(
-    .SW(P1),
-    .numHEX(HEXP1),
-    .signHEX(P1sign)
+binary4todecimal7decoder decP1(
+    .binary(P1),
+    .sevenSeg(HEXP1),
 );
 
 endmodule

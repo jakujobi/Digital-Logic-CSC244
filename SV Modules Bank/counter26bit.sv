@@ -22,7 +22,6 @@ logic CLR;
 logic combine_CLR;
 assign combine_CLR = ~CLRb | CLR;
 
-
 always_ff@(posedge(CLKb))
     if(combine_CLR)
         crrNum <= 0;

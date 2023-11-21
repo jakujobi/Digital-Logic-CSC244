@@ -62,12 +62,6 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Files/fulladder.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Files/adder4.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Files/partialproduct4.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Files/mult4.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Files/L7Multiplier.sv"
-set_global_assignment -name SYSTEMVERILOG_FILE "../SV Files/decimal7decoder.sv"
 set_location_assignment PIN_C10 -to B[0]
 set_location_assignment PIN_C11 -to B[1]
 set_location_assignment PIN_D12 -to B[2]
@@ -104,4 +98,32 @@ set_location_assignment PIN_B16 -to HEXP1[3]
 set_location_assignment PIN_A17 -to HEXP1[4]
 set_location_assignment PIN_A18 -to HEXP1[5]
 set_location_assignment PIN_B17 -to HEXP1[6]
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/PP4.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/dec416.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/binary4todecimal7decoder.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/t_ff.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/sequenceDetectorMoore.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/sequenceDetectorMealy.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/regN.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/partialproduct4.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/mult4.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/machineComparison.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/L7Multiplier.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/giant_counter.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/fulladder.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/decimal7decoder.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/debouncer.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/counter26bit.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/controller.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/ALUcontroller.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/ALU.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/addsub4.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../../SV Modules Bank/adder4.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Files/fulladder.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Files/adder4.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Files/partialproduct4.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Files/mult4.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Files/L7Multiplier.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "../SV Files/decimal7decoder.sv"
+set_global_assignment -name SOURCE_FILE db/L7Multiplier.cmp.rdb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

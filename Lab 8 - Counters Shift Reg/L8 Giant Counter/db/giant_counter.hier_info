@@ -1,83 +1,19 @@
 |giant_counter
 CLK => CLK.IN1
-CLK50M => CLK50M.IN2
+CLK50M => CLK50M.IN1
 LD => LD.IN1
 CLR => CLR.IN1
 ENP => ENP.IN1
 ENT => ENT.IN1
-Q[0] << counter26bit:counter1.QA
-Q[1] << counter26bit:counter1.QB
-Q[2] << counter26bit:counter1.QC
-Q[3] << counter26bit:counter1.QD
-RCO << counter26bit:counter1.RCO
-isHalf << counter26bit:counter1.isHalf
+Q[0] <= counter26bit:counter1.QA
+Q[1] <= counter26bit:counter1.QB
+Q[2] <= counter26bit:counter1.QC
+Q[3] <= counter26bit:counter1.QD
+RCO <= counter26bit:counter1.RCO
+isHalf <= counter26bit:counter1.isHalf
 
 
 |giant_counter|debouncer:comb_3
-A_noisy => Anext.IN1
-A_noisy => t_r.IN1
-A_noisy => t_r.IN1
-CLK50M => A~reg0.CLK
-CLK50M => COUNT[0].CLK
-CLK50M => COUNT[1].CLK
-CLK50M => COUNT[2].CLK
-CLK50M => COUNT[3].CLK
-CLK50M => COUNT[4].CLK
-CLK50M => COUNT[5].CLK
-CLK50M => COUNT[6].CLK
-CLK50M => COUNT[7].CLK
-CLK50M => COUNT[8].CLK
-CLK50M => COUNT[9].CLK
-CLK50M => COUNT[10].CLK
-CLK50M => COUNT[11].CLK
-CLK50M => COUNT[12].CLK
-CLK50M => COUNT[13].CLK
-CLK50M => COUNT[14].CLK
-CLK50M => COUNT[15].CLK
-A <= A~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|giant_counter|counter26bit:halfsecond_step
-ENP => isEnable.IN0
-ENT => isEnable.IN1
-ENT => RCO.DATAB
-LDb => always0.IN1
-CLRb => combine_CLR.IN1
-CLKb => crrNum[0].CLK
-CLKb => crrNum[1].CLK
-CLKb => crrNum[2].CLK
-CLKb => crrNum[3].CLK
-CLKb => crrNum[4].CLK
-CLKb => crrNum[5].CLK
-CLKb => crrNum[6].CLK
-CLKb => crrNum[7].CLK
-CLKb => crrNum[8].CLK
-CLKb => crrNum[9].CLK
-CLKb => crrNum[10].CLK
-CLKb => crrNum[11].CLK
-CLKb => crrNum[12].CLK
-CLKb => crrNum[13].CLK
-CLKb => crrNum[14].CLK
-CLKb => crrNum[15].CLK
-CLKb => crrNum[16].CLK
-CLKb => crrNum[17].CLK
-CLKb => crrNum[18].CLK
-CLKb => crrNum[19].CLK
-CLKb => crrNum[20].CLK
-CLKb => crrNum[21].CLK
-CLKb => crrNum[22].CLK
-CLKb => crrNum[23].CLK
-CLKb => crrNum[24].CLK
-CLKb => crrNum[25].CLK
-QA <= crrNum[0].DB_MAX_OUTPUT_PORT_TYPE
-QB <= crrNum[1].DB_MAX_OUTPUT_PORT_TYPE
-QC <= crrNum[2].DB_MAX_OUTPUT_PORT_TYPE
-QD <= crrNum[3].DB_MAX_OUTPUT_PORT_TYPE
-RCO <= RCO.DB_MAX_OUTPUT_PORT_TYPE
-isHalf <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|giant_counter|debouncer:comb_4
 A_noisy => Anext.IN1
 A_noisy => t_r.IN1
 A_noisy => t_r.IN1

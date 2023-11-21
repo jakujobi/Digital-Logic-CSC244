@@ -11,20 +11,20 @@ ALUcontrol[0] => ALUcontrol[0].IN1
 ALUcontrol[1] => ALUcontrol[1].IN1
 CLKb => CLKb.IN1
 CLK50M => CLK50M.IN1
-Aseg[0][6] << <GND>
-Aseg[0][5] << <GND>
-Aseg[0][4] << <GND>
-Aseg[0][3] << <GND>
-Aseg[0][2] << <GND>
-Aseg[0][1] << <GND>
-Aseg[0][0] << <GND>
-Aseg[1][6] << <GND>
-Aseg[1][5] << <GND>
-Aseg[1][4] << <GND>
-Aseg[1][3] << <GND>
-Aseg[1][2] << <GND>
-Aseg[1][1] << <GND>
-Aseg[1][0] << <GND>
+Aseg[0][6] << binary4todecimal7decoder:hexA0.sevenSeg
+Aseg[0][5] << binary4todecimal7decoder:hexA0.sevenSeg
+Aseg[0][4] << binary4todecimal7decoder:hexA0.sevenSeg
+Aseg[0][3] << binary4todecimal7decoder:hexA0.sevenSeg
+Aseg[0][2] << binary4todecimal7decoder:hexA0.sevenSeg
+Aseg[0][1] << binary4todecimal7decoder:hexA0.sevenSeg
+Aseg[0][0] << binary4todecimal7decoder:hexA0.sevenSeg
+Aseg[1][6] << binary4todecimal7decoder:hexA1.sevenSeg
+Aseg[1][5] << binary4todecimal7decoder:hexA1.sevenSeg
+Aseg[1][4] << binary4todecimal7decoder:hexA1.sevenSeg
+Aseg[1][3] << binary4todecimal7decoder:hexA1.sevenSeg
+Aseg[1][2] << binary4todecimal7decoder:hexA1.sevenSeg
+Aseg[1][1] << binary4todecimal7decoder:hexA1.sevenSeg
+Aseg[1][0] << binary4todecimal7decoder:hexA1.sevenSeg
 Bseg[0][6] << <GND>
 Bseg[0][5] << <GND>
 Bseg[0][4] << <GND>
@@ -39,20 +39,20 @@ Bseg[1][3] << <GND>
 Bseg[1][2] << <GND>
 Bseg[1][1] << <GND>
 Bseg[1][0] << <GND>
-Cseg[0][6] << <GND>
-Cseg[0][5] << <GND>
-Cseg[0][4] << <GND>
-Cseg[0][3] << <GND>
-Cseg[0][2] << <GND>
-Cseg[0][1] << <GND>
-Cseg[0][0] << <GND>
-Cseg[1][6] << <GND>
-Cseg[1][5] << <GND>
-Cseg[1][4] << <GND>
-Cseg[1][3] << <GND>
-Cseg[1][2] << <GND>
-Cseg[1][1] << <GND>
-Cseg[1][0] << <GND>
+Cseg[0][6] << binary4todecimal7decoder:hexC0.sevenSeg
+Cseg[0][5] << binary4todecimal7decoder:hexC0.sevenSeg
+Cseg[0][4] << binary4todecimal7decoder:hexC0.sevenSeg
+Cseg[0][3] << binary4todecimal7decoder:hexC0.sevenSeg
+Cseg[0][2] << binary4todecimal7decoder:hexC0.sevenSeg
+Cseg[0][1] << binary4todecimal7decoder:hexC0.sevenSeg
+Cseg[0][0] << binary4todecimal7decoder:hexC0.sevenSeg
+Cseg[1][6] << binary4todecimal7decoder:hexC1.sevenSeg
+Cseg[1][5] << binary4todecimal7decoder:hexC1.sevenSeg
+Cseg[1][4] << binary4todecimal7decoder:hexC1.sevenSeg
+Cseg[1][3] << binary4todecimal7decoder:hexC1.sevenSeg
+Cseg[1][2] << binary4todecimal7decoder:hexC1.sevenSeg
+Cseg[1][1] << binary4todecimal7decoder:hexC1.sevenSeg
+Cseg[1][0] << binary4todecimal7decoder:hexC1.sevenSeg
 V << regN:statusreg.Q
 C << regN:statusreg.Q
 Neg << regN:statusreg.Q
@@ -329,5 +329,61 @@ Cin => S.IN1
 Cin => Cout.IN1
 S <= S.DB_MAX_OUTPUT_PORT_TYPE
 Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|binary4todecimal7decoder:hexA1
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+sevenSeg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|binary4todecimal7decoder:hexA0
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+sevenSeg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|binary4todecimal7decoder:hexC1
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+sevenSeg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUcontroller|binary4todecimal7decoder:hexC0
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+sevenSeg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 

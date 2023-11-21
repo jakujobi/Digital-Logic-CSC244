@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("C:/Users/akujo_2rtofyy/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/L7 Multiplier/output_files/") File("L7Multiplier.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/Lab 7 - Multiplier ALU/L7 Multiplier/output_files/") File("L7Multiplier.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

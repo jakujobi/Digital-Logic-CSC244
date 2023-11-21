@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Oct 26 10:05:48 2023
+Fitter Status : Successful - Fri Nov 17 12:46:11 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : L7Multiplier
 Top-level Entity Name : L7Multiplier
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 23 / 49,760 ( < 1 % )
-    Total combinational functions : 23 / 49,760 ( < 1 % )
+Total logic elements : 60 / 49,760 ( < 1 % )
+    Total combinational functions : 60 / 49,760 ( < 1 % )
     Dedicated logic registers : 0 / 49,760 ( 0 % )
 Total registers : 0
 Total pins : 36 / 360 ( 10 % )

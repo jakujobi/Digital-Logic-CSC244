@@ -2,4 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'debouncer:comb_3|A'
+Slack : -3.821
+TNS   : -87.638
+
+Type  : Slow 1200mV 85C Model Setup 'CLK50M'
+Slack : -3.633
+TNS   : -61.553
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:comb_3|A'
+Slack : 0.332
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLK50M'
+Slack : 0.622
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK50M'
+Slack : -3.000
+TNS   : -26.851
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:comb_3|A'
+Slack : -1.403
+TNS   : -36.478
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:comb_3|A'
+Slack : -3.472
+TNS   : -79.379
+
+Type  : Slow 1200mV 0C Model Setup 'CLK50M'
+Slack : -3.321
+TNS   : -56.233
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:comb_3|A'
+Slack : 0.298
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLK50M'
+Slack : 0.575
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK50M'
+Slack : -3.000
+TNS   : -26.851
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:comb_3|A'
+Slack : -1.403
+TNS   : -36.478
+
+Type  : Fast 1200mV 0C Model Setup 'CLK50M'
+Slack : -0.997
+TNS   : -16.709
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:comb_3|A'
+Slack : -0.990
+TNS   : -20.589
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:comb_3|A'
+Slack : 0.145
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLK50M'
+Slack : 0.238
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK50M'
+Slack : -3.000
+TNS   : -20.527
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:comb_3|A'
+Slack : -1.000
+TNS   : -26.000
+
 ------------------------------------------------------------

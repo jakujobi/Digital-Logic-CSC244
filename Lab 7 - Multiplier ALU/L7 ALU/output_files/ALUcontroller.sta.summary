@@ -3,19 +3,19 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'debouncer:clkdeb|A'
-Slack : -3.290
-TNS   : -26.158
+Slack : -3.353
+TNS   : -34.548
 
 Type  : Slow 1200mV 85C Model Setup 'CLK50M'
-Slack : -3.278
-TNS   : -55.521
+Slack : -3.223
+TNS   : -54.730
 
 Type  : Slow 1200mV 85C Model Hold 'debouncer:clkdeb|A'
-Slack : 0.349
+Slack : 0.479
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'CLK50M'
-Slack : 0.530
+Slack : 0.536
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK50M'
@@ -24,22 +24,22 @@ TNS   : -23.774
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:clkdeb|A'
 Slack : -1.222
-TNS   : -20.774
-
-Type  : Slow 1200mV 0C Model Setup 'CLK50M'
-Slack : -2.932
-TNS   : -49.531
+TNS   : -30.550
 
 Type  : Slow 1200mV 0C Model Setup 'debouncer:clkdeb|A'
-Slack : -2.904
-TNS   : -22.435
+Slack : -2.980
+TNS   : -29.566
+
+Type  : Slow 1200mV 0C Model Setup 'CLK50M'
+Slack : -2.909
+TNS   : -49.363
 
 Type  : Slow 1200mV 0C Model Hold 'debouncer:clkdeb|A'
-Slack : 0.325
+Slack : 0.437
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'CLK50M'
-Slack : 0.488
+Slack : 0.493
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK50M'
@@ -48,30 +48,30 @@ TNS   : -23.774
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:clkdeb|A'
 Slack : -1.222
-TNS   : -20.774
+TNS   : -30.550
 
 Type  : Fast 1200mV 0C Model Setup 'CLK50M'
-Slack : -1.103
-TNS   : -18.684
+Slack : -1.080
+TNS   : -18.089
 
 Type  : Fast 1200mV 0C Model Setup 'debouncer:clkdeb|A'
-Slack : -1.030
-TNS   : -5.880
+Slack : -1.056
+TNS   : -7.928
 
 Type  : Fast 1200mV 0C Model Hold 'debouncer:clkdeb|A'
-Slack : 0.158
+Slack : 0.221
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'CLK50M'
-Slack : 0.238
+Slack : 0.242
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK50M'
 Slack : -3.000
-TNS   : -20.493
+TNS   : -20.459
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:clkdeb|A'
 Slack : -1.000
-TNS   : -17.000
+TNS   : -25.000
 
 ------------------------------------------------------------
