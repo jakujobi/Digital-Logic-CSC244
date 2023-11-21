@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at dec416.sv(17): always construct contains both blocking and non-blocking assignments File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/dec416.sv Line: 17
+Warning (10268): Verilog HDL information at counter26bit.sv(25): always construct contains both blocking and non-blocking assignments File: D:/OneDrive - South Dakota State University - SDSU/#SDSU Courses/CSC 244 - Digital Logic/Digital-Logic-CSC244/SV Modules Bank/counter26bit.sv Line: 25

@@ -1,0 +1,237 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Aseg[0][0]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[0][1]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[0][2]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[0][3]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[0][4]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[0][5]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[0][6]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[1][0]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[1][1]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[1][2]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[1][3]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[1][4]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[1][5]",
+					"strict" : false
+				},
+				{
+					"name" : "Aseg[1][6]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[0][0]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[0][1]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[0][2]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[0][3]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[0][4]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[0][5]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[0][6]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[1][0]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[1][1]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[1][2]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[1][3]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[1][4]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[1][5]",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg[1][6]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[0][0]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[0][1]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[0][2]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[0][3]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[0][4]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[0][5]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[0][6]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[1][0]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[1][1]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[1][2]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[1][3]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[1][4]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[1][5]",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg[1][6]",
+					"strict" : false
+				},
+				{
+					"name" : "V",
+					"strict" : false
+				},
+				{
+					"name" : "Neg",
+					"strict" : false
+				},
+				{
+					"name" : "Z",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "INPUT[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CLKb",
+					"strict" : false
+				},
+				{
+					"name" : "CLK50M",
+					"strict" : false
+				},
+				{
+					"name" : "ALUcontrol[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUcontrol[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

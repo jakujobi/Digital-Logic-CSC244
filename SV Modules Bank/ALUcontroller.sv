@@ -40,7 +40,7 @@ module ALUcontroller(
 	input logic [1:0] ALUcontrol,
 	input logic CLKb, CLK50M,
 	
-	output logic [0:6] Aseg[1:0], Bseg[1:0], Cseg[1:0],
+	output logic [6:0] Aseg[1:0], Bseg[1:0], Cseg[1:0],
 	output logic V, C, Neg, Z
 );
 	
@@ -91,6 +91,9 @@ module ALUcontroller(
 	
 	binary4todecimal7decoder hexA1(.binary(_A[7:4]), .sevenSeg(Aseg[1]));
 	binary4todecimal7decoder hexA0(.binary(_A[3:0]), .sevenSeg(Aseg[0]));
+
+	binary4todecimal7decoder hexB1(.binary(INPUT[7:4]), .sevenSeg(Bseg[1]));
+	binary4todecimal7decoder hexB0(.binary(INPUT[3:0]), .sevenSeg(Bseg[0]));
 	
 	binary4todecimal7decoder hexC1(.binary(_Cout[7:4]), .sevenSeg(Cseg[1]));
 	binary4todecimal7decoder hexC0(.binary(_Cout[3:0]), .sevenSeg(Cseg[0]));
